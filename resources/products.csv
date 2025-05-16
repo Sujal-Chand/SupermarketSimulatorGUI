@@ -1,0 +1,22 @@
+﻿Type,Name,Description,Price,Quantity,Storage
+Basic Products,Pasta,A versatile Italian staple perfect for various dishes,40.5,30,SHELF
+Basic Products,Water Bottle,Essential for hydration on the go,26.7,30,SHELF
+Basic Products,Cereal,A quick and easy breakfast option,50,20,SHELF
+Basic Products,Rice,A pantry staple great as a side dish or main meal base,43.5,30,SHELF
+Basic Products,Salt,A basic seasoning to enhance flavours,22.5,50,SHELF
+Basic Products,Sugar,A sweetener for drinks baking or cooking,59.6,30,SHELF
+Dairy Products,Emmental Cheese,A Swiss cheese known for its mild nutty flavour,146.4,80,FRIDGE
+Dairy Products,Gruyere Cheese,A firm rich Swiss cheese perfect for melting,180,80,FRIDGE
+Dairy Products,Skimmed Cheese,A lighter version of traditional cheese with less fat,188,80,FRIDGE
+Dairy Products,Fruit Yoghurt,A creamy yoghurt with fruit flavours ideal for snacks,65,25,FRIDGE
+Dairy Products,Milk,For your cereal and coffee,27.3,30,FRIDGE
+Soda Drinks,Cola Pack,A classic refreshing soft drink in convenient pack sizes,54,30,SHELF
+Soda Drinks,Soda Pack,A selection of fizzy drinks for a refreshing experience,63,30,SHELF
+Soda Drinks,Soda Bottle,Individual bottles of refreshing soft drinks,30,20,SHELF
+Soda Drinks,Cola Bottle,A single bottle of the popular cola beverage,36,20,SHELF
+Soda Drinks,Premium Soda,Scam soda,60,20,SHELF
+Freezer Products,Vanilla IceCream,Yummy ice cream,50,15,FROZEN
+Freezer Products,Popsicles,Ice cold popsicle,35,10,FROZEN
+Freezer Products,Chicken,Uncooked frozen chicken,50,10,FROZEN
+Freezer Products,Dino Nuggets,Dinosaur-shaped nuggets,80,50,FROZEN
+Freezer Products,Hashbrowns,Not better than Maccas,100,100,FROZEN
