@@ -3,6 +3,7 @@
  */
 package com.pdcgame.supermarketsimulatorfinal;
 
+import com.pdcgame.supermarketsimulatorfinal.PageNavigator;
 import java.util.Scanner;
 /**
  * @author prisha, sujal
