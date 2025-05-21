@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC connection settings -->
+        <property name="connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+        <property name="connection.url">jdbc:derby:database/SuperMarketDB_Ebd;create=true</property>
+        <property name="connection.username">pdc</property>
+        <property name="connection.password">pdc</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.DerbyTenSevenDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Automatically update the schema -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Your mapped entity -->
+        <mapping class="com.pdcgame.Entities.GameSave"/>
+    </session-factory>
+</hibernate-configuration>

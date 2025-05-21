@@ -45,7 +45,6 @@ com/pdcgame/Pages/BuyProductPage.class
 com/pdcgame/Finders/FindProductName.class
 com/pdcgame/Printers/CartPrinter.class
 com/pdcgame/ProductTypes/Product.class
-com/pdcgame/SupermarketSimulatorGUI.class
 com/pdcgame/Loaders/BoardCellLoader.class
 com/pdcgame/Printers/InventoryStoragePrinter.class
 com/pdcgame/Managers/GameSaveManager.class

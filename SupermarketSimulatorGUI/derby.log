@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Wed May 21 21:45:17 NZST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0196-f23b-a3c3-00000f78f128 
-on database directory /Users/sujalchand/NetBeansProjects/SupermarketSimulatorGUI/database/SuperMarketDB_Ebd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@63c12fb0 
+Wed May 21 22:26:25 NZST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0196-f261-4bf1-00000f51cc40 
+on database directory /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/database/SuperMarketDB_Ebd with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@63c12fb0 
 Loaded from file:/Users/sujalchand/.m2/repository/org/apache/derby/derby/10.15.2.0/derby-10.15.2.0.jar
 java.vendor=Eclipse Adoptium
 java.runtime.version=21.0.3+9-LTS
-user.dir=/Users/sujalchand/NetBeansProjects/SupermarketSimulatorGUI
+user.dir=/Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI
 os.name=Mac OS X
 os.arch=aarch64
 os.version=15.4.1
