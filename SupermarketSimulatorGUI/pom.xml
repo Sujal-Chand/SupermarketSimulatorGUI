@@ -3,14 +3,18 @@
   <groupId>SupermarketSimulatorGUI</groupId>
   <artifactId>SupermarketSimulatorGUI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>10.17.1.0</version>
+      </dependency>   
+  </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
       <resource>
         <directory>src</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
       </resource>
     </resources>
     <plugins>
