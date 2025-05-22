@@ -29,7 +29,7 @@ public class GameState {
     private double balance, rating; // balance and rating. rating stored as a double but displayed as rounded value
     private int totalActions, actionsRemaining; // total actions, actions in current round, and current day
     public long day = 0; // used for economy rate, and popular products
-    public long gameSeed = new Random().nextLong(1000000000);
+    public long gameSeed = new Random().nextLong(1000000000); // game economy seed
 
 
     // constructor

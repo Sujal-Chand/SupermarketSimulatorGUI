@@ -15,6 +15,5 @@ public class Main {
         PageNavigator.instance().startNavigation(scanner); // start at the menu page, with the scanner
         scanner.close(); // close the scanner
         
-        /// 
     }
 }

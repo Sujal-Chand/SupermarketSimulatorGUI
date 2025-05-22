@@ -34,7 +34,7 @@ public final class DBManager {
         return this.conn;
     }
 
-    //Establish connection
+    // establish connection
     public void establishConnection() {
         if (this.conn == null) {
             try {
