@@ -14,5 +14,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in); // scanner object that can be passed around to classes
         PageNavigator.instance().startNavigation(scanner); // start at the menu page, with the scanner
         scanner.close(); // close the scanner
+        
+        /// 
     }
 }
