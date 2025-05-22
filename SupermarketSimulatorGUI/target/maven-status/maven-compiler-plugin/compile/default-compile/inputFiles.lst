@@ -28,6 +28,7 @@
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Loaders/ProductLoader.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Loaders/StorageLoader.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Main.java
+/Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/MainWindow.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Managers/ActionManager.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Managers/BankManager.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Managers/BoardManager.java
@@ -100,4 +101,3 @@
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Scenarios/RobberyScenario.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Scenarios/SaleScenario.java
 /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/Scenarios/WeatherScenario.java
-/Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/src/main/java/com/pdcgame/gui.java

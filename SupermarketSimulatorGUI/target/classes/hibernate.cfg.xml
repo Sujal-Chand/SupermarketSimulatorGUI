@@ -20,7 +20,7 @@
         <!-- Automatically update the schema -->
         <property name="hbm2ddl.auto">update</property>
 
-        <!-- Your mapped entity -->
+        <!-- GameSave mapped entity -->
         <mapping class="com.pdcgame.Entities.GameSave"/>
     </session-factory>
 </hibernate-configuration>
