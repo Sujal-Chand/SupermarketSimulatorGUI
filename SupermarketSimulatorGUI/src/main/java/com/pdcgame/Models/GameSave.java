@@ -1,30 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.pdcgame.Models;
 
 import com.pdcgame.Enums.Difficulty;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 
-/**
- *
- * @author sujal
- */
 @Entity
 @Table(name = "game_save")
 public class GameSave {
     @Id
     private int id = 1; // singleton save
-    
-    @Enumerated(EnumType.STRING)
+
     private Difficulty difficulty;
-    
     private double balance;
     private int totalActions;
     private int actions;
@@ -32,67 +21,73 @@ public class GameSave {
     private long day;
     private long gameSeed;
 
-    // getters
+    public GameSave() {
+        // no-arg constructor required by Hibernate
+    }
+
+    // — Getters & Setters —
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Difficulty getDifficulty() {
         return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
     }
 
     public double getBalance() {
         return balance;
     }
 
-    public int getTotalActions() {
-        return totalActions;
-    }
-
-    public int getActions() {
-        return actions;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public long getDay() {
-        return day;
-    }
-
-    public long getGameSeed() {
-        return gameSeed;
-    }
-
-    // setters
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public int getTotalActions() {
+        return totalActions;
     }
 
     public void setTotalActions(int totalActions) {
         this.totalActions = totalActions;
     }
 
+    public int getActions() {
+        return actions;
+    }
+
     public void setActions(int actions) {
         this.actions = actions;
+    }
+
+    public double getRating() {
+        return rating;
     }
 
     public void setRating(double rating) {
         this.rating = rating;
     }
 
+    public long getDay() {
+        return day;
+    }
+
     public void setDay(long day) {
         this.day = day;
+    }
+
+    public long getGameSeed() {
+        return gameSeed;
     }
 
     public void setGameSeed(long gameSeed) {
         this.gameSeed = gameSeed;
     }
-    
-    
 }
