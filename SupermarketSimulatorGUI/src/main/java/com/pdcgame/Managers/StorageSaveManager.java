@@ -4,7 +4,6 @@ import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.EquipmentStorage;
 import com.pdcgame.GameState;
 import com.pdcgame.IOHandler;
-import com.pdcgame.Interfaces.FileProcessor;
 import com.pdcgame.Loaders.StorageLoader;
 
 import java.io.BufferedReader;
@@ -16,11 +15,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+import com.pdcgame.Interfaces.DataProcessor;
 
 /**
  * @author prisha, sujal
  */
-public class StorageSaveManager implements FileProcessor {
+public class StorageSaveManager implements DataProcessor {
     private static final String SAVE_PATH = "./save_folder/storage_save.csv";
     private static final GameState gameInstance = GameState.instance();
     private final StorageLoader storageLoader = new StorageLoader();

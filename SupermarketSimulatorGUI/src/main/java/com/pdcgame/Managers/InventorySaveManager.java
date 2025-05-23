@@ -1,7 +1,6 @@
 package com.pdcgame.Managers;
 
 import com.pdcgame.GameState;
-import com.pdcgame.Interfaces.FileProcessor;
 import com.pdcgame.ProductTypes.PurchasableProduct;
 
 import java.io.BufferedReader;
@@ -12,11 +11,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import com.pdcgame.Interfaces.DataProcessor;
 
 /**
  * @author prisha, sujal
  */
-public class InventorySaveManager implements FileProcessor {
+public class InventorySaveManager implements DataProcessor {
     private static final String SAVE_PATH = "./save_folder/inventory_save.csv";
     private static final GameState gameInstance = GameState.instance();
     @Override

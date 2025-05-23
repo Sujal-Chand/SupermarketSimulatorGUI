@@ -1,7 +1,6 @@
 package com.pdcgame.Models;
 
 import com.pdcgame.Enums.Difficulty;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -20,13 +19,8 @@ public class GameSave {
     private double rating;
     private long day;
     private long gameSeed;
-
-    public GameSave() {
-        // no-arg constructor required by Hibernate
-    }
-
-    // — Getters & Setters —
-
+    
+    // getters
     public int getId() {
         return id;
     }
@@ -63,6 +57,7 @@ public class GameSave {
         return actions;
     }
 
+    // setters
     public void setActions(int actions) {
         this.actions = actions;
     }

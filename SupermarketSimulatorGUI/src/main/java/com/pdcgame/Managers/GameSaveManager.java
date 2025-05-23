@@ -1,31 +1,31 @@
 package com.pdcgame.Managers;
 
 import com.pdcgame.GameState;
-import com.pdcgame.Interfaces.FileProcessor;
 import com.pdcgame.Models.GameSave;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import com.pdcgame.Interfaces.DataProcessor;
 
 /**
  * Handles saving and loading of game state using native Hibernate API.
  * @author prisha, sujal
  */
-public class GameSaveManager implements FileProcessor {
+public class GameSaveManager implements DataProcessor {
     private static final int SAVE_ID = 1;
+    
     private final GameState gameInstance = GameState.instance();
     private final SessionFactory sessionFactory;
 
     public GameSaveManager() {
-        // Loads configuration from hibernate.cfg.xml on the classpath
+        // load configuration from hibernate.cfg.xml on the classpath
         Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        // Register annotated class if not declared in cfg file
-        cfg.addAnnotatedClass(GameSave.class);
         this.sessionFactory = cfg.buildSessionFactory();
     }
 
     @Override
+    // load from database 
     public void load() {
         try (Session session = sessionFactory.openSession()) {
             GameSave save = session.get(GameSave.class, SAVE_ID);
@@ -44,6 +44,7 @@ public class GameSaveManager implements FileProcessor {
     }
 
     @Override
+    // save to database
     public void save() {
         GameSave save = new GameSave();
         save.setId(SAVE_ID);
@@ -67,6 +68,7 @@ public class GameSaveManager implements FileProcessor {
     }
 
     @Override
+    // check file exists
     public boolean fileExists() {
         try (Session session = sessionFactory.openSession()) {
             GameSave save = session.get(GameSave.class, SAVE_ID);

@@ -2,7 +2,6 @@ package com.pdcgame.Managers;
 
 import com.pdcgame.GameState;
 import com.pdcgame.Interfaces.CSVReader;
-import com.pdcgame.Interfaces.FileProcessor;
 import com.pdcgame.Loaders.BoardCellLoader;
 
 import java.io.BufferedReader;
@@ -12,11 +11,12 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import com.pdcgame.Interfaces.DataProcessor;
 
 /**
  * @author prisha, sujal
  */
-public class BoardSaveManager implements FileProcessor {
+public class BoardSaveManager implements DataProcessor {
     private static final String SAVE_PATH = "./save_folder/board_save.csv";
     private static final GameState gameInstance = GameState.instance();
     private final BoardCellLoader boardCellLoader = new BoardCellLoader();

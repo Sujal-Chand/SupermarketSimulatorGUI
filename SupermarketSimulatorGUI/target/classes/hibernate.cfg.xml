@@ -15,13 +15,7 @@
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.format_sql">false</property>
 
-        <!--
-            Database schema auto-creation/update.
-            'update' will create tables if they don't exist, and update if they change.
-            'create' will drop and re-create the schema on every run (useful for testing).
-            'validate' will validate the schema, but not modify it.
-            'none' will do nothing.
-        -->
+        
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="com.pdcgame.Models.GameSave"/>
