@@ -8,7 +8,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <exec.mainClass>com.pdcgame.supermarketsimulatorgui.SupermarketSimulatorGUI</exec.mainClass>
     </properties>
     <dependencies>
         <!-- Hibernate Core -->
@@ -24,11 +23,12 @@
             <artifactId>jakarta.persistence-api</artifactId>
             <version>3.1.0</version>
         </dependency>
+        
         <dependency>
             <!-- Derby JDBC -->
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
-            <version>10.15.2.0</version>
+            <version>10.17.1.0</version>
         </dependency>
         
     </dependencies>
