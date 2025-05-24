@@ -18,6 +18,8 @@ public class Main {
         LogSettings logSettings = new LogSettings();
         Scanner scanner = new Scanner(System.in);
         PageNavigator.instance().startNavigation(scanner);
+        
+        GamePersistence.shutdownSession();
         scanner.close();
     }
 }

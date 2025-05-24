@@ -20,6 +20,7 @@ com\pdcgame\Printers\CartPrinter$1.class
 com\pdcgame\Printers\GameMenuPrinter.class
 com\pdcgame\Finders\FindProductName.class
 com\pdcgame\Managers\EconomyManager.class
+com\pdcgame\Models\InventorySave.class
 com\pdcgame\Pages\PopularProductPage.class
 com\pdcgame\Scenarios\EconomicDownturnScenario.class
 com\pdcgame\Main.class

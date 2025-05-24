@@ -6,6 +6,8 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.EmbeddedDriver</property>
+        
+        <!-- Database Connection Info -->
         <property name="hibernate.connection.url">jdbc:derby:database/SupermarketDB;create=true</property>
         <property name="hibernate.connection.username"></property>
         <property name="hibernate.connection.password"></property>
@@ -18,7 +20,9 @@
         
         <property name="hibernate.hbm2ddl.auto">update</property>
 
+        <!-- Entity Mappings -->
         <mapping class="com.pdcgame.Models.GameSave"/>
+        <mapping class="com.pdcgame.Models.InventorySave"/>
 
     </session-factory>
 </hibernate-configuration>

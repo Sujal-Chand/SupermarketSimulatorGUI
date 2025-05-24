@@ -3,70 +3,98 @@ package com.pdcgame.Managers;
 import com.pdcgame.GameState;
 import com.pdcgame.ProductTypes.PurchasableProduct;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import com.pdcgame.Interfaces.DataProcessor;
+import com.pdcgame.Models.InventorySave;
+import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 /**
  * @author prisha, sujal
  */
 public class InventorySaveManager implements DataProcessor {
-    private static final String SAVE_PATH = "./save_folder/inventory_save.csv";
-    private static final GameState gameInstance = GameState.instance();
+    private final GameState gameInstance = GameState.instance();
+    private final SessionFactory sessionFactory;
+    
+    public InventorySaveManager() {
+        // load configuration from hibernate.cfg.xml 
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+        this.sessionFactory = cfg.buildSessionFactory();
+    }
+    
     @Override
     public void load() {
-        try(BufferedReader reader = new BufferedReader(new FileReader(SAVE_PATH))) {
-            reader.readLine(); // skip first line (header)
-
-            String line;
-            while((line = reader.readLine()) != null) {
-                String[] values = line.split(",");
-                if(values.length == 3) {
-                    String name = values[0]; // read product name
-                    int quantity = Integer.parseInt(values[1]); // read quantity in inventory
-                    double sellPrice = Double.parseDouble(values[2]); // read the user sell price for product
-                    gameInstance.getInventoryManager().setQuantity(name, quantity); // set quantity
-                    gameInstance.getProductManager().setSellPrice(name, sellPrice);} // set sell price
+        try (Session session = sessionFactory.openSession()) {
+            // begin read transaction
+            Transaction tx = session.beginTransaction();
+            List<InventorySave> inventorySave = session.createQuery("from InventorySave", InventorySave.class).list();
+            
+            for (InventorySave invenItem : inventorySave) {
+                String name = invenItem.getName();
+                int quantity = invenItem.getQuantity();
+                double sellPrice = invenItem.getSellPrice();
+                gameInstance.getInventoryManager().setQuantity(name, quantity);
+                gameInstance.getProductManager().setSellPrice(name, sellPrice);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("Failed to load iventory save: " + e.getMessage());
         }
     }
     @Override
     public void save() {
-        try (PrintWriter pw = new PrintWriter(SAVE_PATH)){
-            // get all the products in the store
-            Collection<PurchasableProduct> allProducts = gameInstance.getProductManager().getPurchasableProducts();
-            pw.println("Name,Quantity,sellPrice"); // header
-
-            String[] lines = new String[3]; // string array for name, quantity, price in string format
-            for(PurchasableProduct product : allProducts){
-                // product name
-                lines[0] = product
-                        .getName();
-                // quantity in inventory
-                lines[1] = Integer.toString(gameInstance
-                        .getInventoryManager()
-                        .getQuantity(product.getName()));
-                // store selling price
-                lines[2] = Double.toString(product.getSellPrice());
-                String data = String.join(",", lines); // join the array with commas to form data line
-                pw.println(data); // write the data line
+        // get all the products in the store
+        Collection<PurchasableProduct> allProducts = gameInstance.getProductManager().getPurchasableProducts();
+        Transaction tx = null;
+        try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
+            for(PurchasableProduct product : allProducts) {
+                
+                String productName = product.getName(); // get current product name
+                int quantity = gameInstance.getInventoryManager().getQuantity(productName);
+                double sellPrice = product.getSellPrice();
+                
+                // either load existing inventory product or create newq one
+                InventorySave invenItem = session.get(InventorySave.class, productName);
+                if (invenItem == null) {
+                    invenItem = new InventorySave(productName, quantity, sellPrice);
+                } else {
+                    invenItem.setQuantity(quantity);
+                    invenItem.setSellPrice(sellPrice);
+                }
+                session.merge(invenItem);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            System.err.println("Failed to save inventory: " + e.getMessage());
         }
     }
 
     @Override
     public boolean fileExists() {
-        Path save_path = Paths.get(SAVE_PATH);
-        return Files.exists(save_path);
+        Collection<PurchasableProduct> allProducts = gameInstance.getProductManager().getPurchasableProducts();
+        long productCount = allProducts.size();
+        
+        try (Session session = sessionFactory.openSession()) {
+            Transaction tx = session.beginTransaction();
+            // count rows in InventorySave
+            Long dbCount = session.createQuery("select count(i) from InventorySave i", Long.class)
+                    .uniqueResult();
+            tx.commit();
+            
+            return (dbCount != null && dbCount == productCount);
+        } catch (Exception e) {
+            System.err.println("Error checking if inventory save exists: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    public void close() {
+        if(sessionFactory != null) {
+            sessionFactory.close();
+        }
     }
 }

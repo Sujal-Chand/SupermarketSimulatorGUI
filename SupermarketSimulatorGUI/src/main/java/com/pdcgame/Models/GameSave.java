@@ -20,6 +20,8 @@ public class GameSave {
     private long day;
     private long gameSeed;
     
+    public GameSave() {} // default constructor
+    
     // getters
     public int getId() {
         return id;

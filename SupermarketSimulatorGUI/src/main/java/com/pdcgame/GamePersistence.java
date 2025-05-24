@@ -54,4 +54,9 @@ public class GamePersistence {
         inventorySaveManager.load();
         storageSaveManager.load();
     }
+    
+    public static void shutdownSession() {
+        gameSaveManager.close();
+        inventorySaveManager.close();
+    }
 }

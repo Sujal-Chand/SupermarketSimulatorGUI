@@ -19,7 +19,7 @@ public class GameSaveManager implements DataProcessor {
     private final SessionFactory sessionFactory;
 
     public GameSaveManager() {
-        // load configuration from hibernate.cfg.xml on the classpath
+        // load configuration from hibernate.cfg.xml
         Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
         this.sessionFactory = cfg.buildSessionFactory();
     }
@@ -59,7 +59,7 @@ public class GameSaveManager implements DataProcessor {
         Transaction tx = null;
         try (Session session = sessionFactory.openSession()) {
             tx = session.beginTransaction();
-            session.saveOrUpdate(save);
+            session.merge(save);
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
@@ -74,7 +74,7 @@ public class GameSaveManager implements DataProcessor {
             GameSave save = session.get(GameSave.class, SAVE_ID);
             return save != null;
         } catch (Exception e) {
-            System.out.println("Error checking if game save exists: " + e.getMessage());
+            System.err.println("Error checking if game save exists: " + e.getMessage());
             return false;
         } 
     }
