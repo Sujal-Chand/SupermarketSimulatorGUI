@@ -5,10 +5,7 @@ package com.pdcgame;
 
 import com.pdcgame.PageNavigator;
 import java.util.Scanner;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+
 /**
  * @author prisha, sujal
  */

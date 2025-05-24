@@ -43,6 +43,7 @@ public class InventorySaveManager implements DataProcessor {
             System.err.println("Failed to load iventory save: " + e.getMessage());
         }
     }
+    
     @Override
     public void save() {
         // get all the products in the store
