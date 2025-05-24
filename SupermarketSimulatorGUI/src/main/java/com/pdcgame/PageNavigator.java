@@ -6,21 +6,7 @@ import com.pdcgame.Enums.PageName;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import com.pdcgame.Pages.BuyEquipmentPage;
-import com.pdcgame.Pages.BuyProductPage;
-import com.pdcgame.Pages.CartPage;
-import com.pdcgame.Pages.DifficultyPage;
-import com.pdcgame.Pages.EquipmentPage;
-import com.pdcgame.Pages.GameMenuPage;
-import com.pdcgame.Pages.GameOverPage;
-import com.pdcgame.Pages.InventoryStoragePage;
-import com.pdcgame.Pages.MenuPage;
-import com.pdcgame.Pages.PopularProductPage;
-import com.pdcgame.Pages.ProductsPage;
-import com.pdcgame.Pages.ScenarioPage;
-import com.pdcgame.Pages.SellEquipmentPage;
-import com.pdcgame.Pages.SetPricePage;
-import com.pdcgame.Pages.StoragePage;
+import com.pdcgame.Pages.*;
 
 /**
  * @author prisha, sujal

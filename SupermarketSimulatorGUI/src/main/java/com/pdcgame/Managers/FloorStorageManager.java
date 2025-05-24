@@ -21,6 +21,10 @@ public class FloorStorageManager {
         locationWithStorage.remove(locationCoordinate);
     }
 
+    public void initalizeStorage() {
+        locationWithStorage.clear();
+    }
+    
     // returns the total quantity of a product on the store floor
     public int totalQuantityOnFloor(String productName) {
         int quantityOnFloor = 0;

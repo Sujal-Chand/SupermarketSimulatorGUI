@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        LogSettings logSettings = new LogSettings();
+        LogSettings logSettings = new LogSettings(); // turns off Hibernate auto logging and warnings
         Scanner scanner = new Scanner(System.in);
         PageNavigator.instance().startNavigation(scanner);
         

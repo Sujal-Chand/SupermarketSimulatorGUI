@@ -6,6 +6,8 @@ package com.pdcgame.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -14,51 +16,42 @@ import jakarta.persistence.Table;
  * @author sujal
  */
 @Entity
-@Table(name = "inventory_save")
-public class InventorySave {
-    
+@Table(name = "storage_save")
+public class StorageItemSave {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "coordinate_id")
+    private String coordinateID;
+    
     @Column(name = "product_name")
-    private String productName;
+    private String productName; 
     
     @Column(name = "quantity")
     private int quantity;
+
+    public StorageItemSave() {}
     
-    @Column(name = "sell_price")
-    private double sellPrice;
-    
-    public InventorySave() {} // default constructor
-    
-    public InventorySave(String name, int quantity, double sellPrice) {
-        this.productName = name;
+    public StorageItemSave(String coordinateID, String productName, int quantity) {
+        this.coordinateID = coordinateID;
+        this.productName = productName;
         this.quantity = quantity;
-        this.sellPrice = sellPrice;
+    }
+    
+    public String getProductName() {
+        return productName;
     }
 
-    // getters
-    public String getName() {
-        return productName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public double getSellPrice() {
-        return sellPrice;
-    }
-    
-    // setters
-    public void setName(String name) {
-        this.productName = name;
-    }
-    
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public void setSellPrice(double sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-    
 }

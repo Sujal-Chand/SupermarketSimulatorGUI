@@ -16,7 +16,12 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+        setTitle("Supermarket Simulator");
         setResizable(false);
+        
+        if(!GamePersistence.saveExists()) {
+            jButton2.setVisible(false);
+        }
     }
 
     /**
@@ -140,6 +145,7 @@ public class MainWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        LogSettings logSettings = new LogSettings();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

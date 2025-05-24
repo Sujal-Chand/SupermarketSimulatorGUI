@@ -3,91 +3,125 @@ package com.pdcgame.Managers;
 import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.EquipmentStorage;
 import com.pdcgame.GameState;
-import com.pdcgame.IOHandler;
-import com.pdcgame.Loaders.StorageLoader;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 import com.pdcgame.Interfaces.DataProcessor;
+import com.pdcgame.Models.BoardSave;
+import com.pdcgame.Models.StorageItemSave;
+import java.util.List;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 /**
  * @author prisha, sujal
  */
 public class StorageSaveManager implements DataProcessor {
-    private static final String SAVE_PATH = "./save_folder/storage_save.csv";
     private static final GameState gameInstance = GameState.instance();
-    private final StorageLoader storageLoader = new StorageLoader();
+    private final SessionFactory sessionFactory;
+    
+    public StorageSaveManager() {
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+        this.sessionFactory = cfg.buildSessionFactory();
+       
+    }
+    
+
     @Override
     public void load() {
-        try(BufferedReader reader = new BufferedReader(new FileReader(SAVE_PATH))) {
-            String line;
-            int count = 0;
-
-            String coordinate = "";
-            BoardCell cell = null;
-            boolean functionStatus = false;
-            Map<String, Integer> loadedProducts = new HashMap<>();
-
-            while((line = reader.readLine()) != null)  {
-                switch (count) {
-                    case 0 -> coordinate = line; // set the string coordinate to line being read
-                    case 1 -> cell = BoardCell.valueOf(line); // set board sell to line being read
-                    case 2 -> functionStatus = Boolean.parseBoolean(line); // set function status to line being read
-                    case 3 -> {
-                        loadedProducts.clear();
-                        if(!line.isEmpty()) {
-                            // load stored products from the file line
-                            loadedProducts.putAll(storageLoader.fromCSV(line));
-                        }
-                        // add the location
-                        gameInstance.getFloorStorageManager().addLocation(coordinate, cell, functionStatus);
-
-                        EquipmentStorage storage = gameInstance.getFloorStorageManager().getLocationWithStorage().get(coordinate);
-                        storage.setStoredProducts(loadedProducts);
-
-                        count = -1; // reset for next block of items
-                    }
+        try (Session session = sessionFactory.openSession()) {
+            List<BoardSave> allBoardLocations = session
+                    .createQuery("from BoardSave", BoardSave.class)
+                    .list();
+            
+            for(BoardSave location : allBoardLocations) {
+                List<StorageItemSave> storageItems = session
+                        .createQuery("from StorageItemSave where coordinateID = :coordId", StorageItemSave.class)
+                        .setParameter("coordId", location.getCoordinateID())
+                        .list();
+                
+                Map<String, Integer> loadedProducts = new HashMap<>();
+                for(StorageItemSave storageItem : storageItems) {
+                    loadedProducts.put(storageItem.getProductName(), storageItem.getQuantity());
                 }
-                count++;
+                
+                BoardCell cell = location.getBoardCell();
+                gameInstance.getFloorStorageManager().addLocation(location.getCoordinateID(), cell, true);
+                
+                EquipmentStorage storage = gameInstance.getFloorStorageManager().getLocationWithStorage().get(location.getCoordinateID());
+                storage.setStoredProducts(loadedProducts);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
-
+    
+    
     @Override
     public void save() {
-        try(PrintWriter pw = new PrintWriter(SAVE_PATH)) {
-            Map<String, EquipmentStorage> locationWithStorage = gameInstance.getFloorStorageManager().getLocationWithStorage();
-            for(String location : locationWithStorage.keySet()) {
-                EquipmentStorage equipment = locationWithStorage.get(location); // get the equipment storage object at location key value
-                pw.println(location); // write the location coordinate
-                pw.println(equipment.getEquipmentType().name()); // write the name (boardcell)
-                pw.println(equipment.getFunctionStatus()); // write the functional status
-                if(equipment.storedProducts == null || equipment.storedProducts.isEmpty()) {
-                    pw.println(""); // if there are no products just write a blank line
-                } else {
-                    // load the products stored in this storage location as a string
-                    String storageLine = storageLoader.toCSV(equipment.storedProducts);
-                    pw.println(storageLine); // write the csv string representing the stored products
-                }
+        Map<String, EquipmentStorage> locationWithStorage = gameInstance.getFloorStorageManager().getLocationWithStorage();
+        Transaction tx = null;
+        
+        try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
+            
+            flushStorageItem(session);
+            
+            for(String coordinateID : locationWithStorage.keySet()) {
+                
+                EquipmentStorage equipment = locationWithStorage.get(coordinateID);
+                Map<String, Integer> storedProducts = equipment.getStoredProducts();
+                
 
+                if(storedProducts != null || storedProducts.isEmpty()) {
+                    for(Map.Entry<String, Integer> product : storedProducts.entrySet()) {
+                        StorageItemSave storageItem = new StorageItemSave(coordinateID, product.getKey(), product.getValue());
+                        session.persist(storageItem);
+                    }
+                }
             }
-        } catch(IOException e) {
-            e.printStackTrace();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            System.out.println("Failed to save storage: " + e.getMessage());
         }
     }
-
+    
     @Override
     public boolean fileExists() {
-        Path save_path = Paths.get(SAVE_PATH);
-        return Files.exists(save_path);
+        try (Session session = sessionFactory.openSession()) {
+            Long count = session.createQuery("select count(i) from StorageItemSave i", Long.class)
+                    .uniqueResult();
+            
+            if(count == null || count == 0) {
+                Long itemCount = session.createQuery("select count(i) from BoardSave i", Long.class)
+                    .uniqueResult();
+                return itemCount != null && itemCount > 0;
+            }
+            
+            return true; 
+        } catch (Exception e) {
+            System.err.println("Failed to check if storage save exists: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public void flushStorageItem(Session session) {
+        // bulk delete all rows from StorageItemSave
+        session.createQuery("delete from StorageItemSave").executeUpdate();
+    }
+    public void flushStorageItem() {
+        Transaction tx = null;
+        
+        try (Session session = sessionFactory.openSession()) {
+            tx = session.beginTransaction();
+            StorageSaveManager.this.flushStorageItem(session);
+            tx.commit();
+        } catch (Exception e) {
+            if(tx != null) tx.rollback();
+            System.err.println("Failed to flush board");
+            e.printStackTrace();
+        }
     }
 }

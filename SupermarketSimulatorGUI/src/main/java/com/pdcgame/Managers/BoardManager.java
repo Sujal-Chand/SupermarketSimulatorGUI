@@ -12,17 +12,22 @@ public class BoardManager implements BoardUtility {
 
     // constructor for making a 2D board
     public BoardManager() {
-        this.board = new BoardCell[HEIGHT][WIDTH];
-        initialiseBoard();
+        this.board = buildBlankBoard();
+    }
+    
+    public void initalizeBoard() {
+        set2DBoard(buildBlankBoard());
     }
 
     // initializes the board with empty cells
-    public void initialiseBoard() {
+    public BoardCell[][] buildBlankBoard() {
+        BoardCell[][] emptyBoard = new BoardCell[HEIGHT][WIDTH];
         for (int y = 0; y < HEIGHT; y++) {
-            for (int x = 0; x < WIDTH; x++) {
-                board[y][x] = BoardCell.EMPTY;
+            for (int x = 0; x < WIDTH; x++ ) {
+                emptyBoard[y][x] = BoardCell.EMPTY;
             }
         }
+        return emptyBoard;
     }
 
     @Override

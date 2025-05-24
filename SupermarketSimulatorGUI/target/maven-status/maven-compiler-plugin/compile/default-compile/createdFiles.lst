@@ -44,6 +44,7 @@ com\pdcgame\PageInputs\ProductInput.class
 com\pdcgame\Printers\EquipmentPrinter.class
 com\pdcgame\DisplayObjects\GameBoard.class
 com\pdcgame\Pages\SetPricePage.class
+com\pdcgame\Models\BoardSave.class
 com\pdcgame\Interfaces\CSVReader.class
 com\pdcgame\Pages\StoragePage.class
 com\pdcgame\ProductTypes\Product.class
@@ -67,6 +68,7 @@ com\pdcgame\Scenarios\RobberyScenario.class
 com\pdcgame\PageInputs\StorageInput.class
 com\pdcgame\Printers\SellEquipmentPrinter.class
 com\pdcgame\MainWindow$2.class
+com\pdcgame\Models\StorageItemSave.class
 com\pdcgame\DisplayObjects\PreGameStats.class
 com\pdcgame\PageInputs\EquipmentInput.class
 com\pdcgame\Loaders\BoardCellLoader.class

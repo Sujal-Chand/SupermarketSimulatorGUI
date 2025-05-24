@@ -29,8 +29,9 @@ public class InventorySaveManager implements DataProcessor {
     public void load() {
         try (Session session = sessionFactory.openSession()) {
             // begin read transaction
-            Transaction tx = session.beginTransaction();
-            List<InventorySave> inventorySave = session.createQuery("from InventorySave", InventorySave.class).list();
+            List<InventorySave> inventorySave = session
+                    .createQuery("from InventorySave", InventorySave.class)
+                    .list();
             
             for (InventorySave invenItem : inventorySave) {
                 String name = invenItem.getName();

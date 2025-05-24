@@ -30,8 +30,12 @@ public class GamePersistence {
     public static void newSave() {
         BankManager.setInitialBalance(); // set initial bank balance for a new save
         RatingManager.setInitialRating(); // set initial store rating
-        GameState.instance().getBoardManager().initialiseBoard(); // initialize the board
+        GameState.instance().getBoardManager().initalizeBoard(); // initialize the board
+        GameState.instance().getFloorStorageManager().initalizeStorage(); // initalize the storage
         GameState.instance().getInventoryManager().initializeInventory(); // initialize the inventory to contain all purchasable products
+        
+        boardSaveManager.flushBoard(); // delete all items in the table
+        storageSaveManager.flushStorageItem(); // delete all items in storage locations
         GameState.instance().setActionState(ActionState.LOAD_SAVE); // set the action state to load save from every point forward
         ActionManager.setInitialActions(); // set initial actions
         GameState.instance().setDay(0);

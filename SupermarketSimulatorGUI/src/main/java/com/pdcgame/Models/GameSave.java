@@ -2,6 +2,8 @@ package com.pdcgame.Models;
 
 import com.pdcgame.Enums.Difficulty;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -12,7 +14,9 @@ public class GameSave {
     @Id
     private int id = 1; // singleton save
 
+    @Enumerated(EnumType.STRING)
     private Difficulty difficulty;
+    
     private double balance;
     private int totalActions;
     private int actions;

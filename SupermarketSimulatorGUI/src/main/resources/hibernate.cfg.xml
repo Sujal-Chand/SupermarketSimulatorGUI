@@ -16,13 +16,13 @@
 
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.format_sql">false</property>
-
-        
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Entity Mappings -->
         <mapping class="com.pdcgame.Models.GameSave"/>
         <mapping class="com.pdcgame.Models.InventorySave"/>
+        <mapping class="com.pdcgame.Models.BoardSave"/>
+        <mapping class="com.pdcgame.Models.StorageItemSave"/>
 
     </session-factory>
 </hibernate-configuration>
