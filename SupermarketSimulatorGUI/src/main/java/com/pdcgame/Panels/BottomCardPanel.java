@@ -20,7 +20,7 @@ public class BottomCardPanel extends JPanel{
         
         add(new SplitPagePanel("Menu"), "Menu");
         add(new SplitPagePanel("Equipment"), "Equipment");
-        add(new SplitPagePanel("Storage"), "Storage");
+        add(new SplitPagePanel("Inventory"), "Inventory");
         add(new SplitPagePanel("Products"), "Products");
         add(new SplitPagePanel("Open Store"), "Open Store");
         

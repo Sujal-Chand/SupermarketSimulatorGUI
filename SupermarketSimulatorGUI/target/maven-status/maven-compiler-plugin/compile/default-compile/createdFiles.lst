@@ -1,4 +1,4 @@
-com/pdcgame/Panels/TopPanel.class
-com/pdcgame/Panels/SplitPagePanel.class
-com/pdcgame/MainFrame.class
-com/pdcgame/Panels/BottomCardPanel.class
+com\pdcgame\Panels\SplitPagePanel.class
+com\pdcgame\Panels\TopPanel.class
+com\pdcgame\Panels\BottomCardPanel.class
+com\pdcgame\MainFrame.class

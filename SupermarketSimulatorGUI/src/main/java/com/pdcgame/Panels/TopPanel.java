@@ -26,7 +26,7 @@ public class TopPanel extends JPanel {
 
         add(createTabButton("Menu", bottomCardPanel));
         add(createTabButton("Equipment", bottomCardPanel));
-        add(createTabButton("Storage", bottomCardPanel));
+        add(createTabButton("Inventory", bottomCardPanel));
         add(createTabButton("Products", bottomCardPanel));
         add(createTabButton("Open Store", bottomCardPanel));
         
