@@ -20,13 +20,17 @@ public class SplitPagePanel extends JPanel {
         setLayout(new BorderLayout());
 
         JPanel leftPanel = new JPanel();
-        leftPanel.setBackground(new Color(40, 40, 40));
-        leftPanel.add(new JLabel(labelText + " - Left Side"));
+        leftPanel.setBackground(new Color(138, 129, 124));
+        JLabel leftLabel = new JLabel(labelText + " - Left Side");
+        leftLabel.setForeground(new Color(244, 243, 238));
+        leftPanel.add(leftLabel);
 
         JPanel rightPanel = new JPanel();
-        rightPanel.setBackground(new Color(20, 20, 20));
-        rightPanel.add(new JLabel(labelText + " - Right Side"));
-        rightPanel.setPreferredSize(new Dimension(400, 0)); // Half of 800
+        rightPanel.setBackground(new Color(70, 63, 58));
+        JLabel rightLabel = new JLabel(labelText + " - Right Side");
+        rightLabel.setForeground(new Color(244, 243, 238));
+        rightPanel.add(rightLabel);
+        rightPanel.setPreferredSize(new Dimension(300, 0));
 
         add(leftPanel, BorderLayout.CENTER);
         add(rightPanel, BorderLayout.EAST);

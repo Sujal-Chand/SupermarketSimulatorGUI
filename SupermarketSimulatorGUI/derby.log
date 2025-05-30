@@ -1,4 +1,4 @@
-Fri May 30 15:42:32 NZST 2025 Thread[#1,main,5,main] Cleanup action starting
+Fri May 30 16:10:57 NZST 2025 Thread[#1,main,5,main] Cleanup action starting
 java.sql.SQLException: Failed to start database 'database/SupermarketDB' with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@63c12fb0, see the next exception for details.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)

@@ -18,11 +18,13 @@ public class BottomCardPanel extends JPanel{
         cardLayout = new CardLayout();
         setLayout(cardLayout);
         
-        add(new SplitPagePanel("Home"), "Home");
-        add(new SplitPagePanel("Projects"), "Projects");
-        add(new SplitPagePanel("Settings"), "Settings");
+        add(new SplitPagePanel("Menu"), "Menu");
+        add(new SplitPagePanel("Equipment"), "Equipment");
+        add(new SplitPagePanel("Storage"), "Storage");
+        add(new SplitPagePanel("Products"), "Products");
+        add(new SplitPagePanel("Open Store"), "Open Store");
         
-        cardLayout.show(this, "Home");
+        cardLayout.show(this, "Menu");
     }
     
     public void showPanel(String name) {

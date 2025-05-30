@@ -18,16 +18,18 @@ import javax.swing.JPanel;
  */
 public class TopPanel extends JPanel {
     private final Map<String, JButton> buttons = new HashMap<>();
-    private String selectedPage = "Home";  // Default selected page
+    private String selectedPage = "Menu";  // Default selected page
 
     public TopPanel(BottomCardPanel bottomCardPanel) {
         setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(new Color(188, 184, 177));
 
-        add(createTabButton("Home", bottomCardPanel));
-        add(createTabButton("Projects", bottomCardPanel));
-        add(createTabButton("Settings", bottomCardPanel));
-
+        add(createTabButton("Menu", bottomCardPanel));
+        add(createTabButton("Equipment", bottomCardPanel));
+        add(createTabButton("Storage", bottomCardPanel));
+        add(createTabButton("Products", bottomCardPanel));
+        add(createTabButton("Open Store", bottomCardPanel));
+        
         updateButtonColors();  // Set initial selection
     }
 
@@ -51,12 +53,12 @@ public class TopPanel extends JPanel {
         for (Map.Entry<String, JButton> entry : buttons.entrySet()) {
             if (entry.getKey().equals(selectedPage)) {
                 // Selected button color
-                entry.getValue().setBackground(new Color(100, 150, 255));  // e.g., light blue
-                entry.getValue().setForeground(Color.WHITE);
+                entry.getValue().setBackground(new Color(70, 63, 58));  
+                entry.getValue().setForeground(new Color(244, 243, 238));
             } else {
                 // Unselected button color
-                entry.getValue().setBackground(new Color(160, 160, 160));  // gray
-                entry.getValue().setForeground(Color.BLACK);
+                entry.getValue().setBackground(new Color(138, 129, 124));
+                entry.getValue().setForeground(new Color(244, 243, 238));
             }
         }
     }
