@@ -18,7 +18,7 @@ public class BottomCardPanel extends JPanel{
         cardLayout = new CardLayout();
         setLayout(cardLayout);
         
-        add(new SplitPagePanel("Menu"), "Menu");
+        add(new MenuPagePanel(), "Menu");
         add(new SplitPagePanel("Equipment"), "Equipment");
         add(new SplitPagePanel("Inventory"), "Inventory");
         add(new SplitPagePanel("Products"), "Products");

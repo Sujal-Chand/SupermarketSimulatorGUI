@@ -13,7 +13,7 @@ import com.pdcgame.Panels.TopPanel;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainFrame {
+public class SupermarketGame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Supermarket Simulator");

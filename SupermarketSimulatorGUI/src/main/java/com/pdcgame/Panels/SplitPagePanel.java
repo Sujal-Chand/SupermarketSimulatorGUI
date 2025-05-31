@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.net.URL;
 
 public class SplitPagePanel extends JPanel {
     public SplitPagePanel(String labelText) {
@@ -33,38 +36,55 @@ public class SplitPagePanel extends JPanel {
         // Right Panel (contains grid panel inside it)
         JPanel rightPanel = new JPanel();
         rightPanel.setBackground(new Color(70, 63, 58));
-        rightPanel.setPreferredSize(new Dimension(350, 0));
+        rightPanel.setPreferredSize(new Dimension(400, 0));
         rightPanel.setLayout(new GridBagLayout()); // Centers the grid panel
 
         // Small grid panel
         JPanel gridPanel = new JPanel(new GridLayout(10, 10, 2, 2));
         gridPanel.setOpaque(false);
-        
-        Dimension buttonSize = new Dimension(50, 50); // Size of each button
-        Color buttonColor = new Color(138, 129, 124);
-        
+
+        Dimension labelSize = new Dimension(80, 80); // Size of each label "button"
+        Color labelColor = new Color(138, 129, 124);
+        Color textColor = new Color(244, 243, 238);
+
         for (int i = 1; i <= 100; i++) {
             int x = (i - 1) % 10;
             int y = (i - 1) / 10;
-            JButton button = new JButton("[D F]");
-            button.setPreferredSize(buttonSize);
-            button.setMargin(new Insets(0, 0, 0, 0));
-            button.setFocusable(false);
-            button.setBackground(buttonColor);
-            button.setOpaque(true);
-            button.setBorderPainted(false);
-            
-            button.setFont(new Font("Arial", Font.BOLD, 11));
-            gridPanel.add(button);
 
+            JLabel label = new JLabel("S", SwingConstants.CENTER);
+            label.setOpaque(true);
+            // resource getting example
+            //URL url = getClass().getResource("/stand.png");
+            //System.out.println(url);
+            label.setBackground(labelColor);
+            label.setForeground(textColor);
+            label.setPreferredSize(labelSize);
+            label.setFont(new Font("Dialog", Font.BOLD, 10));
+            label.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
             
-            button.addActionListener(e -> {
-                System.out.println("Button x,y = " + x + ", " + y + " was clicked!");
+            // Add hover and click effects
+            label.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+                    label.setBackground(labelColor.darker());
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    label.setBackground(labelColor);
+                }
+
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    System.out.println("Label x,y = " + x + ", " + y + " was clicked!");
+                }
             });
+
+            gridPanel.add(label);
         }
 
-        gridPanel.setPreferredSize(new Dimension(320, 320)); // Entire grid size
-
+        gridPanel.setPreferredSize(new Dimension(350, 350)); // Entire grid size
         rightPanel.add(gridPanel); // Centered by GridBagLayout
 
         add(leftPanel, BorderLayout.CENTER);
