@@ -4,6 +4,11 @@
  */
 package com.pdcgame.Panels;
 
+import com.pdcgame.Panels.Pages.InventoryPagePanel;
+import com.pdcgame.Panels.Pages.OpenStorePagePanel;
+import com.pdcgame.Panels.Pages.EquipmentPagePanel;
+import com.pdcgame.Panels.Pages.InstructionPagePanel;
+import com.pdcgame.Panels.Pages.ProductPagePanel;
 import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
