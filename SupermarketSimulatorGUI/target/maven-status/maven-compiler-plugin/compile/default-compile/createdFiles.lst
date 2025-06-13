@@ -11,3 +11,4 @@ com\pdcgame\Panels\SplitPagePanel$1.class
 com\pdcgame\Panels\EquipmentPagePanel.class
 com\pdcgame\Panels\OpenStorePagePanel.class
 com\pdcgame\Panels\GameBoardPanel.class
+com\pdcgame\Panels\StoreRatingPanel.class

@@ -4,6 +4,7 @@
  */
 package com.pdcgame.Panels;
 
+import com.pdcgame.GameState;
 import javax.swing.*;
 import java.awt.*;
 /**
@@ -14,10 +15,16 @@ public class InstructionPagePanel extends SubPagePanel {
     
         public InstructionPagePanel() {
         setLayout(null);
-        JLabel label = new JLabel("instruction Page");
+        JLabel label = new JLabel("Instruction Page");
         label.setBounds(10, 10, 200, 30); 
         label.setForeground(Color.RED);
         add(label);
+        
+        StoreRatingPanel ratingDisplay = new StoreRatingPanel();
+        JPanel ratingPanel = ratingDisplay.getRatingPanel(3.5); //change to match gamestate instance
+        ratingPanel.setBounds(10, 50, 600, 120);
+        add(ratingPanel);
+        
     }
     
     

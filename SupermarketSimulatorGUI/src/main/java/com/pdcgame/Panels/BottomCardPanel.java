@@ -23,14 +23,12 @@ public class BottomCardPanel extends JPanel {
         panels = new HashMap<>();
         contentPanel = new JPanel(new BorderLayout());
 
-        // Initialise and store panels
         panels.put("Menu", new MenuPagePanel(this));
         panels.put("Default", new InstructionPagePanel());
         panels.put("Equipment", new EquipmentPagePanel());
         panels.put("Products", new ProductPagePanel());
         panels.put("Inventory", new InventoryPagePanel());
         panels.put("Open Store", new OpenStorePagePanel());
-        
 
         add(contentPanel, BorderLayout.CENTER);
 
@@ -43,10 +41,8 @@ public class BottomCardPanel extends JPanel {
         JPanel panel = panels.get(name);
         if (panel != null) {
             if (panel instanceof SubPagePanel) {
-                // Wrap in DefaultPagePanel
                 contentPanel.add(new DefaultPagePanel((SubPagePanel) panel), BorderLayout.CENTER);
             } else {
-                // Show raw panel (e.g. MenuPagePanel)
                 contentPanel.add(panel, BorderLayout.CENTER);
             }
             contentPanel.revalidate();

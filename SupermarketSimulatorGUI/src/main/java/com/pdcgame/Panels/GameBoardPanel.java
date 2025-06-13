@@ -20,7 +20,7 @@ public class GameBoardPanel extends JPanel{
         setBackground(new Color(70, 63, 58));
         setPreferredSize(new Dimension(400, 0));
 
-        JLabel rightLabel = new JLabel("Right Panel", SwingConstants.CENTER);
+        JLabel rightLabel = new JLabel("Game Board", SwingConstants.CENTER);
         rightLabel.setForeground(Color.WHITE);
         rightLabel.setHorizontalAlignment(SwingConstants.CENTER);
         rightLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));

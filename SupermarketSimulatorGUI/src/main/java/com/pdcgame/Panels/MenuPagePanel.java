@@ -5,6 +5,7 @@
 package com.pdcgame.Panels;
 
 import com.pdcgame.Enums.Difficulty;
+import com.pdcgame.GamePersistence;
 import com.pdcgame.GameState;
 import java.awt.BorderLayout;
 import java.awt.Color;
