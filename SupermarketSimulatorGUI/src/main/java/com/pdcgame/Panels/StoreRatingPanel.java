@@ -30,7 +30,7 @@ public class StoreRatingPanel {
             return new ImageIcon();
         }
 
-        Image image = new ImageIcon(imgUrl).getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Image image = new ImageIcon(imgUrl).getImage().getScaledInstance(90, 90, Image.SCALE_SMOOTH);
         return new ImageIcon(image);
     }
 

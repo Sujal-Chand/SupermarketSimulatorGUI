@@ -1,6 +1,8 @@
 com\pdcgame\Panels\SubPagePanel.class
+com\pdcgame\Panels\Pages\InstructionPagePanel$1.class
 com\pdcgame\Panels\GameGridPanel$1.class
 com\pdcgame\Panels\StoreStatusPanel.class
+com\pdcgame\Panels\Pages\InstructionPagePanel$TutorialStep.class
 com\pdcgame\Panels\Pages\ProductPagePanel.class
 com\pdcgame\Panels\Pages\OpenStorePagePanel.class
 com\pdcgame\Panels\Pages\EquipmentPagePanel.class
