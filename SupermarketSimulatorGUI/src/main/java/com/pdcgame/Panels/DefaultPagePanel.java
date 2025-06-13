@@ -15,10 +15,10 @@ import java.awt.*;
 
 public class DefaultPagePanel extends JPanel{
 
-    public DefaultPagePanel(SubPagePanel subPage) {
+    public DefaultPagePanel(SubPagePanel subPage, FunctionPagePanel functionPage) {
         setLayout(new BorderLayout());
         add(subPage, BorderLayout.CENTER);
-        add(new GameBoardPanel(), BorderLayout.EAST);
+        add(functionPage, BorderLayout.EAST);
         add(new StoreStatusPanel(), BorderLayout.SOUTH);
     }
 

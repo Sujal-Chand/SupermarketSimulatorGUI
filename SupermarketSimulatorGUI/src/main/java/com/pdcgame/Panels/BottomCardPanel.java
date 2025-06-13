@@ -46,7 +46,15 @@ public class BottomCardPanel extends JPanel {
         JPanel panel = panels.get(name);
         if (panel != null) {
             if (panel instanceof SubPagePanel) {
-                contentPanel.add(new DefaultPagePanel((SubPagePanel) panel), BorderLayout.CENTER);
+                FunctionPagePanel functionPage;
+
+                if (name.equals("Default") || name.equals("Inventory") || name.equals("Equipment")) {
+                    functionPage = new GameBoardPanel();
+                } else {
+                    functionPage = new BuyProductsPanel();
+                }
+
+                contentPanel.add(new DefaultPagePanel((SubPagePanel) panel, functionPage), BorderLayout.CENTER);
             } else {
                 contentPanel.add(panel, BorderLayout.CENTER);
             }

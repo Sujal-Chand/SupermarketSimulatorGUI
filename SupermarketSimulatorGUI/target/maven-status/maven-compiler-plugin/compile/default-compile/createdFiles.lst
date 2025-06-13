@@ -1,3 +1,5 @@
+com\pdcgame\Panels\ShelfItem.class
+com\pdcgame\Panels\ShelfPanel.class
 com\pdcgame\Panels\SubPagePanel.class
 com\pdcgame\Panels\GameGridPanel$1.class
 com\pdcgame\Panels\StoreStatusPanel.class
@@ -5,10 +7,13 @@ com\pdcgame\Panels\Pages\ProductPagePanel.class
 com\pdcgame\Panels\Pages\OpenStorePagePanel.class
 com\pdcgame\Panels\TutorialPanel.class
 com\pdcgame\Panels\Pages\EquipmentPagePanel.class
+com\pdcgame\Panels\ProductInfoPanel.class
 com\pdcgame\Panels\TutorialPanel$TutorialStep.class
 com\pdcgame\Panels\GameGridPanel.class
 com\pdcgame\Panels\Pages\InstructionPagePanel.class
+com\pdcgame\Panels\BuyProductsPanel.class
 com\pdcgame\Panels\DefaultPagePanel.class
+com\pdcgame\Panels\FunctionPagePanel.class
 com\pdcgame\Panels\TutorialPanel$1.class
 com\pdcgame\SupermarketGame.class
 com\pdcgame\Panels\MenuPagePanel.class

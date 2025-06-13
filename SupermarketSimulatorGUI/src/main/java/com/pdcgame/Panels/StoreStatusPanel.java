@@ -24,14 +24,14 @@ public class StoreStatusPanel extends JPanel{
 
         //store rating display
         StoreRatingPanel ratingDisplay = new StoreRatingPanel();
-        JPanel ratingPanel = ratingDisplay.getRatingPanel(3.5);
+        JPanel ratingPanel = ratingDisplay.getRatingPanel(5);
         ratingPanel.setOpaque(false);
 
         //panel to hold stats
         JPanel statsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 20));
         statsPanel.setOpaque(false);
 
-        Font statsFont = new Font("SansSerif", Font.BOLD, 24);
+        Font statsFont = new Font("Courier New", Font.BOLD, 24);
         Color statsColour = new Color(66, 62, 55);
         Border statBorder = BorderFactory.createLineBorder(new Color(66, 62, 55), 2);
         Insets padding = new Insets(10, 15, 10, 15);

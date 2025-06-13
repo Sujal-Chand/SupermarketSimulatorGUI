@@ -13,13 +13,9 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class GameBoardPanel extends JPanel{
+public class GameBoardPanel extends FunctionPagePanel{
     public GameBoardPanel(){
         
-        setLayout(new BorderLayout());
-        setBackground(new Color(70, 63, 58));
-        setPreferredSize(new Dimension(400, 0));
-
         JLabel rightLabel = new JLabel("Game Board", SwingConstants.CENTER);
         rightLabel.setForeground(Color.WHITE);
         rightLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -30,6 +26,4 @@ public class GameBoardPanel extends JPanel{
         add(rightLabel, BorderLayout.NORTH);
         add(grid, BorderLayout.CENTER);
     }
-
-    
 }

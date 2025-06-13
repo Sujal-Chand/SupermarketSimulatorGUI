@@ -18,11 +18,11 @@ public class InventoryPagePanel extends SubPagePanel {
     public InventoryPagePanel() {
         
         setLayout(null);
-        JLabel label = new JLabel("Inventory Page");
-        label.setBounds(10, 10, 200, 30); 
-        label.setForeground(Color.RED);
-        add(label);
-        
+        JLabel titleLabel = new JLabel("Inventory Page");
+        titleLabel.setBounds(30, 30, 400, 40);
+        titleLabel.setForeground(new Color(66, 62, 55));
+        titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
+        add(titleLabel);
     }
     
 }

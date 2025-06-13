@@ -8,6 +8,7 @@ package com.pdcgame.Panels.Pages;
  *
  * @author prish
  */
+import com.pdcgame.Panels.ShelfPanel;
 import com.pdcgame.Panels.SubPagePanel;
 import javax.swing.*;
 import java.awt.*;
@@ -16,9 +17,16 @@ public class ProductPagePanel extends SubPagePanel {
     
     public ProductPagePanel() {
         setLayout(null);
-        JLabel label = new JLabel("Product Page");
-        label.setBounds(10, 10, 200, 30); 
-        label.setForeground(Color.RED);
-        add(label);
+        JLabel titleLabel = new JLabel("Products Page");
+        titleLabel.setBounds(30, 30, 400, 40);
+        titleLabel.setForeground(new Color(66, 62, 55));
+        titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
+        add(titleLabel);
+        
+
+        ShelfPanel shelfPanel = new ShelfPanel();
+        shelfPanel.setBounds(50, 50, 700, 500); 
+        add(shelfPanel, BorderLayout.CENTER);
+
     }
 }
