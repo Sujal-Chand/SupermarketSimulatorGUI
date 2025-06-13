@@ -4,7 +4,6 @@
  */
 package com.pdcgame.Panels;
 
-
 /**
  *
  * @author prish
@@ -13,12 +12,13 @@ package com.pdcgame.Panels;
 import javax.swing.*;
 import java.awt.*;
 
-public class DefaultPagePanel extends JPanel{
-
-    public DefaultPagePanel(SubPagePanel subPage) {
-        setLayout(new BorderLayout());
-        add(subPage, BorderLayout.CENTER);
-        add(new GameBoardPanel(), BorderLayout.EAST);
+public class EquipmentPagePanel extends SubPagePanel {
+    
+    public EquipmentPagePanel() {
+        setLayout(null);
+        JLabel label = new JLabel("Equipment Page");
+        label.setBounds(10, 10, 200, 30); 
+        label.setForeground(Color.RED);
+        add(label);
     }
-
 }

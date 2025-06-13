@@ -4,36 +4,41 @@
  */
 package com.pdcgame.Panels;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-
 /**
  *
  * @author sujalchand
  */
 public class TopPanel extends JPanel {
     private final Map<String, JButton> buttons = new HashMap<>();
-    private String selectedPage = "Menu";  // Default selected page
+    private String selectedPage = "Default";
 
+    private final JPanel tabButtonPanel;
+    private final BottomCardPanel bottomCardPanel;  
     public TopPanel(BottomCardPanel bottomCardPanel) {
-        setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        this.bottomCardPanel = bottomCardPanel;
+
+        setLayout(new BorderLayout());
         setBackground(new Color(188, 184, 177));
 
-        add(createTabButton("Menu", bottomCardPanel));
-        add(createTabButton("Equipment", bottomCardPanel));
-        add(createTabButton("Inventory", bottomCardPanel));
-        add(createTabButton("Products", bottomCardPanel));
-        add(createTabButton("Open Store", bottomCardPanel));
+        tabButtonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        tabButtonPanel.setBackground(new Color(188, 184, 177));
+
+        addTabButton("Default");
+        addTabButton("Equipment");
+        addTabButton("Inventory");
+        addTabButton("Products");
+        addTabButton("Open Store");
         
-        updateButtonColors();  // Set initial selection
+
+        add(tabButtonPanel, BorderLayout.NORTH);
+        updateButtonColors();
     }
 
-    private JButton createTabButton(String name, BottomCardPanel cardPanel) {
+    private void addTabButton(String name) {
         JButton button = new JButton(name);
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createEmptyBorder(5, 20, 5, 20));
@@ -41,22 +46,21 @@ public class TopPanel extends JPanel {
 
         button.addActionListener(e -> {
             selectedPage = name;
-            cardPanel.showPanel(name);
+            bottomCardPanel.showPanel(name); 
             updateButtonColors();
+            System.out.println("Switched to page: " + name);
         });
 
         buttons.put(name, button);
-        return button;
+        tabButtonPanel.add(button);
     }
 
     private void updateButtonColors() {
         for (Map.Entry<String, JButton> entry : buttons.entrySet()) {
             if (entry.getKey().equals(selectedPage)) {
-                // Selected button color
-                entry.getValue().setBackground(new Color(70, 63, 58));  
+                entry.getValue().setBackground(new Color(70, 63, 58));
                 entry.getValue().setForeground(new Color(244, 243, 238));
             } else {
-                // Unselected button color
                 entry.getValue().setBackground(new Color(138, 129, 124));
                 entry.getValue().setForeground(new Color(244, 243, 238));
             }

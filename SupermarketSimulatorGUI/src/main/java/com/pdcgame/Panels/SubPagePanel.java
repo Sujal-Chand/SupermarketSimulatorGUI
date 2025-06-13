@@ -4,7 +4,6 @@
  */
 package com.pdcgame.Panels;
 
-
 /**
  *
  * @author prish
@@ -13,12 +12,14 @@ package com.pdcgame.Panels;
 import javax.swing.*;
 import java.awt.*;
 
-public class DefaultPagePanel extends JPanel{
-
-    public DefaultPagePanel(SubPagePanel subPage) {
+public class SubPagePanel extends JPanel{
+    public SubPagePanel() {
+        setBackground(new Color(236, 234, 213));
         setLayout(new BorderLayout());
-        add(subPage, BorderLayout.CENTER);
-        add(new GameBoardPanel(), BorderLayout.EAST);
-    }
 
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        setPreferredSize(new Dimension(600, 0));
+        
+    }
+    
 }

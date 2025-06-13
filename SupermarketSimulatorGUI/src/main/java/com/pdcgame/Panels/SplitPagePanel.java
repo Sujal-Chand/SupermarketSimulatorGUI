@@ -48,8 +48,8 @@ public class SplitPagePanel extends JPanel {
         Color textColor = new Color(244, 243, 238);
 
         for (int i = 1; i <= 100; i++) {
-            int x = (i - 1) % 10;
-            int y = (i - 1) / 10;
+            int x = (i - 1) % 10; //columns
+            int y = 9 - (i - 1) / 10; //rows
 
             JLabel label = new JLabel("S", SwingConstants.CENTER);
             label.setOpaque(true);

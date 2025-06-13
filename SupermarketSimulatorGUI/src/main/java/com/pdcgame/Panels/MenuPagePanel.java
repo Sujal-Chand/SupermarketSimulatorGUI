@@ -4,6 +4,8 @@
  */
 package com.pdcgame.Panels;
 
+import com.pdcgame.Enums.Difficulty;
+import com.pdcgame.GameState;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -30,10 +32,13 @@ public class MenuPagePanel extends JPanel {
     private JLabel difficultyLabel;
     private JPanel difficultyButtonPanel;
     private JButton goBackButton;
+    private final BottomCardPanel bottomCardPanel;
 
-    public MenuPagePanel() {
+    public MenuPagePanel(BottomCardPanel bottomCardPanel) {
+        this.bottomCardPanel = bottomCardPanel;
         setLayout(new BorderLayout());
-        setBackground(new Color(138, 129, 124));
+        setBackground(new Color(237, 235, 215));
+        
 
         // left Panel creation and addition of elements
         JPanel leftPanel = new JPanel();
@@ -55,8 +60,8 @@ public class MenuPagePanel extends JPanel {
         }
 
         JLabel titleLabel = new JLabel("Supermarket Simulator", SwingConstants.CENTER);
-        titleLabel.setForeground(new Color(244, 243, 238));
-        titleLabel.setFont(new Font("SansSerif", Font.BOLD, 45));
+        titleLabel.setForeground(new Color(66, 62, 55));
+        titleLabel.setFont(new Font("Impact", Font.BOLD, 48));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         titleLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
 
@@ -68,13 +73,14 @@ public class MenuPagePanel extends JPanel {
         JButton newGameButton = new JButton("New Game");
         JButton quitButton = new JButton("Quit");
 
-        Color btnBg = new Color(70, 63, 58);
-        Color btnFg = new Color(244, 243, 238);
-        Dimension buttonSize = new Dimension(600, 30);
+        Color btnBg = new Color(66, 62, 55);
+        Color btnFg = new Color(237, 235, 215);
+        Dimension buttonSize = new Dimension(400, 28);
 
         for (JButton button : new JButton[]{loadGameButton, newGameButton, quitButton}) {
             button.setBackground(btnBg);
             button.setForeground(btnFg);
+            button.setFont(new Font("Courier New", Font.BOLD, 18));
             button.setOpaque(true);
             button.setBorderPainted(false);
             button.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -177,7 +183,24 @@ public class MenuPagePanel extends JPanel {
         rightPanel.add(difficultyButtonPanel);
         rightPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         rightPanel.add(goBackButton);
+        
+        //difculty buttons 
+        setupDifficultyButton(easyButton, Difficulty.Easy);
+        setupDifficultyButton(mediumButton, Difficulty.Normal);
+        setupDifficultyButton(hardButton, Difficulty.Hard);
+
+        
     }
+    
+    //set game instance to chose difculty and switch screens
+    private void setupDifficultyButton(JButton button, Difficulty difficulty) {
+    button.addActionListener(e -> {
+        GameState.instance().setDifficulty(difficulty);
+        System.out.println(GameState.instance().getDifficulty());
+        bottomCardPanel.showPanel("Default");
+    });
+    }
+
 
     // show the right pannel
     public void showDifficulty() {
