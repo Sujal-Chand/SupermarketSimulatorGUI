@@ -19,6 +19,7 @@ public class DefaultPagePanel extends JPanel{
         setLayout(new BorderLayout());
         add(subPage, BorderLayout.CENTER);
         add(new GameBoardPanel(), BorderLayout.EAST);
+        add(new StoreStatusPanel(), BorderLayout.SOUTH);
     }
 
 }
