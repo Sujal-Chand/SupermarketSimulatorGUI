@@ -10,6 +10,7 @@ package com.pdcgame.Panels;
  */
 
 
+import com.pdcgame.GameState;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.Border;
@@ -24,7 +25,7 @@ public class StoreStatusPanel extends JPanel{
 
         //store rating display
         StoreRatingPanel ratingDisplay = new StoreRatingPanel();
-        JPanel ratingPanel = ratingDisplay.getRatingPanel(5);
+        JPanel ratingPanel = ratingDisplay.getRatingPanel(GameState.instance().getRating());
         ratingPanel.setOpaque(false);
 
         //panel to hold stats

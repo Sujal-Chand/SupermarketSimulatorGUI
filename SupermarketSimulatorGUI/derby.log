@@ -1,107 +1,13 @@
-Sat Jun 14 00:45:13 NZST 2025 Thread[#1,main,5,main] Cleanup action starting
-ERROR XBM0J: Directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SuperMarketDB_Ebd already exists.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.services.monitor.StorageFactoryService.createServiceRoot(StorageFactoryService.java:719)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1742)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.createPersistentService(BaseMonitor.java:1011)
-	at org.apache.derby.impl.services.monitor.FileMonitor.createPersistentService(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.createPersistentService(Monitor.java:650)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createPersistentService(EmbedConnection.java:4004)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2649)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:430)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
-	at com.pdcgame.DBManager.establishConnection(DBManager.java:41)
-	at com.pdcgame.DBManager.<init>(DBManager.java:25)
-	at com.pdcgame.DBManager.main(DBManager.java:29)
-Cleanup action completed
-Sat Jun 14 00:45:13 NZST 2025 Thread[#1,main,5,main] Cleanup action starting
-java.sql.SQLException: Failed to create database 'database/SuperMarketDB_Ebd', see the next exception for details.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:141)
-	at org.apache.derby.impl.jdbc.Util.seeNextException(Util.java:252)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2656)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:430)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
-	at com.pdcgame.DBManager.establishConnection(DBManager.java:41)
-	at com.pdcgame.DBManager.<init>(DBManager.java:25)
-	at com.pdcgame.DBManager.main(DBManager.java:29)
-Caused by: ERROR XJ041: Failed to create database 'database/SuperMarketDB_Ebd', see the next exception for details.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(SQLExceptionFactory.java:170)
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:75)
-	... 13 more
-Caused by: ERROR XBM0J: Directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SuperMarketDB_Ebd already exists.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.services.monitor.StorageFactoryService.createServiceRoot(StorageFactoryService.java:719)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1742)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.createPersistentService(BaseMonitor.java:1011)
-	at org.apache.derby.impl.services.monitor.FileMonitor.createPersistentService(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.createPersistentService(Monitor.java:650)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createPersistentService(EmbedConnection.java:4004)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2649)
-	... 10 more
-============= begin nested exception, level (1) ===========
-java.sql.SQLException: Directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SuperMarketDB_Ebd already exists.
-	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(SQLExceptionFactory.java:115)
-	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Util.java:230)
-	at org.apache.derby.impl.jdbc.TransactionResourceImpl.wrapInSQLException(TransactionResourceImpl.java:431)
-	at org.apache.derby.impl.jdbc.TransactionResourceImpl.handleException(TransactionResourceImpl.java:360)
-	at org.apache.derby.impl.jdbc.EmbedConnection.handleException(EmbedConnection.java:2400)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2657)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:430)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
-	at com.pdcgame.DBManager.establishConnection(DBManager.java:41)
-	at com.pdcgame.DBManager.<init>(DBManager.java:25)
-	at com.pdcgame.DBManager.main(DBManager.java:29)
-Caused by: ERROR XBM0J: Directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SuperMarketDB_Ebd already exists.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.services.monitor.StorageFactoryService.createServiceRoot(StorageFactoryService.java:719)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1742)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.createPersistentService(BaseMonitor.java:1011)
-	at org.apache.derby.impl.services.monitor.FileMonitor.createPersistentService(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.createPersistentService(Monitor.java:650)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createPersistentService(EmbedConnection.java:4004)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2649)
-	... 10 more
-============= end nested exception, level (1) ===========
-============= begin nested exception, level (2) ===========
-ERROR XBM0J: Directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SuperMarketDB_Ebd already exists.
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:299)
-	at org.apache.derby.shared.common.error.StandardException.newException(StandardException.java:294)
-	at org.apache.derby.impl.services.monitor.StorageFactoryService.createServiceRoot(StorageFactoryService.java:719)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.bootService(BaseMonitor.java:1742)
-	at org.apache.derby.impl.services.monitor.BaseMonitor.createPersistentService(BaseMonitor.java:1011)
-	at org.apache.derby.impl.services.monitor.FileMonitor.createPersistentService(FileMonitor.java:45)
-	at org.apache.derby.iapi.services.monitor.Monitor.createPersistentService(Monitor.java:650)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createPersistentService(EmbedConnection.java:4004)
-	at org.apache.derby.impl.jdbc.EmbedConnection.createDatabase(EmbedConnection.java:2649)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(EmbedConnection.java:430)
-	at org.apache.derby.iapi.jdbc.InternalDriver.getNewEmbedConnection(InternalDriver.java:629)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:295)
-	at org.apache.derby.iapi.jdbc.InternalDriver.connect(InternalDriver.java:921)
-	at org.apache.derby.iapi.jdbc.AutoloadedDriver.connect(AutoloadedDriver.java:132)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
-	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
-	at com.pdcgame.DBManager.establishConnection(DBManager.java:41)
-	at com.pdcgame.DBManager.<init>(DBManager.java:25)
-	at com.pdcgame.DBManager.main(DBManager.java:29)
-============= end nested exception, level (2) ===========
-Cleanup action completed
+----------------------------------------------------------------
+Sat Jun 14 17:55:31 NZST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-6d01-e81b-0000084af598 
+on database directory C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@70dea4e 
+Loaded from file:/C:/Users/prish/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=21.0.5+9-LTS-239
+user.dir=C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

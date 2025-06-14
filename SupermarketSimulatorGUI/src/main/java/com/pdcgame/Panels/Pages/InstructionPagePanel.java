@@ -17,14 +17,15 @@ public class InstructionPagePanel extends SubPagePanel {
     public InstructionPagePanel() {
         setLayout(null);
         
-        JLabel titleLabel = new JLabel("Instruction Page");
-        titleLabel.setBounds(30, 30, 400, 40);
+        JLabel titleLabel = new JLabel("Supermarket Simulator");
+        titleLabel.setBounds(30, 30, 1000, 40);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
-        add(titleLabel);
+        
 
         TutorialPanel tutorial = new TutorialPanel();
         tutorial.setBounds(0, 0, 900, 800);
         add(tutorial);
+        add(titleLabel);
     }
 }

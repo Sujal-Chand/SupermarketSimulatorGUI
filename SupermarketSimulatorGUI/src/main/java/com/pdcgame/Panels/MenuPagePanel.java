@@ -197,6 +197,7 @@ public class MenuPagePanel extends JPanel {
     private void setupDifficultyButton(JButton button, Difficulty difficulty) {
     button.addActionListener(e -> {
         GameState.instance().setDifficulty(difficulty);
+        GamePersistence.saveGame();
         System.out.println("Difficulty chosen: "+GameState.instance().getDifficulty());
         bottomCardPanel.showPanel("Default");
     });

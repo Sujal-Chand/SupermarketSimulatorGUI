@@ -19,7 +19,7 @@ public class BuyProductsPanel extends FunctionPagePanel{
         rightLabel.setForeground(Color.WHITE);
         rightLabel.setHorizontalAlignment(SwingConstants.CENTER);
         rightLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-       
+      
         add(rightLabel, BorderLayout.NORTH);
     }
 }
