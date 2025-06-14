@@ -16,14 +16,15 @@ import java.awt.*;
 public class GameBoardPanel extends FunctionPagePanel{
     public GameBoardPanel(){
         
-        JLabel rightLabel = new JLabel("Game Board", SwingConstants.CENTER);
-        rightLabel.setForeground(Color.WHITE);
-        rightLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        rightLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        JLabel titleLabel = new JLabel("Game Board", SwingConstants.CENTER);
+        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setFont(new Font("Courier New", Font.BOLD, 20));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        add(titleLabel, BorderLayout.NORTH);
         
         GameGridPanel grid = new GameGridPanel();
 
-        add(rightLabel, BorderLayout.NORTH);
+        add(titleLabel, BorderLayout.NORTH);
         add(grid, BorderLayout.CENTER);
     }
 }
