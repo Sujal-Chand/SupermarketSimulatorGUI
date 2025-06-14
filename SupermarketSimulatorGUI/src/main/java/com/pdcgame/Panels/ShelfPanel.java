@@ -23,15 +23,24 @@ public class ShelfPanel extends JPanel {
 
     private final Image backgroundImage;
     private final List<ShelfItem> shelfItems = new ArrayList<>();
+    private final List<JButton> buttons = new ArrayList<>();
+    
+    public interface ProductClickListener {
+    void onProductClicked(Product product);
+    }
 
+    private ProductClickListener listener;
+
+    public void setProductClickListener(ProductClickListener listener) {
+        this.listener = listener;
+    }
+    
     public ShelfPanel() {
         backgroundImage = loadImage("/shelf.png");
         setPreferredSize(new Dimension(700, 500));
         setLayout(null);
         setOpaque(false);
-        
         populateShelf();
-        
     }
 
     private void populateShelf() {
@@ -57,12 +66,24 @@ public class ShelfPanel extends JPanel {
             btn.setFocusPainted(false);
             btn.setOpaque(false);
 
-            btn.addActionListener(e -> {
-                System.out.println("Clicked: " + item.product.getName());
-            });
+            // IMPORTANT: Don't close over listener here!
+            btn.addActionListener(e -> onButtonClicked(item.product));
 
             add(btn);
+            buttons.add(btn);
         }
+    }
+
+    // Called dynamically on button press
+    private void onButtonClicked(Product product) {
+        System.out.println("Clicked: " + product.getName());
+        if (listener != null) {
+            System.out.println("Listener is set. Calling...");
+            listener.onProductClicked(product);
+        } else {
+            System.out.println("Listener is NULL!");
+        }
+        
     }
    
     private void addShelfItem(String imagePath, int x, int y, int width, int height, Product product) {

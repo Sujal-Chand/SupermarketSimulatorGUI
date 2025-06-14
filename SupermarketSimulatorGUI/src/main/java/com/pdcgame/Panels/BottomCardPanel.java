@@ -64,5 +64,4 @@ public class BottomCardPanel extends JPanel {
             System.err.println("Panel with name '" + name + "' not found.");
         }
     }
-
 }

@@ -8,18 +8,32 @@ package com.pdcgame.Panels;
  *
  * @author prish
  */
+import com.pdcgame.Enums.ProductStorageType;
+import com.pdcgame.GameState;
+import com.pdcgame.ProductTypes.Product;
+import com.pdcgame.ProductTypes.PurchasableProduct;
 import javax.swing.*;
 import java.awt.*;
 
 public class BuyProductsPanel extends FunctionPagePanel{
     
-    public BuyProductsPanel(){
-    
-        JLabel rightLabel = new JLabel("Buy Products Board", SwingConstants.CENTER);
-        rightLabel.setForeground(Color.WHITE);
-        rightLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        rightLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-      
-        add(rightLabel, BorderLayout.NORTH);
+    private final ShelfPanel shelfPanel;
+    private final ProductInfoPanel productInfoPanel;
+
+    public BuyProductsPanel() {
+        setLayout(new BorderLayout());
+
+        shelfPanel = new ShelfPanel();
+        productInfoPanel = new ProductInfoPanel();
+
+        // Listener that updates ProductInfoPanel
+        shelfPanel.setProductClickListener(product -> {
+            productInfoPanel.showProductInfo(product);
+        });
+
+        
+        // Layout setup - you can adjust positions
+        add(shelfPanel, BorderLayout.CENTER);
+        add(productInfoPanel, BorderLayout.EAST); // or SOUTH, or a split pane
     }
 }

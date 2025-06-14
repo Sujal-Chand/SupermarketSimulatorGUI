@@ -7,6 +7,7 @@ com\pdcgame\Panels\StoreStatusPanel.class
 com\pdcgame\Panels\Pages\ProductPagePanel.class
 com\pdcgame\Panels\FreezerPanel.class
 com\pdcgame\Panels\Pages\OpenStorePagePanel.class
+com\pdcgame\Panels\ShelfPanel$ProductClickListener.class
 com\pdcgame\Panels\TutorialPanel.class
 com\pdcgame\Panels\Pages\EquipmentPagePanel.class
 com\pdcgame\Panels\ProductInfoPanel.class

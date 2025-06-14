@@ -14,12 +14,14 @@ import com.pdcgame.ProductTypes.Product;
 import javax.swing.*;
 import java.awt.*;
 
-public class ProductInfoPanel extends FunctionPagePanel {
+public class ProductInfoPanel extends JPanel {
 
     private final JPanel productInfoPanel;
 
     public ProductInfoPanel() {
         setLayout(new BorderLayout());
+        setBackground(new Color(70, 63, 58));
+        setPreferredSize(new Dimension(400, 0));
 
         JLabel titleLabel = new JLabel("Products info Board", SwingConstants.CENTER);
         titleLabel.setForeground(Color.WHITE);
@@ -33,16 +35,15 @@ public class ProductInfoPanel extends FunctionPagePanel {
 
         add(productInfoPanel, BorderLayout.CENTER);
     }
-
-    public void showProductDetails(Product product) {
+    
+    public void showProductInfo(Product product) {
         productInfoPanel.removeAll();
-
         productInfoPanel.add(createLabel("Name: " + product.getName()));
         productInfoPanel.add(createLabel("Price: " + product.getBulkPrice()));
         productInfoPanel.add(createLabel("Storage Type: " + product.getStorageType().name()));
-
         productInfoPanel.revalidate();
         productInfoPanel.repaint();
+        System.out.println("show product info printed");
     }
 
     private JLabel createLabel(String text) {

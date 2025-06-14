@@ -11,16 +11,19 @@ package com.pdcgame.Panels.Pages;
 
 import com.pdcgame.Panels.FreezerPanel;
 import com.pdcgame.Panels.FridgePanel;
+import com.pdcgame.Panels.ProductInfoPanel;
 import com.pdcgame.Panels.ShelfPanel;
+import com.pdcgame.Panels.StoreStatusPanel;
 import com.pdcgame.Panels.SubPagePanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ProductPagePanel extends SubPagePanel {
+public class ProductPagePanel extends JPanel {
 
     private final CardLayout cardLayout;
     private final JPanel contentPanel;
+    private final ProductInfoPanel productInfoPanel;
 
     public ProductPagePanel() {
         setLayout(null);
@@ -44,12 +47,21 @@ public class ProductPagePanel extends SubPagePanel {
         add(fridgeButton);
         add(freezerButton);
 
+        // Panels
         cardLayout = new CardLayout();
         contentPanel = new JPanel(cardLayout);
         contentPanel.setBounds(50, 100, 700, 500);
         contentPanel.setOpaque(false);
 
+        // Info Panel
+        productInfoPanel = new ProductInfoPanel();
+        productInfoPanel.setBounds(760, 100, 400, 500); // Adjust as needed
+        add(productInfoPanel);
+
+        // ShelfPanel setup with listener
         ShelfPanel shelfPanel = new ShelfPanel();
+        shelfPanel.setProductClickListener(product -> productInfoPanel.showProductInfo(product));
+
         FridgePanel fridgePanel = new FridgePanel();
         FreezerPanel freezerPanel = new FreezerPanel();
 
