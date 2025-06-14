@@ -15,6 +15,9 @@ import java.awt.*;
 
 public class SupermarketGame {
     public static void main(String[] args) {
+        
+        LogSettings logSettings1 = new LogSettings(); // turns off Hibernate auto logging and warnings
+        
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Supermarket Simulator");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
