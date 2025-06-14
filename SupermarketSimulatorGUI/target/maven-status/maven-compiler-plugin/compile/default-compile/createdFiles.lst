@@ -2,6 +2,7 @@ com\pdcgame\Panels\ShelfItem.class
 com\pdcgame\Panels\ShelfPanel.class
 com\pdcgame\Panels\FridgePanel.class
 com\pdcgame\Panels\SubPagePanel.class
+com\pdcgame\Panels\FridgePanel$ProductClickListener.class
 com\pdcgame\Panels\GameGridPanel$1.class
 com\pdcgame\Panels\StoreStatusPanel.class
 com\pdcgame\Panels\Pages\ProductPagePanel.class
@@ -11,6 +12,7 @@ com\pdcgame\Panels\ShelfPanel$ProductClickListener.class
 com\pdcgame\Panels\TutorialPanel.class
 com\pdcgame\Panels\Pages\EquipmentPagePanel.class
 com\pdcgame\Panels\ProductInfoPanel.class
+com\pdcgame\Panels\FreezerPanel$ProductClickListener.class
 com\pdcgame\Panels\TutorialPanel$TutorialStep.class
 com\pdcgame\Panels\GameGridPanel.class
 com\pdcgame\Panels\Pages\InstructionPagePanel.class

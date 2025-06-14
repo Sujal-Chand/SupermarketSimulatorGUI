@@ -27,6 +27,7 @@ public class ProductPagePanel extends JPanel {
 
     public ProductPagePanel() {
         setLayout(null);
+        setBackground(new Color(236, 234, 213));
 
         JLabel titleLabel = new JLabel("Products Page");
         titleLabel.setBounds(20, 10, 400, 40);
@@ -55,7 +56,7 @@ public class ProductPagePanel extends JPanel {
 
         // Info Panel
         productInfoPanel = new ProductInfoPanel();
-        productInfoPanel.setBounds(760, 100, 400, 500); // Adjust as needed
+        productInfoPanel.setBounds(880, 0, 400, 580); // Adjust as needed
         add(productInfoPanel);
 
         // ShelfPanel setup with listener
@@ -63,8 +64,11 @@ public class ProductPagePanel extends JPanel {
         shelfPanel.setProductClickListener(product -> productInfoPanel.showProductInfo(product));
 
         FridgePanel fridgePanel = new FridgePanel();
+        fridgePanel.setProductClickListener(product -> productInfoPanel.showProductInfo(product));
+        
         FreezerPanel freezerPanel = new FreezerPanel();
-
+        freezerPanel.setProductClickListener(product -> productInfoPanel.showProductInfo(product));
+        
         contentPanel.add(shelfPanel, "shelf");
         contentPanel.add(fridgePanel, "fridge");
         contentPanel.add(freezerPanel, "freezer");

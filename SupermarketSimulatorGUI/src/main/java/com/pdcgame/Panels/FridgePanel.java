@@ -22,6 +22,17 @@ public class FridgePanel extends JPanel {
 
     private final Image backgroundImage;
     private final List<ShelfItem> shelfItems = new ArrayList<>();
+    private final List<JButton> buttons = new ArrayList<>();
+    
+    public interface ProductClickListener {
+    void onProductClicked(Product product);
+    }
+
+    private ProductClickListener listener;
+
+    public void setProductClickListener(ProductClickListener listener) {
+        this.listener = listener;
+    }
 
     public FridgePanel() {
         backgroundImage = loadImage("/fridge.png");
@@ -56,13 +67,23 @@ public class FridgePanel extends JPanel {
             btn.setFocusPainted(false);
             btn.setOpaque(false);
 
-            btn.addActionListener(e -> {
-                System.out.println("Clicked: " + item.product.getName());
-            });
+            btn.addActionListener(e -> onButtonClicked(item.product));
 
             add(btn);
+            buttons.add(btn);
         }
     }
+    
+        private void onButtonClicked(Product product) {
+            System.out.println("Clicked: " + product.getName());
+            if (listener != null) {
+                System.out.println("Listener is set. Calling...");
+                listener.onProductClicked(product);
+            } else {
+                System.out.println("Listener is NULL!");
+            }
+        
+        }
    
     private void addShelfItem(String imagePath, int x, int y, int width, int height, Product product) {
     ImageIcon icon = loadAndScaleIcon(imagePath, width, height);
