@@ -1,9 +1,11 @@
 com\pdcgame\Panels\ShelfItem.class
 com\pdcgame\Panels\ShelfPanel.class
+com\pdcgame\Panels\FridgePanel.class
 com\pdcgame\Panels\SubPagePanel.class
 com\pdcgame\Panels\GameGridPanel$1.class
 com\pdcgame\Panels\StoreStatusPanel.class
 com\pdcgame\Panels\Pages\ProductPagePanel.class
+com\pdcgame\Panels\FreezerPanel.class
 com\pdcgame\Panels\Pages\OpenStorePagePanel.class
 com\pdcgame\Panels\TutorialPanel.class
 com\pdcgame\Panels\Pages\EquipmentPagePanel.class

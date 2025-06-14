@@ -37,9 +37,9 @@ public class StoreStatusPanel extends JPanel{
         Border statBorder = BorderFactory.createLineBorder(new Color(66, 62, 55), 2);
         Insets padding = new Insets(10, 15, 10, 15);
 
-        statsPanel.add(createStatBox("Balance: $1500", statsFont, statsColour, statBorder, padding));
-        statsPanel.add(createStatBox("Actions Left: 3/3", statsFont, statsColour, statBorder, padding));
-        statsPanel.add(createStatBox("Days Passed: 1", statsFont, statsColour, statBorder, padding));
+        statsPanel.add(createStatBox("Balance: $" + String.format("%.2f", GameState.instance().getBalance()), statsFont, statsColour, statBorder, padding));
+        statsPanel.add(createStatBox("Actions Left: " + GameState.instance().getActions() + "/" + GameState.instance().getTotalActions(), statsFont, statsColour, statBorder, padding));
+        statsPanel.add(createStatBox("Days Passed: " + GameState.instance().day, statsFont, statsColour, statBorder, padding));
 
         add(statsPanel, BorderLayout.WEST);
         add(ratingPanel, BorderLayout.EAST);
