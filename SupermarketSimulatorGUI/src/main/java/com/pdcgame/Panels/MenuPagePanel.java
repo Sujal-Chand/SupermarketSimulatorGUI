@@ -201,14 +201,14 @@ public class MenuPagePanel extends JPanel {
         GamePersistence.saveGame();
         System.out.println("Difficulty chosen: "+GameState.instance().getDifficulty());
         bottomCardPanel.showPanel("Default");
-        TopPanel.getInstance().addButtons();
+        PanelNavigator.getInstance().addButtons();
     });
     }
 
     private void loadGame() {
         if(GamePersistence.saveExists()) GamePersistence.loadGame();
         bottomCardPanel.showPanel("Default");
-        TopPanel.getInstance().addButtons();
+        PanelNavigator.getInstance().addButtons();
     }
 
     // show the right pannel

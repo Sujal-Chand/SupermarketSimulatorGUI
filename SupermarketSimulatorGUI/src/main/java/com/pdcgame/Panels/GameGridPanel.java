@@ -75,6 +75,7 @@ public class GameGridPanel extends JPanel {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     System.out.println("Label x,y = " + finalX + ", " + finalY + " was clicked!");
+                    PanelNavigator.getInstance().switchPanel("Equipment");
                 }
             });
 

@@ -12,8 +12,8 @@ import java.util.Map;
  *
  * @author sujalchand
  */
-public class TopPanel extends JPanel {
-    private static TopPanel instance;
+public class PanelNavigator extends JPanel {
+    private static PanelNavigator instance;
 
     private final Map<String, JButton> buttons = new HashMap<>();
     private String selectedPage = "Default";
@@ -24,7 +24,7 @@ public class TopPanel extends JPanel {
     private boolean buttonsAdded = false;
 
     // Private constructor
-    private TopPanel(BottomCardPanel bottomCardPanel) {
+    private PanelNavigator(BottomCardPanel bottomCardPanel) {
         this.bottomCardPanel = bottomCardPanel;
 
         setLayout(new BorderLayout());
@@ -36,14 +36,14 @@ public class TopPanel extends JPanel {
         // Do not add tabButtonPanel yet — only when buttons are added
     }
 
-    public static TopPanel getInstance(BottomCardPanel bottomCardPanel) {
+    public static PanelNavigator getInstance(BottomCardPanel bottomCardPanel) {
         if (instance == null) {
-            instance = new TopPanel(bottomCardPanel);
+            instance = new PanelNavigator(bottomCardPanel);
         }
         return instance;
     }
 
-    public static TopPanel getInstance() {
+    public static PanelNavigator getInstance() {
         if (instance == null) {
             throw new IllegalStateException("TopPanel has not been initialized yet.");
         }
@@ -74,9 +74,7 @@ public class TopPanel extends JPanel {
         button.setOpaque(true);
 
         button.addActionListener(e -> {
-            selectedPage = name;
-            bottomCardPanel.showPanel(name);
-            updateButtonColors();
+            switchPanel(name);
             System.out.println("Switched to page: " + name);
         });
 
@@ -84,6 +82,11 @@ public class TopPanel extends JPanel {
         tabButtonPanel.add(button);
     }
 
+    public void switchPanel(String panel) {
+        selectedPage = panel;
+        bottomCardPanel.showPanel(panel);
+        updateButtonColors();
+    }
     private void updateButtonColors() {
         for (Map.Entry<String, JButton> entry : buttons.entrySet()) {
             boolean selected = entry.getKey().equals(selectedPage);

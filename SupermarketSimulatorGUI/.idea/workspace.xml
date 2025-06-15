@@ -7,8 +7,11 @@
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Enums/BoardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Enums/BoardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Enums/BoardCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Enums/BoardCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

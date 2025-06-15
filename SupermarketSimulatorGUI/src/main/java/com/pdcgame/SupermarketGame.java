@@ -9,7 +9,7 @@ package com.pdcgame;
  * @author sujalchand
  */
 import com.pdcgame.Panels.BottomCardPanel;
-import com.pdcgame.Panels.TopPanel;
+import com.pdcgame.Panels.PanelNavigator;
 import javax.swing.*;
 import java.awt.*;
 
@@ -32,17 +32,17 @@ public class SupermarketGame {
             BottomCardPanel bottomCardPanel = new BottomCardPanel();
             
             // interactable TopPanel used to switch cards
-            TopPanel topPanel = TopPanel.getInstance(bottomCardPanel);
+            PanelNavigator panelNavigator = PanelNavigator.getInstance(bottomCardPanel);
             
             // set fixed heights
             int frameHeight = frame.getHeight();
             int topHeight = (int)(frameHeight * 0.05);
             int bottomHeight = (int)(frameHeight * 0.95);
             
-            topPanel.setPreferredSize(new Dimension(frame.getWidth(), topHeight));
+            panelNavigator.setPreferredSize(new Dimension(frame.getWidth(), topHeight));
             bottomCardPanel.setPreferredSize(new Dimension(frame.getWidth(), bottomHeight));
             
-            container.add(topPanel);
+            container.add(panelNavigator);
             container.add(bottomCardPanel);
             
             frame.setContentPane(container);
