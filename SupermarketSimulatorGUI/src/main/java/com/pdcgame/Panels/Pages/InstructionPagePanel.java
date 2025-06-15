@@ -21,13 +21,10 @@ public class InstructionPagePanel extends SubPagePanel {
         titleLabel.setBounds(30, 30, 1000, 40);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
-        
 
         TutorialPanel tutorial = new TutorialPanel();
         tutorial.setBounds(0, 0, 900, 800);
         add(tutorial);
         add(titleLabel);
-
-
     }
 }

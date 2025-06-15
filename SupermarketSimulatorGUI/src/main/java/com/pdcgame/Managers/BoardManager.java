@@ -9,13 +9,14 @@ import com.pdcgame.Interfaces.BoardUtility;
 public class BoardManager implements BoardUtility {
     private static final int WIDTH = 10, HEIGHT = 10; // game board dimensions
     private final BoardCell[][] board; // board object
+    private int[] selectedCell = new int[2];
 
     // constructor for making a 2D board
     public BoardManager() {
         this.board = buildBlankBoard();
     }
     
-    public void initalizeBoard() {
+    public void initializeBoard() {
         set2DBoard(buildBlankBoard());
     }
 
@@ -80,5 +81,15 @@ public class BoardManager implements BoardUtility {
             }
         }
         return count;
+    }
+
+    public int[] getSelectedCell() {
+        return selectedCell;
+    }
+
+    public void setSelectedCell(int[] selectedCell) {
+        if(selectedCell.length == 2) {
+            this.selectedCell = selectedCell;
+        }
     }
 }

@@ -16,9 +16,9 @@ import com.pdcgame.Panels.SubPagePanel;
 import javax.swing.*;
 import java.awt.*;
 
-public class InventoryPagePanel extends SubPagePanel {
+public class InventoryControllerPagePanel extends SubPagePanel {
 
-    public InventoryPagePanel() {
+    public InventoryControllerPagePanel() {
         setLayout(null);
 
         JLabel titleLabel = new JLabel("Inventory");
