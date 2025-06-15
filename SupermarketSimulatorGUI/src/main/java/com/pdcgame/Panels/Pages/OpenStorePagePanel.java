@@ -9,6 +9,7 @@ package com.pdcgame.Panels.Pages;
  * @author prish
  */
 
+import com.pdcgame.GameState;
 import com.pdcgame.Managers.ScenarioManager;
 
 import javax.swing.*;

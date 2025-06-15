@@ -25,6 +25,7 @@ public class ProductInfoPanel extends JPanel {
     private final JButton viewCartButton;
     private final JPanel productButtonsPanel;
     private final JPanel cartButtonsPanel;
+    private final JScrollPane cartScrollPane;
     private final JLabel cartTotalLabel = new JLabel();
     private final JButton purchaseCartButton = new JButton("Purchase Cart");
     
@@ -44,13 +45,18 @@ public class ProductInfoPanel extends JPanel {
         productInfoPanel.setLayout(new BoxLayout(productInfoPanel, BoxLayout.Y_AXIS));
         productInfoPanel.setBackground(new Color(70, 63, 58));
         productInfoPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        productInfoPanel.add(createLabel("Click on any product to start!", ""));
+        productInfoPanel.add(createCenteredMessageLabel("Click on any product to start!"));
 
-        // Cart Panel setup (empty initially)
         cartPanel = new JPanel();
         cartPanel.setLayout(new BoxLayout(cartPanel, BoxLayout.Y_AXIS));
         cartPanel.setBackground(new Color(70, 63, 58));
         cartPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        cartScrollPane = new JScrollPane(cartPanel);
+        cartScrollPane.setBorder(null);
+        cartScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        cartScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        cartScrollPane.getViewport().setBackground(new Color(70, 63, 58)); 
 
         // Buttons
         addToCartButton = new JButton("Add to Cart");
@@ -71,14 +77,14 @@ public class ProductInfoPanel extends JPanel {
                 JLabel messageLabel;
                 switch (result) {
                     case NO_ACTIONS:
-                        messageLabel = createLabel("Cannot purchase: No actions remaining.", "");
+                        messageLabel = createCenteredMessageLabel("NO ACTIONS REMAINING");
                         break;
                     case NO_FUNDS:
-                        messageLabel = createLabel("Cannot purchase: Not enough funds.", "");
+                        messageLabel = createCenteredMessageLabel("NOT ENOUGH FUNDS");
                         break;
                     case SUCCESS:
                         cartPanel.removeAll();
-                        messageLabel = createLabel("Purchase complete! Thanks.", "");
+                        messageLabel = createCenteredMessageLabel("Purchase complete! Thanks.");
                         break;
                     default:
                         messageLabel = createLabel("Unknown error occurred.", "");
@@ -119,7 +125,7 @@ public class ProductInfoPanel extends JPanel {
 
         backButton.addActionListener(e -> {
             productInfoPanel.removeAll();
-            productInfoPanel.add(createLabel("Click a product", ""));
+            productInfoPanel.add(createCenteredMessageLabel("Click a product"));
             showProductInfoPanel();
         });
 
@@ -155,7 +161,7 @@ public class ProductInfoPanel extends JPanel {
         Map<String, Integer> items = CartManager.instance().getStoredProducts();
 
         if (items.isEmpty()) {
-            cartPanel.add(createLabel("Cart is empty.", ""));
+            cartPanel.add(createCenteredMessageLabel("CART IS EMPTY"));
         } else {
             for (Map.Entry<String, Integer> entry : items.entrySet()) {
                 String productName = entry.getKey();
@@ -172,7 +178,7 @@ public class ProductInfoPanel extends JPanel {
                 JSpinner qtySpinner = new JSpinner(new SpinnerNumberModel(currentQty, 0, 100, 1));
                 qtySpinner.setPreferredSize(new Dimension(60, 25));
 
-                JButton updateButton = new JButton("Update");
+                JButton updateButton = new JButton("Modify");
                 styleButton(updateButton);
 
                 updateButton.addActionListener(e -> {
@@ -202,7 +208,7 @@ public class ProductInfoPanel extends JPanel {
         cartTotalLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         cartPanel.add(cartTotalLabel);
 
-        add(cartPanel, BorderLayout.CENTER);
+        add(cartScrollPane, BorderLayout.CENTER);
 
         // Cart button panel (Back + Purchase)
         cartButtonsPanel.removeAll();
@@ -250,6 +256,15 @@ public class ProductInfoPanel extends JPanel {
         return label;
     }
     
+    private JLabel createCenteredMessageLabel(String message) {
+        JLabel label = new JLabel(message, SwingConstants.CENTER);
+        label.setFont(new Font("Courier New", Font.BOLD, 18));
+        label.setForeground(Color.WHITE);
+        label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+        return label;
+    }
+    
     private void styleButton(JButton button) {
         button.setFont(new Font("Courier New", Font.BOLD, 16));
         button.setBackground(new Color(90, 80, 75));
@@ -265,5 +280,6 @@ public class ProductInfoPanel extends JPanel {
         button.setFocusPainted(false);
         button.setPreferredSize(new Dimension(45, 30));
     }
+    
 }
 
