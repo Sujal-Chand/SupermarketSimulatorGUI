@@ -135,7 +135,7 @@ public class ScenarioManager {
                 if (scenario.getMessages() != null) {
                     allMessages.addAll(scenario.getMessages());
                 } else {
-                    // If no getMessages(), consider adding a message directly
+                    // If no getMessages()
                     allMessages.add("[Scenario " + type.name() + " executed.]");
                 }
             }

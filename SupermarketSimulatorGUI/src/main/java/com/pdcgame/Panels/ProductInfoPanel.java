@@ -117,6 +117,7 @@ public class ProductInfoPanel extends JPanel {
         });
 
         backButton.addActionListener(e -> {
+            currentProduct = null;
             productInfoPanel.removeAll();
             productInfoPanel.add(createCenteredMessageLabel("Click a product"));
             showProductInfoPanel();

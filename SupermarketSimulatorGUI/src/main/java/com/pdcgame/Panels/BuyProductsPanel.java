@@ -8,11 +8,6 @@ package com.pdcgame.Panels;
  *
  * @author prish
  */
-import com.pdcgame.Enums.ProductStorageType;
-import com.pdcgame.GameState;
-import com.pdcgame.ProductTypes.Product;
-import com.pdcgame.ProductTypes.PurchasableProduct;
-import javax.swing.*;
 import java.awt.*;
 
 public class BuyProductsPanel extends FunctionPagePanel{
@@ -34,6 +29,6 @@ public class BuyProductsPanel extends FunctionPagePanel{
         
         // Layout setup - you can adjust positions
         add(shelfPanel, BorderLayout.CENTER);
-        add(productInfoPanel, BorderLayout.EAST); // or SOUTH, or a split pane
+        add(productInfoPanel, BorderLayout.EAST);
     }
 }
