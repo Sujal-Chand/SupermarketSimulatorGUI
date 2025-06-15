@@ -12,6 +12,7 @@ package com.pdcgame.Panels.Pages;
 import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.GameState;
 import com.pdcgame.Panels.BuyEquipmentPanel;
+import com.pdcgame.Panels.ManageEquipmentPanel;
 import com.pdcgame.Panels.SubPagePanel;
 import javax.swing.*;
 import java.awt.*;
@@ -46,11 +47,12 @@ public class EquipmentControllerPagePanel extends SubPagePanel {
             BuyEquipmentPanel buyPanel = new BuyEquipmentPanel();
             cardPanel.add(buyPanel, "BUY");
             cardLayout.show(cardPanel, "BUY");
+        } else {
+            ManageEquipmentPanel managePanel = new ManageEquipmentPanel();
+            cardPanel.add(managePanel, "MANAGE");
+            cardLayout.show(cardPanel, "MANAGE");
         }
 
-        // Could add more conditions here later for MANAGE, etc.
-
-        // Revalidate and repaint to ensure updates are shown
         cardPanel.revalidate();
         cardPanel.repaint();
     }

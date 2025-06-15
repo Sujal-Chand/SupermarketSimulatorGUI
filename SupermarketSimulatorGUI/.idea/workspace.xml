@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BuyEquipmentPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
@@ -14,24 +14,9 @@
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/GamePersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/GamePersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/BoardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/BoardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BottomCardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BottomCardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentControllerPagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InstructionPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InstructionPagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryControllerPagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Printers/BuyEquipmentPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Printers/BuyEquipmentPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/GamePersistence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/GamePersistence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Managers/BoardManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Managers/BoardManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BottomCardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BottomCardPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/EquipmentPagePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InstructionPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InstructionPagePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InventoryPagePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/BuyEquipmentPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/BuyEquipmentPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentControllerPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentControllerPagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "equipment-branch",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/sujal/OneDrive/Desktop/Github/SupermarketSimulatorGUI/SupermarketSimulatorGUI",
     "node.js.detected.package.eslint": "true",
