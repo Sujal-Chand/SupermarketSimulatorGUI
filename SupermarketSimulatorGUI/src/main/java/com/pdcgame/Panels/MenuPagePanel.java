@@ -92,9 +92,10 @@ public class MenuPagePanel extends JPanel {
 
         // button listeners
         quitButton.addActionListener(e -> System.exit(0));
+        loadGameButton.addActionListener(e -> loadGame());
         newGameButton.addActionListener(e -> showDifficulty());
 
-        buttonPanel.add(loadGameButton);
+        if(GamePersistence.saveExists()) buttonPanel.add(loadGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
         buttonPanel.add(newGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
@@ -185,7 +186,7 @@ public class MenuPagePanel extends JPanel {
         rightPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         rightPanel.add(goBackButton);
         
-        //difculty buttons 
+        //difficulty buttons
         setupDifficultyButton(easyButton, Difficulty.Easy);
         setupDifficultyButton(mediumButton, Difficulty.Normal);
         setupDifficultyButton(hardButton, Difficulty.Hard);
@@ -204,6 +205,11 @@ public class MenuPagePanel extends JPanel {
     });
     }
 
+    private void loadGame() {
+        if(GamePersistence.saveExists()) GamePersistence.loadGame();
+        bottomCardPanel.showPanel("Default");
+        TopPanel.getInstance().addButtons();
+    }
 
     // show the right pannel
     public void showDifficulty() {

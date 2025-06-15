@@ -18,8 +18,6 @@ import java.awt.*;
 
 public class InventoryPagePanel extends SubPagePanel {
 
-    private JPanel productGridPanel;
-
     public InventoryPagePanel() {
         setLayout(null);
 
@@ -43,7 +41,7 @@ public class InventoryPagePanel extends SubPagePanel {
 
         // Panel to hold the products
         ProductGridPanel productGridPanel = new ProductGridPanel();
-        productGridPanel.setListProducts(GameState.instance().getProductManager().getFilteredPurchasableProducts(ProductStorageType.SHELF));
+
         JScrollPane scrollPane = new JScrollPane(productGridPanel);
         scrollPane.setBounds(15, 110, 850, 450); // below the buttons
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);

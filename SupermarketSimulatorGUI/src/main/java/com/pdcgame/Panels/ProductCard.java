@@ -1,14 +1,18 @@
 package com.pdcgame.Panels;
 
+import com.pdcgame.GameState;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
+import java.util.Map;
 
 public class ProductCard extends JPanel {
 
     public ProductCard(String name, String price) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        setPreferredSize(new Dimension(120, 200));
         setBackground(Color.WHITE);
 
 
@@ -51,6 +55,11 @@ public class ProductCard extends JPanel {
         priceLabel.setAlignmentX(CENTER_ALIGNMENT);
         priceLabel.setFont(new Font("Dialog", Font.BOLD, 16));
 
+        // Stock label
+        JLabel stockLabel = new JLabel("Stock: " + GameState.instance().getInventoryManager().getStoredProducts().get(name));
+        stockLabel.setAlignmentX(CENTER_ALIGNMENT);
+        stockLabel.setFont(new Font("Dialog", Font.BOLD, 16));
+
         // Add components
         add(Box.createVerticalStrut(5));
         add(imageLabel);
@@ -58,8 +67,10 @@ public class ProductCard extends JPanel {
         add(nameLabel);
         add(Box.createVerticalStrut(3));
         add(priceLabel);
+        add(Box.createVerticalStrut(3));
+        add(stockLabel);
         add(Box.createVerticalGlue());
-        setPreferredSize(new Dimension(120, 200));
+
     }
 
 }
