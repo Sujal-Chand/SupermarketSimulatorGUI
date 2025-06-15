@@ -16,19 +16,22 @@ import java.awt.*;
 import javax.swing.border.Border;
 
 public class StoreStatusPanel extends JPanel{
-    
+
+    private JLabel balanceLabel;
+    private JLabel actionsLabel;
+    private JLabel dayLabel;
+
     public StoreStatusPanel() {
-        
         setLayout(new BorderLayout());
         setBackground(new Color(217, 213, 171));
         setPreferredSize(new Dimension(600, 100));
 
-        //store rating display
+        // Store rating display
         StoreRatingPanel ratingDisplay = new StoreRatingPanel();
         JPanel ratingPanel = ratingDisplay.getRatingPanel(GameState.instance().getRating());
         ratingPanel.setOpaque(false);
 
-        //panel to hold stats
+        // Panel to hold stats
         JPanel statsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 20));
         statsPanel.setOpaque(false);
 
@@ -37,16 +40,24 @@ public class StoreStatusPanel extends JPanel{
         Border statBorder = BorderFactory.createLineBorder(new Color(66, 62, 55), 2);
         Insets padding = new Insets(10, 15, 10, 15);
 
-        statsPanel.add(createStatBox("Balance: $" + String.format("%.2f", GameState.instance().getBalance()), statsFont, statsColour, statBorder, padding));
-        statsPanel.add(createStatBox("Actions Left: " + GameState.instance().getActions() + "/" + GameState.instance().getTotalActions(), statsFont, statsColour, statBorder, padding));
-        statsPanel.add(createStatBox("Days Passed: " + GameState.instance().day, statsFont, statsColour, statBorder, padding));
+        // Create and store labels
+        balanceLabel = new JLabel();
+        actionsLabel = new JLabel();
+        dayLabel = new JLabel();
+
+        // Add stat boxes with these labels
+        statsPanel.add(createStatBox(balanceLabel, statsFont, statsColour, statBorder, padding));
+        statsPanel.add(createStatBox(actionsLabel, statsFont, statsColour, statBorder, padding));
+        statsPanel.add(createStatBox(dayLabel, statsFont, statsColour, statBorder, padding));
+
+        // Initial label values
+        refresh();
 
         add(statsPanel, BorderLayout.WEST);
         add(ratingPanel, BorderLayout.EAST);
     }
 
-    private JPanel createStatBox(String text, Font font, Color textColor, Border border, Insets padding) {
-        JLabel label = new JLabel(text);
+    private JPanel createStatBox(JLabel label, Font font, Color textColor, Border border, Insets padding) {
         label.setFont(font);
         label.setForeground(textColor);
 
@@ -59,6 +70,17 @@ public class StoreStatusPanel extends JPanel{
         ));
         box.add(label);
         return box;
+    }
+
+    public void refresh() {
+        GameState game = GameState.instance();
+
+        balanceLabel.setText("Balance: $" + String.format("%.2f", game.getBalance()));
+        actionsLabel.setText("Actions Left: " + game.getActions() + "/" + game.getTotalActions());
+        dayLabel.setText("Days Passed: " + game.day);
+
+        revalidate();
+        repaint();
     }
     
 }
