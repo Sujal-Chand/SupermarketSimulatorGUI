@@ -4,7 +4,7 @@ package com.pdcgame.Enums;
  * @author prisha, sujal
  */
 public enum BoardCell {
-    EMPTY("[   ]", 0, 0, null),
+    EMPTY("[ E ]", 0, 0, null),
     SHELF("[ S ]", 200, 50, ProductStorageType.SHELF),
     LARGE_SHELF("[L S]", 400, 100, ProductStorageType.SHELF),
     FRIDGE("[ F ]", 600, 50, ProductStorageType.FRIDGE),
