@@ -27,5 +27,7 @@ public class InstructionPagePanel extends SubPagePanel {
         tutorial.setBounds(0, 0, 900, 800);
         add(tutorial);
         add(titleLabel);
+
+
     }
 }
