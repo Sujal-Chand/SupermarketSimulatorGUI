@@ -30,7 +30,7 @@ public class BottomCardPanel extends JPanel {
 
         panels.put("Menu", new MenuPagePanel(this));
         panels.put("Default", new InstructionPagePanel());
-        panels.put("Equipment", new EquipmentControllerPagePanel());
+        panels.put("Equipment", EquipmentControllerPagePanel.getInstance());
         panels.put("Products", new ProductPagePanel());
         panels.put("Inventory", new InventoryControllerPagePanel());
         panels.put("Store", new StorePagePanel());
@@ -50,13 +50,14 @@ public class BottomCardPanel extends JPanel {
                 contentPanel.add(new DefaultPagePanel(panel), BorderLayout.CENTER);
             } else if (panel instanceof SubPagePanel) {
                 // Full layout — SubPage + FunctionPage + StoreStatusPanel
-                FunctionPagePanel functionPage;
-
-                if (name.equals("Default") || name.equals("Inventory") || name.equals("Equipment")) {
-                    functionPage = new GameBoardPanel();
-                } else {
-                    functionPage = new BuyProductsPanel();
-                }
+                FunctionPagePanel functionPage = switch (name) {
+                    case "Default", "Inventory" -> new GameBoardPanel();
+                    case "Equipment" -> {
+                        EquipmentControllerPagePanel.getInstance().updateView();
+                        yield new GameBoardPanel();
+                    }
+                    default -> new BuyProductsPanel();
+                };
 
                 contentPanel.add(new DefaultPagePanel((SubPagePanel) panel, functionPage), BorderLayout.CENTER);
             } else {

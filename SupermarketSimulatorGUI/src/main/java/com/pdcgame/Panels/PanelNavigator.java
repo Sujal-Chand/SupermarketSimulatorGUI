@@ -83,10 +83,12 @@ public class PanelNavigator extends JPanel {
     }
 
     public void switchPanel(String panel) {
+        System.out.println("Switching to panel: " + panel);
         selectedPage = panel;
         bottomCardPanel.showPanel(panel);
         updateButtonColors();
     }
+
     private void updateButtonColors() {
         for (Map.Entry<String, JButton> entry : buttons.entrySet()) {
             boolean selected = entry.getKey().equals(selectedPage);

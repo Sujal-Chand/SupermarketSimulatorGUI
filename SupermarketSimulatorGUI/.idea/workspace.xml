@@ -5,11 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BottomCardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BottomCardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/PanelNavigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/PanelNavigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Managers/EconomyManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Managers/EconomyManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BottomCardPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BottomCardPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BuyEquipmentPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BuyEquipmentPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BuyEquipmentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/BuyEquipmentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/StorePagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/StorePagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/PanelNavigator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/PanelNavigator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductCard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductCard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/BuyEquipmentPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/BuyEquipmentPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/SellEquipmentPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Printers/SellEquipmentPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Scenarios/DefectiveProductScenario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Scenarios/DefectiveProductScenario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/parking.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,29 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MainWindow.executor": "Run",
-    "Application.SupermarketGame.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/sujal/OneDrive/Desktop/Github/SupermarketSimulatorGUI/SupermarketSimulatorGUI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SupermarketGame.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sujal/OneDrive/Desktop/Github/SupermarketSimulatorGUI/SupermarketSimulatorGUI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SupermarketGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pdcgame.SupermarketGame" />
@@ -95,6 +119,7 @@
       <workItem from="1749974859818" duration="298000" />
       <workItem from="1749975175831" duration="34000" />
       <workItem from="1749975218239" duration="3780000" />
+      <workItem from="1750029725000" duration="682000" />
     </task>
     <servers />
   </component>
