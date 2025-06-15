@@ -38,9 +38,6 @@ public class ProductInfoPanel extends JPanel {
         setBackground(new Color(70, 63, 58));
         setPreferredSize(new Dimension(400, 0));
 
-        // Title label will be added dynamically when switching views
-
-        // Product Info Panel setup
         productInfoPanel = new JPanel();
         productInfoPanel.setLayout(new BoxLayout(productInfoPanel, BoxLayout.Y_AXIS));
         productInfoPanel.setBackground(new Color(70, 63, 58));
@@ -58,7 +55,6 @@ public class ProductInfoPanel extends JPanel {
         cartScrollPane.getVerticalScrollBar().setUnitIncrement(16);
         cartScrollPane.getViewport().setBackground(new Color(70, 63, 58)); 
 
-        // Buttons
         addToCartButton = new JButton("Add to Cart");
         viewCartButton = new JButton("View Cart");
         backButton = new JButton("Back");
@@ -71,7 +67,6 @@ public class ProductInfoPanel extends JPanel {
         purchaseCartButton.addActionListener(e -> {
             if (!CartManager.instance().cartEmpty()) {
 
-                // Check if cart can be purchased
                 InternalCases result = CartManager.instance().canCheckoutCart();
 
                 JLabel messageLabel;
@@ -96,18 +91,16 @@ public class ProductInfoPanel extends JPanel {
                 repaint();
             }
         });
-        // Product buttons panel (Add + View)
+
         productButtonsPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         productButtonsPanel.setBackground(new Color(70, 63, 58));
         productButtonsPanel.add(addToCartButton);
         productButtonsPanel.add(viewCartButton);
 
-        // Cart buttons panel (Back only)
         cartButtonsPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         cartButtonsPanel.setBackground(new Color(70, 63, 58));
         cartButtonsPanel.add(backButton);
 
-        // Add actions
         addToCartButton.addActionListener(e -> {
             if (currentProduct != null) {
                 System.out.println("Adding to cart: " + currentProduct.getName());
@@ -129,7 +122,6 @@ public class ProductInfoPanel extends JPanel {
             showProductInfoPanel();
         });
 
-        // Show initial product info view
         showProductInfoPanel();
     }
 
@@ -210,7 +202,6 @@ public class ProductInfoPanel extends JPanel {
 
         add(cartScrollPane, BorderLayout.CENTER);
 
-        // Cart button panel (Back + Purchase)
         cartButtonsPanel.removeAll();
         cartButtonsPanel.add(backButton);
         cartButtonsPanel.add(purchaseCartButton);
@@ -233,6 +224,8 @@ public class ProductInfoPanel extends JPanel {
         productInfoPanel.repaint();
         currentProduct = product;
         System.out.println("showing product info for: " + product.getName());
+        
+        showProductInfoPanel();
     }
 
     private JLabel createLabel(String key, String value) {

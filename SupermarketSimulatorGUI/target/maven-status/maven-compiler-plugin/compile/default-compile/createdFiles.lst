@@ -144,5 +144,6 @@ com\pdcgame\Managers\RatingManager.class
 com\pdcgame\Printers\BuyEquipmentPrinter.class
 com\pdcgame\Panels\Pages\InventoryPagePanel.class
 com\pdcgame\Interfaces\IOUtilities.class
+com\pdcgame\Panels\PopularProductsPanel.class
 com\pdcgame\Printers\GameOverPrinter.class
 com\pdcgame\IOHandler.class
