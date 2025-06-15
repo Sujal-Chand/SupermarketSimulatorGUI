@@ -45,7 +45,11 @@ public class BottomCardPanel extends JPanel {
 
         JPanel panel = panels.get(name);
         if (panel != null) {
-            if (panel instanceof SubPagePanel) {
+            if (name.equals("Products") || name.equals("Open Store")) {
+                // Basic layout — just page + StoreStatusPanel
+                contentPanel.add(new DefaultPagePanel(panel), BorderLayout.CENTER);
+            } else if (panel instanceof SubPagePanel) {
+                // Full layout — SubPage + FunctionPage + StoreStatusPanel
                 FunctionPagePanel functionPage;
 
                 if (name.equals("Default") || name.equals("Inventory") || name.equals("Equipment")) {
@@ -56,8 +60,10 @@ public class BottomCardPanel extends JPanel {
 
                 contentPanel.add(new DefaultPagePanel((SubPagePanel) panel, functionPage), BorderLayout.CENTER);
             } else {
+                // Fallback (shouldn't hit)
                 contentPanel.add(panel, BorderLayout.CENTER);
             }
+
             contentPanel.revalidate();
             contentPanel.repaint();
         } else {

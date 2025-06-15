@@ -13,8 +13,9 @@ package com.pdcgame.Panels;
 import javax.swing.*;
 import java.awt.*;
 
-public class DefaultPagePanel extends JPanel{
+public class DefaultPagePanel extends JPanel {
 
+    // Constructor for full layout: SubPage + FunctionPage + StoreStatus
     public DefaultPagePanel(SubPagePanel subPage, FunctionPagePanel functionPage) {
         setLayout(new BorderLayout());
         add(subPage, BorderLayout.CENTER);
@@ -22,4 +23,10 @@ public class DefaultPagePanel extends JPanel{
         add(new StoreStatusPanel(), BorderLayout.SOUTH);
     }
 
+    // Constructor for simpler layout: Just a plain JPanel + StoreStatus
+    public DefaultPagePanel(JPanel simplePage) {
+        setLayout(new BorderLayout());
+        add(simplePage, BorderLayout.CENTER);
+        add(new StoreStatusPanel(), BorderLayout.SOUTH);
+    }
 }

@@ -56,7 +56,7 @@ public class ProductPagePanel extends JPanel {
 
         // Info Panel
         productInfoPanel = new ProductInfoPanel();
-        productInfoPanel.setBounds(880, 0, 400, 580); // Adjust as needed
+        productInfoPanel.setBounds(880, 0, 400, 584); // Adjust as needed
         add(productInfoPanel);
 
         // ShelfPanel setup with listener
