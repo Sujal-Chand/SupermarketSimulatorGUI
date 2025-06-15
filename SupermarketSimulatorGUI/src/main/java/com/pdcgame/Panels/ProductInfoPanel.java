@@ -9,6 +9,9 @@ package com.pdcgame.Panels;
  * @author prish
  */
 import com.pdcgame.Enums.InternalCases;
+import com.pdcgame.GamePersistence;
+import com.pdcgame.GameState;
+import com.pdcgame.Managers.ActionManager;
 import javax.swing.*;
 import java.awt.*;
 
@@ -80,6 +83,8 @@ public class ProductInfoPanel extends JPanel {
                     case SUCCESS:
                         cartPanel.removeAll();
                         messageLabel = createCenteredMessageLabel("Purchase complete! Thanks.");
+                        ActionManager.tryActionUpdate();
+                        System.out.println(GameState.instance().getActions());
                         break;
                     default:
                         messageLabel = createLabel("Unknown error occurred.", "");

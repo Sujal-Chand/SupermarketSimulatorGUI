@@ -28,7 +28,9 @@ public class StorePagePanel extends JPanel {
     private final ScenarioManager scenarioManager = new ScenarioManager();
     private final JLabel storeStatusBanner;
     private final JPanel scenarioImageContainer; 
+    private JLabel timeLabel = new JLabel("Time: --:--");
 
+    
     public StorePagePanel() {
         setLayout(null);
         setBackground(new Color(236, 234, 213));
@@ -38,6 +40,21 @@ public class StorePagePanel extends JPanel {
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
         add(titleLabel);
+        
+        JLabel subTitleLabel = new JLabel("- open/close your store");
+        subTitleLabel.setBounds(120, 10, 400, 40);
+        subTitleLabel.setForeground(new Color(66, 62, 55));
+        subTitleLabel.setFont(new Font("Impact", Font.PLAIN, 30));
+        add(subTitleLabel);
+        
+        timeLabel.setFont(new Font("Courier New", Font.BOLD, 18));
+        timeLabel.setBounds(1090, 10, 175, 40);
+        timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        timeLabel.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY, 0));
+        timeLabel.setOpaque(true);
+        timeLabel.setBackground(new Color(250, 250, 240));
+        add(timeLabel);
+        
 
         JButton openStoreButton = new JButton("Open Store");
         openStoreButton.setBounds(10, 60, 180, 40);
@@ -72,7 +89,7 @@ public class StorePagePanel extends JPanel {
         scenarioImageLabel = new JLabel("", SwingConstants.CENTER);
         scenarioImageContainer.add(scenarioImageLabel, BorderLayout.CENTER);
 
-        scenarioTimer = new Timer(1000, e -> showNextMessage());
+        scenarioTimer = new Timer(200, e -> showNextMessage());
 
         openStoreButton.addActionListener(e -> {
             messagePanel.removeAll();
@@ -101,6 +118,11 @@ public class StorePagePanel extends JPanel {
         if (currentMsgIndex < scenarioMessages.size()) {
             String msg = scenarioMessages.get(currentMsgIndex++);
             String iconPath = determineIcon(msg);
+
+        if (msg.startsWith("============ Time: ")) {
+            String extractedTime = msg.replace("============ Time: ", "").replace(" ============", "").trim();
+            timeLabel.setText("Time: " + extractedTime);
+        }
             addMessage(msg, iconPath);
         } else {
             scenarioTimer.stop();
@@ -113,19 +135,26 @@ public class StorePagePanel extends JPanel {
         storeStatusBanner.setBackground(Color.RED);
 
         scenarioImageContainer.removeAll();
-
+        
         JPanel endOfDayStats = new JPanel();
         endOfDayStats.setLayout(new BoxLayout(endOfDayStats, BoxLayout.Y_AXIS));
         endOfDayStats.setBackground(new Color(250, 250, 240));
-        endOfDayStats.setBorder(BorderFactory.createTitledBorder("End of Day Stats"));
+        
+        JLabel titleLabel = new JLabel("End OF Day Stats", SwingConstants.CENTER);
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titleLabel.setForeground(new Color(66, 62, 55));
+        titleLabel.setFont(new Font("Impact", Font.PLAIN, 40));
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
+        endOfDayStats.add(titleLabel);
 
         JLabel revenueLabel = new JLabel("Number of Sales: " + GameState.instance().getEndOfDayManager().getSalesAmount());
-        JLabel profitLabel = new JLabel("Sales Value: $" + GameState.instance().getEndOfDayManager().getSalesValue());
+        JLabel profitLabel = new JLabel("Sales Value: $" + String.format("%.2f", GameState.instance().getEndOfDayManager().getSalesValue()));
         JLabel soldLabel = new JLabel("Items Stolen: " + GameState.instance().getEndOfDayManager().getRobberyQty());
-        JLabel lostSalesLabel = new JLabel("Stolen Value: $" + GameState.instance().getEndOfDayManager().getRobberyValue());
+        JLabel lostSalesLabel = new JLabel("Stolen Value: $" + String.format("%.2f", GameState.instance().getEndOfDayManager().getRobberyValue()));
 
         Font statFont = new Font("Courier New", Font.BOLD, 20);
         for (JLabel label : new JLabel[]{revenueLabel, profitLabel, soldLabel, lostSalesLabel}) {
+            label.setAlignmentX(Component.CENTER_ALIGNMENT); 
             label.setFont(statFont);
             label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             endOfDayStats.add(label);

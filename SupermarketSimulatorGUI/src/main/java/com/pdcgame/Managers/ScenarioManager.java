@@ -1,6 +1,5 @@
 package com.pdcgame.Managers;
 
-import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.Enums.ScenarioType;
 import com.pdcgame.Interfaces.Scenario;
 import com.pdcgame.GameState;
@@ -93,15 +92,20 @@ public class ScenarioManager {
         List<String> allMessages = new ArrayList<>();
         usedToday.clear();
 
-        // Loop through store hours
         for (int hour = 9; hour <= 17; hour++) {
             selectedScenarios.clear();
             int numEvents = 5 + random.nextInt(11);
             Set<ScenarioType> addedThisHour = new HashSet<>();
             int totalWeight = Arrays.stream(ScenarioType.values()).mapToInt(ScenarioType::getWeight).sum();
 
-            // Select scenarios for this hour
-            while (selectedScenarios.size() < numEvents) {
+            String time = String.format("============ Time: %02d:00 %s ============",
+                    (hour > 12 ? hour - 12 : hour),
+                    (hour < 12 ? "AM" : "PM"));
+            allMessages.add(time);
+
+            boolean selectedUniquePerHour = false;
+
+            while (selectedScenarios.size() < numEvents && !selectedUniquePerHour) {
                 int roll = random.nextInt(totalWeight);
                 int cumulative = 0;
                 for (ScenarioType type : ScenarioType.values()) {
@@ -111,38 +115,40 @@ public class ScenarioManager {
                             (type.isUniquePerDay() && usedToday.contains(type))) {
                             break;
                         }
+
                         if (type.isUniquePerHour()) {
                             selectedScenarios.clear();
                             selectedScenarios.add(type);
                             addedThisHour.add(type);
                             if (type.isUniquePerDay()) usedToday.add(type);
+                            selectedUniquePerHour = true; 
                             break;
                         }
+
                         selectedScenarios.add(type);
                         if (type.isUniquePerDay()) usedToday.add(type);
+                        addedThisHour.add(type);
                         break;
                     }
                 }
             }
 
-            // Run each selected scenario and collect messages
             for (ScenarioType type : selectedScenarios) {
                 Scenario scenario = type.createScenario();
                 String product = scenario.needsProduct() ? getRandomProduct() : null;
                 scenario.execute(product);
 
-                // Assume scenario stores messages internally and has getMessages()
                 if (scenario.getMessages() != null) {
                     allMessages.addAll(scenario.getMessages());
                 } else {
-                    // If no getMessages()
                     allMessages.add("[Scenario " + type.name() + " executed.]");
                 }
             }
         }
+        ScenarioType.resetToDefaultWeights();
         return allMessages;
+        
     }
-
     //returns a random product from inventory
     private String getRandomProduct() {
         // this will always return a random product in the store

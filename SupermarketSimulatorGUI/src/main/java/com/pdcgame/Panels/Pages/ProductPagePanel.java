@@ -30,11 +30,18 @@ public class ProductPagePanel extends JPanel {
         setLayout(null);
         setBackground(new Color(236, 234, 213));
 
-        JLabel titleLabel = new JLabel("Products Page");
+        JLabel titleLabel = new JLabel("Products");
         titleLabel.setBounds(20, 10, 400, 40);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
         add(titleLabel);
+        
+        JLabel subTitleLabel = new JLabel("- here you can choose to purchase products and see weekly popular products");
+        subTitleLabel.setBounds(120, 10, 1500, 40);
+        subTitleLabel.setForeground(new Color(66, 62, 55));
+        subTitleLabel.setFont(new Font("Impact", Font.PLAIN, 30));
+        //add(subTitleLabel);
+
 
         // Buttons
         JButton shelfButton = new JButton("Shelf");

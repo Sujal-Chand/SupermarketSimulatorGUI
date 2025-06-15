@@ -58,7 +58,6 @@ public class CartManager extends ProductStorage {
             gameInstance.getInventoryManager().addToInventory(entry.getKey(), quantityAddForInventory(entry.getKey()));
         }
         BankManager.subtractBalance(cartTotalValue());
-        GamePersistence.saveGame();
         removeAllProducts();
     }
 
