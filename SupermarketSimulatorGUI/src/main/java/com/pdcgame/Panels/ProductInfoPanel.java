@@ -68,7 +68,6 @@ public class ProductInfoPanel extends JPanel {
                 cartPanel.removeAll();
                 cartPanel.add(createLabel("Purchase complete! Thanks.", ""));
                 CartManager.instance().checkoutCart();
-                ActionManager.tryActionUpdate();
                 revalidate();
                 repaint();               
 
@@ -104,6 +103,8 @@ public class ProductInfoPanel extends JPanel {
         });
 
         backButton.addActionListener(e -> {
+            productInfoPanel.removeAll();
+            productInfoPanel.add(createLabel("Click a product", ""));
             showProductInfoPanel();
         });
 
@@ -112,8 +113,7 @@ public class ProductInfoPanel extends JPanel {
     }
 
     private void showProductInfoPanel() {
-        removeAll(); // Remove everything before adding new
-
+        removeAll();
         JLabel titleLabel = new JLabel("Product Info", SwingConstants.CENTER);
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Courier New", Font.BOLD, 20));
@@ -128,7 +128,7 @@ public class ProductInfoPanel extends JPanel {
     }
 
     private void showCartPanel() {
-        removeAll(); // Remove everything before adding new
+        removeAll();
 
         JLabel titleLabel = new JLabel("Cart", SwingConstants.CENTER);
         titleLabel.setForeground(Color.WHITE);
