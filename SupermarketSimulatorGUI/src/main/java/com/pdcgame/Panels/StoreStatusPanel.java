@@ -55,6 +55,9 @@ public class StoreStatusPanel extends JPanel{
 
         add(statsPanel, BorderLayout.WEST);
         add(ratingPanel, BorderLayout.EAST);
+
+        javax.swing.Timer timer = new javax.swing.Timer(250, e -> refresh());
+        timer.start();
     }
 
     private JPanel createStatBox(JLabel label, Font font, Color textColor, Border border, Insets padding) {

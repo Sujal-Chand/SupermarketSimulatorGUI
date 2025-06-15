@@ -9,6 +9,7 @@ package com.pdcgame.Panels.Pages;
  * @author prish
  */
 
+import com.pdcgame.GamePersistence;
 import com.pdcgame.GameState;
 import com.pdcgame.Managers.ScenarioManager;
 
@@ -100,7 +101,6 @@ public class StorePagePanel extends JPanel {
             scenarioImageContainer.add(scenarioImageLabel); 
             scenarioImageContainer.revalidate();
             scenarioImageContainer.repaint();
-
             storeStatusBanner.setText("STORE OPEN");
             storeStatusBanner.setBackground(new Color(0, 153, 0)); 
 
@@ -151,7 +151,7 @@ public class StorePagePanel extends JPanel {
         JLabel profitLabel = new JLabel("Sales Value: $" + String.format("%.2f", GameState.instance().getEndOfDayManager().getSalesValue()));
         JLabel soldLabel = new JLabel("Items Stolen: " + GameState.instance().getEndOfDayManager().getRobberyQty());
         JLabel lostSalesLabel = new JLabel("Stolen Value: $" + String.format("%.2f", GameState.instance().getEndOfDayManager().getRobberyValue()));
-
+        GameState.instance().getEndOfDayManager().handleEndOfDay();
         Font statFont = new Font("Courier New", Font.BOLD, 20);
         for (JLabel label : new JLabel[]{revenueLabel, profitLabel, soldLabel, lostSalesLabel}) {
             label.setAlignmentX(Component.CENTER_ALIGNMENT); 
