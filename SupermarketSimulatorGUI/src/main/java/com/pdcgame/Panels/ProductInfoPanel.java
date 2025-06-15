@@ -8,8 +8,7 @@ package com.pdcgame.Panels;
  *
  * @author prish
  */
-import com.pdcgame.GameState;
-import com.pdcgame.Managers.ActionManager;
+import com.pdcgame.Enums.InternalCases;
 import javax.swing.*;
 import java.awt.*;
 
@@ -65,16 +64,32 @@ public class ProductInfoPanel extends JPanel {
         styleButton(purchaseCartButton);
         purchaseCartButton.addActionListener(e -> {
             if (!CartManager.instance().cartEmpty()) {
-                cartPanel.removeAll();
-                cartPanel.add(createLabel("Purchase complete! Thanks.", ""));
-                CartManager.instance().checkoutCart();
-                revalidate();
-                repaint();               
 
-                
+                // Check if cart can be purchased
+                InternalCases result = CartManager.instance().canCheckoutCart();
+
+                JLabel messageLabel;
+                switch (result) {
+                    case NO_ACTIONS:
+                        messageLabel = createLabel("Cannot purchase: No actions remaining.", "");
+                        break;
+                    case NO_FUNDS:
+                        messageLabel = createLabel("Cannot purchase: Not enough funds.", "");
+                        break;
+                    case SUCCESS:
+                        cartPanel.removeAll();
+                        messageLabel = createLabel("Purchase complete! Thanks.", "");
+                        break;
+                    default:
+                        messageLabel = createLabel("Unknown error occurred.", "");
+                        break;
+                }
+
+                cartPanel.add(messageLabel);
+                revalidate();
+                repaint();
             }
         });
-
         // Product buttons panel (Add + View)
         productButtonsPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         productButtonsPanel.setBackground(new Color(70, 63, 58));
@@ -143,7 +158,39 @@ public class ProductInfoPanel extends JPanel {
             cartPanel.add(createLabel("Cart is empty.", ""));
         } else {
             for (Map.Entry<String, Integer> entry : items.entrySet()) {
-                cartPanel.add(createLabel(entry.getKey(), "Quantity: " + entry.getValue()));
+                String productName = entry.getKey();
+                int currentQty = entry.getValue();
+
+                JPanel itemPanel = new JPanel();
+                itemPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+                itemPanel.setBackground(new Color(70, 63, 58));
+
+                JLabel nameLabel = new JLabel(productName + ": ");
+                nameLabel.setFont(new Font("Courier New", Font.PLAIN, 16));
+                nameLabel.setForeground(Color.WHITE);
+
+                JSpinner qtySpinner = new JSpinner(new SpinnerNumberModel(currentQty, 0, 100, 1));
+                qtySpinner.setPreferredSize(new Dimension(60, 25));
+
+                JButton updateButton = new JButton("Update");
+                styleButton(updateButton);
+
+                updateButton.addActionListener(e -> {
+                    int newQty = (Integer) qtySpinner.getValue();
+                    if (newQty <= 0) {
+                        CartManager.instance().removeProduct(productName, currentQty);
+                    } else {
+                        CartManager.instance().removeProduct(productName, currentQty);
+                        CartManager.instance().addProduct(productName, newQty);
+                    }
+                    showCartPanel();
+                });
+
+                itemPanel.add(nameLabel);
+                itemPanel.add(qtySpinner);
+                itemPanel.add(updateButton);
+
+                cartPanel.add(itemPanel);
             }
         }
 
@@ -212,7 +259,7 @@ public class ProductInfoPanel extends JPanel {
     }
     
     private void styleSmallButton(JButton button) {
-        button.setFont(new Font("Courier New", Font.BOLD, 14));
+        button.setFont(new Font("Courier New", Font.PLAIN, 5));
         button.setBackground(new Color(110, 100, 90));
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
