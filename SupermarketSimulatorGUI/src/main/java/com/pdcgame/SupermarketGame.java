@@ -28,11 +28,11 @@ public class SupermarketGame {
             JPanel container = new JPanel();
             container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
-            // interactable CardLayout Panel 
+            // interactable CardLayout Panel
             BottomCardPanel bottomCardPanel = new BottomCardPanel();
             
             // interactable TopPanel used to switch cards
-            TopPanel topPanel = new TopPanel(bottomCardPanel);
+            TopPanel topPanel = TopPanel.getInstance(bottomCardPanel);
             
             // set fixed heights
             int frameHeight = frame.getHeight();

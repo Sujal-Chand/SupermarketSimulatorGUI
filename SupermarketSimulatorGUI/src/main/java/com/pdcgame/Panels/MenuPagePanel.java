@@ -193,13 +193,14 @@ public class MenuPagePanel extends JPanel {
         
     }
     
-    //set game instance to chose difculty and switch screens
+    //set game instance to chose difficulty and switch screens
     private void setupDifficultyButton(JButton button, Difficulty difficulty) {
     button.addActionListener(e -> {
         GameState.instance().setDifficulty(difficulty);
         GamePersistence.saveGame();
         System.out.println("Difficulty chosen: "+GameState.instance().getDifficulty());
         bottomCardPanel.showPanel("Default");
+        TopPanel.getInstance().addButtons();
     });
     }
 

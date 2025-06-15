@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/MenuPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/MenuPagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/SupermarketGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/SupermarketGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2yXJCh3jjr0RoUfCwAMQhB1XvYf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MainWindow.executor": "Run",
+    "Application.SupermarketGame.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "equipment-inventory-branch",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/sujal/OneDrive/Desktop/Github/SupermarketSimulatorGUI/SupermarketSimulatorGUI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="SupermarketGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pdcgame.SupermarketGame" />
+      <module name="SupermarketSimulatorGUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pdcgame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SupermarketGame" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="" />
+      <created>1749974858521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749974858521</updated>
+      <workItem from="1749974859818" duration="298000" />
+      <workItem from="1749975175831" duration="34000" />
+      <workItem from="1749975218239" duration="3780000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
