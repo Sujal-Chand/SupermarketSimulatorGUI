@@ -4,9 +4,9 @@
  */
 package com.pdcgame.Panels;
 
-import com.pdcgame.Panels.Pages.InventoryPagePanel;
+import com.pdcgame.Panels.Pages.InventoryControllerPagePanel;
 import com.pdcgame.Panels.Pages.OpenStorePagePanel;
-import com.pdcgame.Panels.Pages.EquipmentPagePanel;
+import com.pdcgame.Panels.Pages.EquipmentControllerPagePanel;
 import com.pdcgame.Panels.Pages.InstructionPagePanel;
 import com.pdcgame.Panels.Pages.ProductPagePanel;
 import javax.swing.*;
@@ -30,9 +30,9 @@ public class BottomCardPanel extends JPanel {
 
         panels.put("Menu", new MenuPagePanel(this));
         panels.put("Default", new InstructionPagePanel());
-        panels.put("Equipment", new EquipmentPagePanel());
+        panels.put("Equipment", EquipmentControllerPagePanel.getInstance());
         panels.put("Products", new ProductPagePanel());
-        panels.put("Inventory", new InventoryPagePanel());
+        panels.put("Inventory", new InventoryControllerPagePanel());
         panels.put("Open Store", new OpenStorePagePanel());
 
         add(contentPanel, BorderLayout.CENTER);
@@ -53,6 +53,7 @@ public class BottomCardPanel extends JPanel {
                 FunctionPagePanel functionPage;
 
                 if (name.equals("Default") || name.equals("Inventory") || name.equals("Equipment")) {
+                    EquipmentControllerPagePanel.getInstance().updateView();
                     functionPage = new GameBoardPanel();
                 } else {
                     functionPage = new BuyProductsPanel();

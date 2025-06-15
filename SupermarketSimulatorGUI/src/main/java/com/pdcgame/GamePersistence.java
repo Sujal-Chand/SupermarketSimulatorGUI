@@ -30,7 +30,7 @@ public class GamePersistence {
     public static void newSave() {
         BankManager.setInitialBalance(); // set initial bank balance for a new save
         RatingManager.setInitialRating(); // set initial store rating
-        GameState.instance().getBoardManager().initalizeBoard(); // initialize the board
+        GameState.instance().getBoardManager().initializeBoard(); // initialize the board
         GameState.instance().getFloorStorageManager().initalizeStorage(); // initalize the storage
         GameState.instance().getInventoryManager().initializeInventory(); // initialize the inventory to contain all purchasable products
         

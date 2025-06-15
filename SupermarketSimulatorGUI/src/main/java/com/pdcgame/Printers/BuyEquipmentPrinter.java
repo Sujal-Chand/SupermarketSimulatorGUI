@@ -27,7 +27,7 @@ public class BuyEquipmentPrinter extends Printer {
         System.out.println(dash);
         // print all purchasable equipment
         for (BoardCell cell : BoardCell.values()) {
-            if(!cell.getIcon().equalsIgnoreCase("[   ]")){
+            if(!cell.getIcon().equalsIgnoreCase("[ E ]")){
                 System.out.printf("%-20s %s : Cost: $%-7.2f %s",
                         cell, cell.getIcon(), cell.getItemCost(), "");
             }

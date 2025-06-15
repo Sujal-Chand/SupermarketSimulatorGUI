@@ -57,9 +57,9 @@ public class GameGridPanel extends JPanel {
             label.setFont(new Font("Dialog", Font.BOLD, 10));
             label.setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
 
-            int finalX = x;
-            int finalY = y;
-
+            int[] finalCoords = new int[2];
+            finalCoords[0] = x;
+            finalCoords[1] = y;
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseEntered(MouseEvent e) {
@@ -74,7 +74,8 @@ public class GameGridPanel extends JPanel {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    System.out.println("Label x,y = " + finalX + ", " + finalY + " was clicked!");
+                    GameState.instance().getBoardManager().setSelectedCell(finalCoords);
+                    System.out.println("Label x,y = " + finalCoords[0] + ", " + finalCoords[1] + " was clicked!");
                     PanelNavigator.getInstance().switchPanel("Equipment");
                 }
             });
@@ -90,7 +91,7 @@ public class GameGridPanel extends JPanel {
 
         for (int x = 0; x < COLS; x++) {
             for (int y = 0; y < ROWS; y++) {
-                labelGrid[x][y].setText(board[x][y].getIcon());
+                labelGrid[x][y].setText(board[y][x].getIcon());
             }
         }
 
