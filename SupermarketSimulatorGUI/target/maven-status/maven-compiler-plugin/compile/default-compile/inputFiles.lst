@@ -73,6 +73,7 @@ C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\mai
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Pages\SetPricePage.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Pages\StoragePage.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\BottomCardPanel.java
+C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\BuyEquipmentPanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\BuyProductsPanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\DefaultPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\FreezerPanel.java
@@ -80,10 +81,11 @@ C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\mai
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\FunctionPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\GameBoardPanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\GameGridPanel.java
+C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\ManageEquipmentPanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\MenuPagePanel.java
-C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\EquipmentPagePanel.java
+C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\EquipmentControllerPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\InstructionPagePanel.java
-C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\InventoryPagePanel.java
+C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\InventoryControllerPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\ProductPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\Pages\StorePagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\PanelNavigator.java
@@ -98,6 +100,7 @@ C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\mai
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\SubFunctionPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\SubPagePanel.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Panels\TutorialPanel.java
+C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\PriceChangeDialog.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Printers\BuyEquipmentPrinter.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Printers\BuyProductPrinter.java
 C:\Users\prish\Documents\SupermarketSimulatorGUI\SupermarketSimulatorGUI\src\main\java\com\pdcgame\Printers\CartPrinter.java
