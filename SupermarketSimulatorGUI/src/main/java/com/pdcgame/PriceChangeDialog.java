@@ -53,6 +53,7 @@ public class PriceChangeDialog {
                     JOptionPane.showMessageDialog(parentComponent,
                             "Changed price of " + productName + " to $" + String.format("%.2f", newPrice),
                             "Success", JOptionPane.INFORMATION_MESSAGE);
+                    GamePersistence.saveGame();
                     ActionManager.futureConsume();
                     return true;
                 } catch (NumberFormatException ex) {
@@ -69,6 +70,7 @@ public class PriceChangeDialog {
                 JOptionPane.showMessageDialog(parentComponent,
                         "Set price of " + productName + " to recommended: $" + String.format("%.2f", roundedRecommended),
                         "Success", JOptionPane.INFORMATION_MESSAGE);
+                GamePersistence.saveGame();
                 ActionManager.futureConsume();
                 return true;
             }

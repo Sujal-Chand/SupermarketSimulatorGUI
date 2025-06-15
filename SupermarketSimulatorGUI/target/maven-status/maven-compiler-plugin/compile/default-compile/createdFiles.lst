@@ -100,7 +100,6 @@ com\pdcgame\Printers\EquipmentPrinter.class
 com\pdcgame\DisplayObjects\GameBoard.class
 com\pdcgame\Pages\SetPricePage.class
 com\pdcgame\Panels\BottomCardPanel.class
-com\pdcgame\Panels\Pages\EquipmentPagePanel.class
 com\pdcgame\Panels\ProductInfoPanel.class
 com\pdcgame\Panels\SubFunctionPagePanel.class
 com\pdcgame\Pages\StoragePage.class
@@ -139,7 +138,6 @@ com\pdcgame\Pages\BuyEquipmentPage.class
 com\pdcgame\Enums\ScenarioType$1.class
 com\pdcgame\Managers\RatingManager.class
 com\pdcgame\Printers\BuyEquipmentPrinter.class
-com\pdcgame\Panels\Pages\InventoryPagePanel.class
 com\pdcgame\Interfaces\IOUtilities.class
 com\pdcgame\Panels\PopularProductsPanel.class
 com\pdcgame\Printers\GameOverPrinter.class
