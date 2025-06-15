@@ -15,6 +15,7 @@ import com.pdcgame.Panels.ProductInfoPanel;
 import com.pdcgame.Panels.ShelfPanel;
 import com.pdcgame.Panels.StoreStatusPanel;
 import com.pdcgame.Panels.SubPagePanel;
+import com.pdcgame.Panels.PopularProductsPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,14 +40,41 @@ public class ProductPagePanel extends JPanel {
         JButton shelfButton = new JButton("Shelf");
         JButton fridgeButton = new JButton("Fridge");
         JButton freezerButton = new JButton("Freezer");
+        JButton popularButton = new JButton("Popular");
 
-        shelfButton.setBounds(50, 60, 100, 30);
-        fridgeButton.setBounds(160, 60, 100, 30);
-        freezerButton.setBounds(270, 60, 100, 30);
+        shelfButton.setBounds(20, 60, 100, 30);
+        fridgeButton.setBounds(130, 60, 100, 30);
+        freezerButton.setBounds(240, 60, 110, 30);
+        popularButton.setBounds(360, 60, 110, 30);
+        
+        Font buttonFont = new Font("Courier New", Font.BOLD, 16);
+        Color buttonBg = new Color(250, 250, 240);
+        Color buttonFg = new Color(90, 80, 75);
+
+        shelfButton.setFont(buttonFont);
+        fridgeButton.setFont(buttonFont);
+        freezerButton.setFont(buttonFont);
+        popularButton.setFont(buttonFont);
+
+        shelfButton.setBackground(buttonBg);
+        fridgeButton.setBackground(buttonBg);
+        freezerButton.setBackground(buttonBg);
+        popularButton.setBackground(buttonBg);
+
+        shelfButton.setForeground(buttonFg);
+        fridgeButton.setForeground(buttonFg);
+        freezerButton.setForeground(buttonFg);
+        popularButton.setForeground(buttonFg);
+        
+        shelfButton.setFocusPainted(false);
+        fridgeButton.setFocusPainted(false);
+        freezerButton.setFocusPainted(false);
+        popularButton.setFocusPainted(false);
 
         add(shelfButton);
         add(fridgeButton);
         add(freezerButton);
+        add(popularButton);
 
         // Panels
         cardLayout = new CardLayout();
@@ -68,15 +96,20 @@ public class ProductPagePanel extends JPanel {
         
         FreezerPanel freezerPanel = new FreezerPanel();
         freezerPanel.setProductClickListener(product -> productInfoPanel.showProductInfo(product));
+
+        PopularProductsPanel popularPanel = new PopularProductsPanel();
+        popularButton.addActionListener(e -> cardLayout.show(contentPanel, "popular"));
         
         contentPanel.add(shelfPanel, "shelf");
         contentPanel.add(fridgePanel, "fridge");
         contentPanel.add(freezerPanel, "freezer");
+        contentPanel.add(popularPanel, "popular");
 
         add(contentPanel);
 
         shelfButton.addActionListener(e -> cardLayout.show(contentPanel, "shelf"));
         fridgeButton.addActionListener(e -> cardLayout.show(contentPanel, "fridge"));
         freezerButton.addActionListener(e -> cardLayout.show(contentPanel, "freezer"));
+        popularButton.addActionListener(e -> cardLayout.show(contentPanel, "popular"));
     }
 }

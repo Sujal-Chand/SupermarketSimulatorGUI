@@ -37,7 +37,7 @@ public class TutorialPanel extends JPanel {
         setOpaque(false); // So it overlays nicely
 
         instructionBox = new JPanel(null);
-        instructionBox.setBackground(new Color(245, 240, 235));
+        instructionBox.setBackground(new Color(250, 250, 240));
         instructionBox.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(Color.GRAY, 1),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)

@@ -9,6 +9,7 @@ package com.pdcgame.Panels.Pages;
  * @author prish
  */
 
+import com.pdcgame.GameState;
 import com.pdcgame.Managers.ScenarioManager;
 
 import javax.swing.*;
@@ -70,7 +71,7 @@ public class OpenStorePagePanel extends JPanel {
             currentMsgIndex = 0;
 
             if (scenarioMessages.isEmpty()) {
-                addMessage("✅ Store opened normally. No issues encountered.", "/images/default.png");
+                addMessage("Store opened normally. No issues encountered.", "/images/default.png");
             } else {
                 scenarioTimer.start();
             }
@@ -101,11 +102,22 @@ public class OpenStorePagePanel extends JPanel {
 
         SwingUtilities.invokeLater(() -> scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum()));
 
-        URL resource = getClass().getResource(iconPath);
-        if (resource != null) {
-            ImageIcon icon = new ImageIcon(resource);
-            Image scaled = icon.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
-            scenarioImageLabel.setIcon(new ImageIcon(scaled));
+        URL imgUrl = getClass().getResource(iconPath);
+        if (imgUrl != null) {
+            ImageIcon icon = new ImageIcon(imgUrl);
+            Image img = icon.getImage();
+
+            int originalWidth = img.getWidth(null);
+            int originalHeight = img.getHeight(null);
+
+            int maxDimension = 400;
+            double scale = (double) maxDimension / Math.max(originalWidth, originalHeight);
+
+            int newWidth = (int) (originalWidth * scale);
+            int newHeight = (int) (originalHeight * scale);
+
+            Image scaledImage = img.getScaledInstance(newWidth, newHeight, Image.SCALE_SMOOTH);
+            scenarioImageLabel.setIcon(new ImageIcon(scaledImage));
         }
     }
 
