@@ -5,24 +5,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ProductCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ProductGridPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/dbex.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/README_DO_NOT_TOUCH_FILES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c10.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c101.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c111.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c121.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c130.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c141.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c150.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c161.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c171.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c180.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c191.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1e0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c1f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c20.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c200.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c211.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c221.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c230.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c241.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c251.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c260.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c271.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c281.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c290.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c2f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c300.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c31.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c311.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c321.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c331.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c340.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c351.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c361.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c371.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c380.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c391.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3a1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3b1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3c0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3d1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c3f1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c400.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c41.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c411.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c421.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c430.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c441.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c451.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c461.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c470.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c481.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4c1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4e1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c51.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c5f0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c60.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c601.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c670.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c681.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c71.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c81.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c90.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/ca1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/cb1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/cc0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/cd1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/ce1.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/cf0.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/service.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/MenuPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/MenuPagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/TopPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/SupermarketGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/SupermarketGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/MenuPagePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/TopPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InstructionPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InstructionPagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryPagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InstructionPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InstructionPagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InventoryPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InventoryPagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,6 +144,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   }
