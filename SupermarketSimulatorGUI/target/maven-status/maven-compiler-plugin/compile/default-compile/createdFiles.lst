@@ -8,7 +8,6 @@ com\pdcgame\Interfaces\GameObject.class
 com\pdcgame\Panels\SubPagePanel.class
 com\pdcgame\Scenarios\LongLineScenario.class
 com\pdcgame\Finders\FindProductName.class
-com\pdcgame\Panels\SplitPagePanel.class
 com\pdcgame\Models\InventorySave.class
 com\pdcgame\Main.class
 com\pdcgame\Printers\PopularProductPrinter.class
@@ -17,7 +16,6 @@ com\pdcgame\Interfaces\BoardUtility.class
 com\pdcgame\Loaders\StorageLoader.class
 com\pdcgame\Pages\BuyProductPage.class
 com\pdcgame\Pages\ScenarioPage.class
-com\pdcgame\Panels\TopPanel.class
 com\pdcgame\Scenarios\ProductExpiryScenario.class
 com\pdcgame\Managers\FloorStorageManager.class
 com\pdcgame\Panels\Pages\ProductPagePanel.class
@@ -49,13 +47,13 @@ com\pdcgame\DisplayObjects\PreGameStats.class
 com\pdcgame\PageInputs\EquipmentInput.class
 com\pdcgame\Loaders\BoardCellLoader.class
 com\pdcgame\Panels\ProductInfoPanel$1.class
-com\pdcgame\Panels\SplitPagePanel$1.class
 com\pdcgame\Printers\InventoryStoragePrinter.class
 com\pdcgame\Managers\BuilderManager.class
 com\pdcgame\PageInputs\GameMenuInput.class
 com\pdcgame\Pages\ProductsPage.class
 com\pdcgame\Enums\PageName.class
 com\pdcgame\PageInputs\DifficultyInput.class
+com\pdcgame\Panels\Pages\StorePagePanel.class
 com\pdcgame\Managers\ProductManager.class
 com\pdcgame\Enums\BoardCell.class
 com\pdcgame\Printers\EndOfDayPrinter.class
@@ -97,7 +95,6 @@ com\pdcgame\PageNavigator.class
 com\pdcgame\Printers\ProductPrinter.class
 com\pdcgame\Interfaces\Scenario.class
 com\pdcgame\Panels\FreezerPanel.class
-com\pdcgame\Panels\Pages\OpenStorePagePanel.class
 com\pdcgame\Printers\ScenarioPrinter.class
 com\pdcgame\Printers\EquipmentPrinter.class
 com\pdcgame\DisplayObjects\GameBoard.class

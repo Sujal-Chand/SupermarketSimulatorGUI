@@ -57,7 +57,7 @@ public class PanelNavigator extends JPanel {
         addTabButton("Equipment");
         addTabButton("Inventory");
         addTabButton("Products");
-        addTabButton("Open Store");
+        addTabButton("Store");
 
         add(tabButtonPanel, BorderLayout.NORTH);  // Add it *after* buttons are ready
         updateButtonColors();

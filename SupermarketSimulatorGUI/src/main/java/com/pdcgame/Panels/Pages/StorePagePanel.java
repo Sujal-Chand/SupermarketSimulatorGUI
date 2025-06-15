@@ -17,7 +17,7 @@ import java.awt.*;
 import java.net.URL;
 import java.util.List;
 
-public class OpenStorePagePanel extends JPanel {
+public class StorePagePanel extends JPanel {
 
     private final JPanel messagePanel;
     private final JLabel scenarioImageLabel;
@@ -26,24 +26,34 @@ public class OpenStorePagePanel extends JPanel {
     private List<String> scenarioMessages;
     private int currentMsgIndex = 0;
     private final ScenarioManager scenarioManager = new ScenarioManager();
+    private final JLabel storeStatusBanner;
+    private final JPanel scenarioImageContainer; 
 
-    public OpenStorePagePanel() {
+    public StorePagePanel() {
         setLayout(null);
         setBackground(new Color(236, 234, 213));
 
-        JLabel titleLabel = new JLabel("Open Store");
+        JLabel titleLabel = new JLabel("Store");
         titleLabel.setBounds(20, 10, 400, 40);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
         add(titleLabel);
 
         JButton openStoreButton = new JButton("Open Store");
-        openStoreButton.setBounds(10, 60, 200, 40);
+        openStoreButton.setBounds(10, 60, 180, 40);
         openStoreButton.setFont(new Font("Courier New", Font.BOLD, 16));
         openStoreButton.setBackground(new Color(90, 80, 75));
         openStoreButton.setForeground(Color.WHITE);
         openStoreButton.setFocusPainted(false);
         add(openStoreButton);
+        
+        storeStatusBanner = new JLabel("STORE CLOSED", SwingConstants.CENTER);
+        storeStatusBanner.setBounds(230, 60, 300, 40);
+        storeStatusBanner.setFont(new Font("Courier New", Font.BOLD, 18));
+        storeStatusBanner.setOpaque(true);
+        storeStatusBanner.setBackground(Color.RED);
+        storeStatusBanner.setForeground(Color.WHITE);
+        add(storeStatusBanner);
 
         messagePanel = new JPanel();
         messagePanel.setLayout(new BoxLayout(messagePanel, BoxLayout.Y_AXIS));
@@ -54,10 +64,13 @@ public class OpenStorePagePanel extends JPanel {
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         add(scrollPane);
 
-        scenarioImageLabel = new JLabel();
-        scenarioImageLabel.setBounds(650, 100, 500, 500); 
-        scenarioImageLabel.setHorizontalAlignment(JLabel.CENTER);
-        add(scenarioImageLabel);
+        scenarioImageContainer = new JPanel(new BorderLayout()); 
+        scenarioImageContainer.setBounds(650, 100, 500, 500); 
+        scenarioImageContainer.setBackground(new Color(236, 234, 213));
+        add(scenarioImageContainer);
+        
+        scenarioImageLabel = new JLabel("", SwingConstants.CENTER);
+        scenarioImageContainer.add(scenarioImageLabel, BorderLayout.CENTER);
 
         scenarioTimer = new Timer(1000, e -> showNextMessage());
 
@@ -65,11 +78,17 @@ public class OpenStorePagePanel extends JPanel {
             messagePanel.removeAll();
             messagePanel.revalidate();
             messagePanel.repaint();
-            scenarioImageLabel.setIcon(null); 
+            scenarioImageLabel.setIcon(null);
+            scenarioImageContainer.removeAll();
+            scenarioImageContainer.add(scenarioImageLabel); 
+            scenarioImageContainer.revalidate();
+            scenarioImageContainer.repaint();
+
+            storeStatusBanner.setText("STORE OPEN");
+            storeStatusBanner.setBackground(new Color(0, 153, 0)); 
 
             scenarioMessages = scenarioManager.runDayAndGetMessages();
             currentMsgIndex = 0;
-
             if (scenarioMessages.isEmpty()) {
                 addMessage("Store opened normally. No issues encountered.", "/images/default.png");
             } else {
@@ -85,9 +104,38 @@ public class OpenStorePagePanel extends JPanel {
             addMessage(msg, iconPath);
         } else {
             scenarioTimer.stop();
+            endOfDay();
         }
     }
 
+    private void endOfDay() {
+        storeStatusBanner.setText("STORE CLOSED");
+        storeStatusBanner.setBackground(Color.RED);
+
+        scenarioImageContainer.removeAll();
+
+        JPanel endOfDayStats = new JPanel();
+        endOfDayStats.setLayout(new BoxLayout(endOfDayStats, BoxLayout.Y_AXIS));
+        endOfDayStats.setBackground(new Color(250, 250, 240));
+        endOfDayStats.setBorder(BorderFactory.createTitledBorder("End of Day Stats"));
+
+        JLabel revenueLabel = new JLabel("Number of Sales: " + GameState.instance().getEndOfDayManager().getSalesAmount());
+        JLabel profitLabel = new JLabel("Sales Value: $" + GameState.instance().getEndOfDayManager().getSalesValue());
+        JLabel soldLabel = new JLabel("Items Stolen: " + GameState.instance().getEndOfDayManager().getRobberyQty());
+        JLabel lostSalesLabel = new JLabel("Stolen Value: $" + GameState.instance().getEndOfDayManager().getRobberyValue());
+
+        Font statFont = new Font("Courier New", Font.BOLD, 20);
+        for (JLabel label : new JLabel[]{revenueLabel, profitLabel, soldLabel, lostSalesLabel}) {
+            label.setFont(statFont);
+            label.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+            endOfDayStats.add(label);
+        }
+
+        scenarioImageContainer.add(endOfDayStats, BorderLayout.CENTER);
+        scenarioImageContainer.revalidate();
+        scenarioImageContainer.repaint();
+    }
+    
     private void addMessage(String msg, String iconPath) {
         JPanel row = new JPanel(new FlowLayout(FlowLayout.LEFT));
         row.setBackground(new Color(250, 250, 240));

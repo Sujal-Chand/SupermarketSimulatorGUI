@@ -4,9 +4,9 @@
  */
 package com.pdcgame.Panels;
 
-import com.pdcgame.Panels.Pages.InventoryControllerPagePanel;
-import com.pdcgame.Panels.Pages.OpenStorePagePanel;
-import com.pdcgame.Panels.Pages.EquipmentControllerPagePanel;
+import com.pdcgame.Panels.Pages.InventoryPagePanel;
+import com.pdcgame.Panels.Pages.StorePagePanel;
+import com.pdcgame.Panels.Pages.EquipmentPagePanel;
 import com.pdcgame.Panels.Pages.InstructionPagePanel;
 import com.pdcgame.Panels.Pages.ProductPagePanel;
 import javax.swing.*;
@@ -30,10 +30,10 @@ public class BottomCardPanel extends JPanel {
 
         panels.put("Menu", new MenuPagePanel(this));
         panels.put("Default", new InstructionPagePanel());
-        panels.put("Equipment", EquipmentControllerPagePanel.getInstance());
+        panels.put("Equipment", new EquipmentPagePanel());
         panels.put("Products", new ProductPagePanel());
-        panels.put("Inventory", new InventoryControllerPagePanel());
-        panels.put("Open Store", new OpenStorePagePanel());
+        panels.put("Inventory", new InventoryPagePanel());
+        panels.put("Store", new StorePagePanel());
 
         add(contentPanel, BorderLayout.CENTER);
 
@@ -45,7 +45,7 @@ public class BottomCardPanel extends JPanel {
 
         JPanel panel = panels.get(name);
         if (panel != null) {
-            if (name.equals("Products") || name.equals("Open Store")) {
+            if (name.equals("Products") || name.equals("Store")) {
                 // Basic layout — just page + StoreStatusPanel
                 contentPanel.add(new DefaultPagePanel(panel), BorderLayout.CENTER);
             } else if (panel instanceof SubPagePanel) {
@@ -53,7 +53,6 @@ public class BottomCardPanel extends JPanel {
                 FunctionPagePanel functionPage;
 
                 if (name.equals("Default") || name.equals("Inventory") || name.equals("Equipment")) {
-                    EquipmentControllerPagePanel.getInstance().updateView();
                     functionPage = new GameBoardPanel();
                 } else {
                     functionPage = new BuyProductsPanel();
