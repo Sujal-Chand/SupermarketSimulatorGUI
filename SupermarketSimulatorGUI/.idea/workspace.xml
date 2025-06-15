@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
@@ -16,7 +15,13 @@
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentControllerPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/EquipmentControllerPagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/GameGridPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/GameGridPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/OpenStorePagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/OpenStorePagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "equipment-branch",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/sujal/OneDrive/Desktop/Github/SupermarketSimulatorGUI/SupermarketSimulatorGUI",
     "node.js.detected.package.eslint": "true",

@@ -69,7 +69,12 @@ public class GameGridPanel extends JPanel {
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    label.setBackground(labelColor);
+                    int[] selected = GameState.instance().getBoardManager().getSelectedCell();
+                    if (finalCoords[0] == selected[0] && finalCoords[1] == selected[1]) {
+                        label.setBackground(labelColor.darker().darker().darker());
+                    } else {
+                        label.setBackground(labelColor);
+                    }
                 }
 
                 @Override
@@ -88,10 +93,18 @@ public class GameGridPanel extends JPanel {
     // Call this function to update the grid with new icons
     public void updateBoard() {
         BoardCell[][] board = GameState.instance().getBoardManager().get2DBoard();
+        int[] selectedCell = GameState.instance().getBoardManager().getSelectedCell();
 
         for (int x = 0; x < COLS; x++) {
             for (int y = 0; y < ROWS; y++) {
-                labelGrid[x][y].setText(board[y][x].getIcon());
+                JLabel label = labelGrid[x][y];
+                label.setText(board[y][x].getIcon());
+
+                if (x == selectedCell[0] && y == selectedCell[1]) {
+                    label.setBackground(labelColor.darker().darker().darker()); // Highlight selected cell
+                } else {
+                    label.setBackground(labelColor);
+                }
             }
         }
 
