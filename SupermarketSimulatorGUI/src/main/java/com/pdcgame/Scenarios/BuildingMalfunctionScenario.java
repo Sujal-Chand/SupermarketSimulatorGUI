@@ -2,8 +2,6 @@ package com.pdcgame.Scenarios;
 
 import com.pdcgame.Interfaces.Scenario;
 import com.pdcgame.Managers.BankManager;
-import static com.pdcgame.Printers.Printer.*;
-
 import java.util.*;
 
 /**
@@ -11,10 +9,12 @@ import java.util.*;
  */
 public class BuildingMalfunctionScenario implements Scenario {
     private final Random random = new Random();
+    private final List<String> messages = new ArrayList<>();
 
     @Override
     public void execute(String product) {
-        //all issues along with their costs to repair
+        messages.clear();
+
         Map<String, Double> issueCosts = new HashMap<>();
         issueCosts.put("plumbing failure", 89.00);
         issueCosts.put("electrical outage", 120.00);
@@ -25,19 +25,23 @@ public class BuildingMalfunctionScenario implements Scenario {
         issueCosts.put("blocked drainage", 60.00);
         issueCosts.put("fire alarm fault", 41.00);
 
-        List<Map.Entry<String, Double>> entries = new ArrayList<>(issueCosts.entrySet());//get random issue
-        Map.Entry<String, Double> selectedIssue = entries.get(random.nextInt(entries.size())); //get issue repair cost
+        List<Map.Entry<String, Double>> entries = new ArrayList<>(issueCosts.entrySet());
+        Map.Entry<String, Double> selectedIssue = entries.get(random.nextInt(entries.size()));
 
-        printWithDelay("\n[BUILDING ISSUE] ", SMALL_DELAY);
-        printWithDelay("Store closes for an hour due to " + selectedIssue.getKey() + ".\n", BIG_DELAY);
-        printWithDelay("No sales made during this time.\n", BIG_DELAY);
-        printWithDelay("You are charged $" + String.format("%.2f", selectedIssue.getValue()) + " for repairs.", BIG_DELAY);
+        messages.add("[BUILDING ISSUE]");
+        messages.add("Store closes for an hour due to " + selectedIssue.getKey() + ".");
+        messages.add("No sales made during this time.");
+        messages.add("You are charged $" + String.format("%.2f", selectedIssue.getValue()) + " for repairs.");
 
-        BankManager.subtractBalance(selectedIssue.getValue()); //deduct repair cost from balance
+        BankManager.subtractBalance(selectedIssue.getValue());
     }
 
     @Override
     public boolean needsProduct() {
         return false;
+    }
+
+    public List<String> getMessages() {
+        return messages;
     }
 }

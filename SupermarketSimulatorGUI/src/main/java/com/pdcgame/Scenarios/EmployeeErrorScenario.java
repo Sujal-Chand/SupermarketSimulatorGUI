@@ -6,60 +6,53 @@ import com.pdcgame.Interfaces.Scenario;
 import com.pdcgame.Managers.BankManager;
 import com.pdcgame.Managers.ScenarioManager;
 import java.util.Random;
-
-import static com.pdcgame.Printers.Printer.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author prisha, sujal
  */
 public class EmployeeErrorScenario implements Scenario {
     private final Random random = new Random();
-    ScenarioManager scenarioManager = new ScenarioManager();
+    private final ScenarioManager scenarioManager = new ScenarioManager();
     private static final GameState gameInstance = GameState.instance();
+    private final List<String> messages = new ArrayList<>();
 
-    //set max incorrect change based off game difficulty
     private double maxIncorrectChange() {
-        switch (gameInstance.getDifficulty()) {
-            case Difficulty.Easy -> {
-                return 10.00;
-            }
-            case Difficulty.Normal -> {
-                return 20.00;
-            }
-            case Difficulty.Hard -> {
-                return 40.00;
-            }
-            default -> {
-                return 0.0;
-            }
-        }
+        return switch (gameInstance.getDifficulty()) {
+            case Difficulty.Easy -> 10.00;
+            case Difficulty.Normal -> 20.00;
+            case Difficulty.Hard -> 40.00;
+        };
     }
 
     @Override
     public void execute(String product) {
-        double incorrectChange = 1 + random.nextDouble(maxIncorrectChange()); // get random double for incorrect change (at least 1)
+        messages.clear();  // Clear previous messages
+        double incorrectChange = 1 + random.nextDouble(maxIncorrectChange());
 
-        //50% chance of either events happening
         if (random.nextBoolean()) {
-            //check if product is on shop floor
             if (!scenarioManager.outOfStock(product)) {
-                printWithDelay("\n[EMPLOYEE ERROR] ", SMALL_DELAY);
-                printWithDelay("Mistakenly removed 1 " + product + " from shop floor.", BIG_DELAY);
-                gameInstance.getFloorStorageManager().randomRemoveProduct(product, 1); //removes product from shop floor
+                messages.add("[EMPLOYEE ERROR]");
+                messages.add("Mistakenly removed 1 " + product + " from shop floor.");
+                gameInstance.getFloorStorageManager().randomRemoveProduct(product, 1);
             }
         } else {
-            //check if there is enough funds for incorrect change
-            if(BankManager.possiblePurchase(incorrectChange)) {
-                printWithDelay("\n[EMPLOYEE ERROR] ", SMALL_DELAY);
-                printWithDelay("Mistakenly gave $" + String.format("%.2f", incorrectChange) + " of incorrect change.", BIG_DELAY);
-                BankManager.subtractBalance(incorrectChange); //subtract incorrect change from balance
+            if (BankManager.possiblePurchase(incorrectChange)) {
+                messages.add("[EMPLOYEE ERROR]");
+                messages.add("Mistakenly gave $" + String.format("%.2f", incorrectChange) + " of incorrect change.");
+                BankManager.subtractBalance(incorrectChange);
             }
-
         }
     }
 
     @Override
     public boolean needsProduct() {
         return true;
+    }
+
+    @Override
+    public List<String> getMessages() {
+        return messages;
     }
 }

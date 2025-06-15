@@ -17,7 +17,8 @@ public class ScenarioManager {
     private final List<ScenarioType> selectedScenarios = new ArrayList<>();
     private final Set<ScenarioType> usedToday = new HashSet<>();
     private final GameState gameInstance = GameState.instance();
-    private final ScenarioPrinter scenarioPrinter = new ScenarioPrinter();
+    private final ScenarioPrinter scenarioPrinter = new ScenarioPrinter();     
+    private final List<Scenario> activeScenarios = new ArrayList<>();
 
     //Opens the store and runs through all the hours ands scenarios within it
     public void runDay() {
@@ -86,6 +87,60 @@ public class ScenarioManager {
                 scenario.execute(product); //gets a random product and passes it to the scenario
             }
         }
+    }
+
+    public List<String> runDayAndGetMessages() {
+        List<String> allMessages = new ArrayList<>();
+        usedToday.clear();
+
+        // Loop through store hours
+        for (int hour = 9; hour <= 17; hour++) {
+            selectedScenarios.clear();
+            int numEvents = 5 + random.nextInt(11);
+            Set<ScenarioType> addedThisHour = new HashSet<>();
+            int totalWeight = Arrays.stream(ScenarioType.values()).mapToInt(ScenarioType::getWeight).sum();
+
+            // Select scenarios for this hour
+            while (selectedScenarios.size() < numEvents) {
+                int roll = random.nextInt(totalWeight);
+                int cumulative = 0;
+                for (ScenarioType type : ScenarioType.values()) {
+                    cumulative += type.getWeight();
+                    if (roll < cumulative) {
+                        if ((type.isUniquePerHour() && addedThisHour.contains(type)) ||
+                            (type.isUniquePerDay() && usedToday.contains(type))) {
+                            break;
+                        }
+                        if (type.isUniquePerHour()) {
+                            selectedScenarios.clear();
+                            selectedScenarios.add(type);
+                            addedThisHour.add(type);
+                            if (type.isUniquePerDay()) usedToday.add(type);
+                            break;
+                        }
+                        selectedScenarios.add(type);
+                        if (type.isUniquePerDay()) usedToday.add(type);
+                        break;
+                    }
+                }
+            }
+
+            // Run each selected scenario and collect messages
+            for (ScenarioType type : selectedScenarios) {
+                Scenario scenario = type.createScenario();
+                String product = scenario.needsProduct() ? getRandomProduct() : null;
+                scenario.execute(product);
+
+                // Assume scenario stores messages internally and has getMessages()
+                if (scenario.getMessages() != null) {
+                    allMessages.addAll(scenario.getMessages());
+                } else {
+                    // If no getMessages(), consider adding a message directly
+                    allMessages.add("[Scenario " + type.name() + " executed.]");
+                }
+            }
+        }
+        return allMessages;
     }
 
     //returns a random product from inventory
