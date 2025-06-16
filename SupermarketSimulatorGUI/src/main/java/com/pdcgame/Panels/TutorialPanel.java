@@ -34,7 +34,7 @@ public class TutorialPanel extends JPanel {
 
     public TutorialPanel() {
         setLayout(null);
-        setOpaque(false); // So it overlays nicely
+        setOpaque(false);
 
         instructionBox = new JPanel(null);
         instructionBox.setBackground(new Color(250, 250, 240));
