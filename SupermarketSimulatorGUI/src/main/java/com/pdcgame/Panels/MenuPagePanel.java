@@ -255,6 +255,7 @@ public class MenuPagePanel extends JPanel {
             GamePersistence.loadGame();
         }
         PanelNavigator.getInstance().switchPanel("Default");
+        bottomCardPanel.showPanel("Default");
         PanelNavigator.getInstance().addButtons();
     }
 

@@ -114,6 +114,36 @@ public class StorePagePanel extends JPanel {
                 return; // stop further execution, do not open store
             }
 
+            // check if game over
+            double rating = GameState.instance().getRating();
+            if (GameState.instance().isGameOver()) {
+                String message;
+                if (rating > 4.5) {
+                    message = """
+                    CONGRATULATIONS! YOU'VE WON!
+                    YOU'VE BECOME A MASTER CAPITALIST AND CUSTOMERS LOVE YOUR STORE.
+                    
+                    ★★★★★
+                    """;
+                } else if (rating > 0.5) {
+                    message = """
+                    OH NO! GAME OVER.
+                    YOU FILED FOR BANKRUPTCY AND THE BANK HAS SHUT DOWN YOUR STORE.
+                    """;
+                } else {
+                    message = """
+                    OH NO! GAME OVER.
+                    CUSTOMERS MASS-REPORTED YOUR STORE AND BOYCOTTED IT INTO OBLIVION.
+                    """;
+                }
+
+                message += "\n\nThanks for playing. Created by Sujal and Prisha.";
+
+                JOptionPane.showMessageDialog(this, message, "Game Over", JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0);
+                return;
+            }
+
             // reset display
             messagePanel.removeAll();
             messagePanel.revalidate();

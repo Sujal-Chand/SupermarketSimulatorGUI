@@ -40,6 +40,12 @@ public class GameState {
         this.floorStorageManager = new FloorStorageManager();
     }
 
+    public boolean isGameOver() {
+        if(balance <= 0) return true;
+        if(rating > 4.5) return true;
+        if(rating < 1) return true;
+        return false;
+    }
     // return the singleton instance
     public static GameState instance() {
         return gameInstance;
