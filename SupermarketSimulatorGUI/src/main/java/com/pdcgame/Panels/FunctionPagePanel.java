@@ -13,11 +13,8 @@ import java.awt.*;
 
 public class FunctionPagePanel extends JPanel{
     public FunctionPagePanel() {
-        
         setLayout(new BorderLayout());
         setBackground(new Color(70, 63, 58));
         setPreferredSize(new Dimension(400, 0));
-        
     }
-    
 }

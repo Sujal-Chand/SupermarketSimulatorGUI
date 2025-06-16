@@ -2,6 +2,7 @@ package com.pdcgame;
 
 import com.pdcgame.Enums.ActionSource;
 import com.pdcgame.Managers.ActionManager;
+import com.pdcgame.Panels.Pages.EquipmentControllerPagePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -109,6 +110,7 @@ public class MoveOrRemoveDialog {
 
         ActionManager.futureConsume(ActionSource.CHANGE_STOCK);
         GamePersistence.saveGame();
+        EquipmentControllerPagePanel.getInstance().updateView();
         return true;
     }
 }

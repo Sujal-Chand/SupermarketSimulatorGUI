@@ -13,7 +13,7 @@ import com.pdcgame.Panels.PanelNavigator;
 import javax.swing.*;
 import java.awt.*;
 
-public class SupermarketGame {
+public class SupermarketGameGUI {
     public static void main(String[] args) {
         
         //LogSettings logSettings = new LogSettings(); // turns off Hibernate auto logging and warnings

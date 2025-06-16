@@ -27,6 +27,12 @@ import javax.swing.SwingConstants;
  *
  * @author sujalchand
  */
+import javax.swing.*;
+import java.awt.*;
+import java.net.URL;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class MenuPagePanel extends JPanel {
 
     private JPanel rightPanel;
@@ -35,22 +41,26 @@ public class MenuPagePanel extends JPanel {
     private JButton goBackButton;
     private final BottomCardPanel bottomCardPanel;
 
+    // timer to update button states every 1 second
+    private final Timer updateTimer;
+
     public MenuPagePanel(BottomCardPanel bottomCardPanel) {
         this.bottomCardPanel = bottomCardPanel;
+
+        // set layout and background color for main panel
         setLayout(new BorderLayout());
         setBackground(new Color(237, 235, 215));
-        
 
-        // left Panel creation and addition of elements
+        // create left panel with vertical box layout and padding
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.setBackground(getBackground());
         leftPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        // create image label and load supermarket image, scale if available
         JLabel imageLabel = new JLabel();
         imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         URL imageUrl = getClass().getResource("/supermarket.png");
-
         if (imageUrl != null) {
             ImageIcon icon = new ImageIcon(imageUrl);
             Image scaledImage = icon.getImage().getScaledInstance(190, 190, Image.SCALE_SMOOTH);
@@ -60,47 +70,46 @@ public class MenuPagePanel extends JPanel {
             imageLabel.setForeground(Color.RED);
         }
 
+        // create title label centered with impact font
         JLabel titleLabel = new JLabel("Supermarket Simulator", SwingConstants.CENTER);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 48));
         titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         titleLabel.setBorder(BorderFactory.createEmptyBorder(20, 0, 20, 0));
 
+        // create button panel for main menu buttons, vertical box layout
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(getBackground());
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
 
+        // define main menu buttons
         JButton loadGameButton = new JButton("Load Game");
         JButton newGameButton = new JButton("New Game");
         JButton quitButton = new JButton("Quit");
 
+        // button styling colors and dimensions
         Color btnBg = new Color(66, 62, 55);
         Color btnFg = new Color(237, 235, 215);
         Dimension buttonSize = new Dimension(400, 28);
 
+        // apply consistent styling to all main buttons
         for (JButton button : new JButton[]{loadGameButton, newGameButton, quitButton}) {
-            button.setBackground(btnBg);
-            button.setForeground(btnFg);
-            button.setFont(new Font("Courier New", Font.BOLD, 18));
-            button.setOpaque(true);
-            button.setBorderPainted(false);
-            button.setAlignmentX(Component.CENTER_ALIGNMENT);
-            button.setPreferredSize(buttonSize);
-            button.setMaximumSize(buttonSize);
-            button.setMinimumSize(buttonSize);
+            styleMainMenuButton(button, btnBg, btnFg, buttonSize);
         }
 
-        // button listeners
-        quitButton.addActionListener(e -> System.exit(0));
-        loadGameButton.addActionListener(e -> loadGame());
-        newGameButton.addActionListener(e -> showDifficulty());
+        // add button listeners
+        quitButton.addActionListener(e -> System.exit(0)); // quit button exits app
+        loadGameButton.addActionListener(e -> loadGame()); // load game button loads save
+        newGameButton.addActionListener(e -> showDifficulty()); // new game button shows difficulty options
 
-        if(GamePersistence.saveExists()) buttonPanel.add(loadGameButton);
+        // add buttons conditionally and with spacing
+        if (GamePersistence.saveExists()) buttonPanel.add(loadGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
         buttonPanel.add(newGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
         buttonPanel.add(quitButton);
 
+        // add components to left panel with glue for vertical spacing
         leftPanel.add(Box.createVerticalGlue());
         leftPanel.add(titleLabel);
         leftPanel.add(imageLabel);
@@ -108,13 +117,37 @@ public class MenuPagePanel extends JPanel {
         leftPanel.add(buttonPanel);
         leftPanel.add(Box.createVerticalGlue());
 
-        // right panel elements creation
+        // create and setup the right panel for difficulty selection
         createRightPanel();
 
-        // add the left panel
+        // add left panel to center of main panel
         add(leftPanel, BorderLayout.CENTER);
+
+        // create and start timer to update load button state every 1 second
+        updateTimer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // enable load button only if save exists
+                loadGameButton.setEnabled(GamePersistence.saveExists());
+            }
+        });
+        updateTimer.start();
     }
 
+    // helper method to style main menu buttons consistently
+    private void styleMainMenuButton(JButton button, Color bg, Color fg, Dimension size) {
+        button.setBackground(bg);
+        button.setForeground(fg);
+        button.setFont(new Font("Courier New", Font.BOLD, 18));
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+        button.setAlignmentX(Component.CENTER_ALIGNMENT);
+        button.setPreferredSize(size);
+        button.setMaximumSize(size);
+        button.setMinimumSize(size);
+    }
+
+    // create right panel components for difficulty selection
     private void createRightPanel() {
         rightPanel = new JPanel();
         rightPanel.setPreferredSize(new Dimension(400, 0));
@@ -122,34 +155,39 @@ public class MenuPagePanel extends JPanel {
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
         rightPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        // difficulty heading label
         difficultyLabel = new JLabel("Choose Difficulty", SwingConstants.CENTER);
         difficultyLabel.setForeground(new Color(244, 243, 238));
         difficultyLabel.setFont(new Font("SansSerif", Font.BOLD, 40));
         difficultyLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
+        // descriptive labels for each difficulty level
         JLabel easyDesc = new JLabel("Easy - $5000, Customers are usually chill, few unlucky events.");
         JLabel normalDesc = new JLabel("Normal - $3500, Balanced game, unlucky events do occur.");
         JLabel hardDesc = new JLabel("Hard - $2500, Chaos. Frequent robberies and disasters.");
 
+        // style description labels uniformly
         for (JLabel label : new JLabel[]{easyDesc, normalDesc, hardDesc}) {
             label.setForeground(new Color(244, 243, 238));
             label.setFont(new Font("Dialog", Font.BOLD, 11));
             label.setAlignmentX(Component.LEFT_ALIGNMENT);
         }
 
+        // panel to hold difficulty buttons, transparent background
         difficultyButtonPanel = new JPanel();
         difficultyButtonPanel.setLayout(new BoxLayout(difficultyButtonPanel, BoxLayout.Y_AXIS));
         difficultyButtonPanel.setOpaque(false);
         difficultyButtonPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
+        // difficulty selection buttons
         JButton easyButton = new JButton("Easy");
         JButton mediumButton = new JButton("Medium");
         JButton hardButton = new JButton("Hard");
 
         Color btnBg = new Color(70, 63, 58);
-
         Dimension buttonSize = new Dimension(600, 30);
 
+        // style and add difficulty buttons to panel with spacing
         for (JButton btn : new JButton[]{easyButton, mediumButton, hardButton}) {
             btn.setBackground(Color.WHITE);
             btn.setForeground(btnBg);
@@ -163,6 +201,7 @@ public class MenuPagePanel extends JPanel {
             difficultyButtonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
         }
 
+        // create and style the go back button
         goBackButton = new JButton("Go Back");
         goBackButton.setBackground(btnBg);
         goBackButton.setForeground(new Color(244, 243, 238));
@@ -174,6 +213,7 @@ public class MenuPagePanel extends JPanel {
         goBackButton.setMinimumSize(buttonSize);
         goBackButton.addActionListener(e -> hideDifficulty());
 
+        // add all components to right panel with spacing
         rightPanel.add(difficultyLabel);
         rightPanel.add(Box.createRigidArea(new Dimension(0, 30)));
         rightPanel.add(easyDesc);
@@ -185,33 +225,34 @@ public class MenuPagePanel extends JPanel {
         rightPanel.add(difficultyButtonPanel);
         rightPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         rightPanel.add(goBackButton);
-        
-        //difficulty buttons
+
+        // set listeners on difficulty buttons to update game state
         setupDifficultyButton(easyButton, Difficulty.Easy);
         setupDifficultyButton(mediumButton, Difficulty.Normal);
         setupDifficultyButton(hardButton, Difficulty.Hard);
-
-        
     }
-    
-    //set game instance to chose difficulty and switch screens
+
+    // add action listener to difficulty buttons for setting game difficulty
     private void setupDifficultyButton(JButton button, Difficulty difficulty) {
-    button.addActionListener(e -> {
-        GameState.instance().setDifficulty(difficulty);
-        GamePersistence.saveGame();
-        System.out.println("Difficulty chosen: "+GameState.instance().getDifficulty());
-        bottomCardPanel.showPanel("Default");
-        PanelNavigator.getInstance().addButtons();
-    });
+        button.addActionListener(e -> {
+            GameState.instance().setDifficulty(difficulty);
+            GamePersistence.saveGame();
+            System.out.println("Difficulty chosen: " + GameState.instance().getDifficulty());
+            bottomCardPanel.showPanel("Default");
+            PanelNavigator.getInstance().addButtons();
+        });
     }
 
+    // load saved game and show default panel
     private void loadGame() {
-        if(GamePersistence.saveExists()) GamePersistence.loadGame();
+        if (GamePersistence.saveExists()) {
+            GamePersistence.loadGame();
+        }
         bottomCardPanel.showPanel("Default");
         PanelNavigator.getInstance().addButtons();
     }
 
-    // show the right pannel
+    // add the right panel to show difficulty selection options
     public void showDifficulty() {
         if (rightPanel.getParent() == null) {
             add(rightPanel, BorderLayout.EAST);
@@ -219,8 +260,8 @@ public class MenuPagePanel extends JPanel {
         revalidate();
         repaint();
     }
-    
-    // remove the right panel 
+
+    // remove the right panel to hide difficulty selection options
     public void hideDifficulty() {
         remove(rightPanel);
         revalidate();

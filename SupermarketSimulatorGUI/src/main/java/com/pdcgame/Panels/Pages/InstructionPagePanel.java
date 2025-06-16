@@ -15,15 +15,20 @@ import java.awt.*;
 public class InstructionPagePanel extends SubPagePanel {
 
     public InstructionPagePanel() {
+        // use absolute positioning
         setLayout(null);
-        
-        JLabel titleLabel = new JLabel("Supermarket Simulator");
-        titleLabel.setBounds(30, 30, 1000, 40);
-        titleLabel.setForeground(new Color(66, 62, 55));
-        titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
 
+        // create title label
+        JLabel titleLabel = new JLabel("Supermarket Simulator");
+        titleLabel.setBounds(30, 30, 1000, 40); // set position and size
+        titleLabel.setForeground(new Color(66, 62, 55)); // set text color
+        titleLabel.setFont(new Font("Impact", Font.BOLD, 40)); // set font
+
+        // create and add tutorial panel
         TutorialPanel tutorial = new TutorialPanel();
-        tutorial.setBounds(0, 0, 900, 800);
+        tutorial.setBounds(0, 0, 900, 800); // set position and size
+
+        // add components to panel
         add(tutorial);
         add(titleLabel);
     }

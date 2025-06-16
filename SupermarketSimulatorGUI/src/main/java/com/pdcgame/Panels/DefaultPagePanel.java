@@ -14,9 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DefaultPagePanel extends JPanel {
-
-
-    private StoreStatusPanel statusPanel;
+    private final StoreStatusPanel statusPanel;
 
     public DefaultPagePanel(SubPagePanel subPage, FunctionPagePanel functionPage) {
         setLayout(new BorderLayout());
@@ -33,11 +31,5 @@ public class DefaultPagePanel extends JPanel {
 
         statusPanel = new StoreStatusPanel(); // Save reference
         add(statusPanel, BorderLayout.SOUTH);
-    }
-
-    public void updateStatusPanel() {
-        if (statusPanel != null) {
-            statusPanel.refresh();  // You’ll define this method below
-        }
     }
 }

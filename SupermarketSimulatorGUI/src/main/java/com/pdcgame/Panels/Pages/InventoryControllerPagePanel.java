@@ -26,62 +26,67 @@ import java.awt.event.ActionEvent;
 
 public class InventoryControllerPagePanel extends SubPagePanel {
 
+    // tracks the last selected product storage type (shelf, fridge, freezer)
     private ProductStorageType lastSelectedType = null;
+    // panel that displays inventory items in a grid
     private final InventoryGridPanel inventoryGridPanel = new InventoryGridPanel();
 
     public InventoryControllerPagePanel() {
+        // use absolute positioning
         setLayout(null);
 
+        // create title label
         JLabel titleLabel = new JLabel("Inventory");
         titleLabel.setBounds(20, 10, 400, 40);
         titleLabel.setForeground(new Color(66, 62, 55));
         titleLabel.setFont(new Font("Impact", Font.BOLD, 40));
         add(titleLabel);
 
+        // create buttons for storage types
         JButton shelfButton = new JButton("Shelf");
         JButton fridgeButton = new JButton("Fridge");
         JButton freezerButton = new JButton("Freezer");
 
+        // position buttons
         shelfButton.setBounds(50, 60, 100, 30);
         fridgeButton.setBounds(160, 60, 100, 30);
         freezerButton.setBounds(270, 60, 100, 30);
 
+        // add buttons to panel
         add(shelfButton);
         add(fridgeButton);
         add(freezerButton);
 
+        // create scrollable panel for inventory display
         JScrollPane scrollPane = new JScrollPane(inventoryGridPanel);
         scrollPane.setBounds(15, 110, 850, 450);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         add(scrollPane);
 
-        // Timer to refresh product list every 2 seconds, only if a type is selected
-        Timer timer = new Timer(2000, (ActionEvent e) -> {
+        // refresh every 250ms
+        Timer timer = new Timer(2500, (ActionEvent e) -> {
             if (lastSelectedType != null) {
                 refreshList();
             }
         });
         timer.start();
 
-        shelfButton.addActionListener(e -> {
-            lastSelectedType = ProductStorageType.SHELF;
-            refreshList();
-        });
-
-        fridgeButton.addActionListener(e -> {
-            lastSelectedType = ProductStorageType.FRIDGE;
-            refreshList();
-        });
-
-        freezerButton.addActionListener(e -> {
-            lastSelectedType = ProductStorageType.FROZEN;
-            refreshList();
-        });
+        // add button listeners to change selected storage type and refresh
+        shelfButton.addActionListener(e -> handleStorageTypeSelection(ProductStorageType.SHELF));
+        fridgeButton.addActionListener(e -> handleStorageTypeSelection(ProductStorageType.FRIDGE));
+        freezerButton.addActionListener(e -> handleStorageTypeSelection(ProductStorageType.FROZEN));
     }
 
+    // updates product list shown in the grid panel based on selected type
     private void refreshList() {
         inventoryGridPanel.setListProducts(GameState.instance()
                 .getProductManager()
                 .getFilteredPurchasableProducts(lastSelectedType));
+    }
+
+    // sets the selected storage type and refreshes the list
+    private void handleStorageTypeSelection(ProductStorageType type) {
+        lastSelectedType = type;
+        refreshList();
     }
 }

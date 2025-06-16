@@ -3,13 +3,12 @@
  */
 package com.pdcgame;
 
-import com.pdcgame.PageNavigator;
 import java.util.Scanner;
 
 /**
  * @author prisha, sujal
  */
-public class Main {
+public class SupermarketGameCLI {
 
     public static void main(String[] args) throws InterruptedException {
         LogSettings logSettings = new LogSettings(); // turns off Hibernate auto logging and warnings

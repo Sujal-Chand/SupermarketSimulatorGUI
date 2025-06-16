@@ -11,23 +11,18 @@ package com.pdcgame.Panels;
 import java.awt.*;
 
 public class BuyProductsPanel extends FunctionPagePanel{
-    
-    private final ShelfPanel shelfPanel;
-    private final ProductInfoPanel productInfoPanel;
 
     public BuyProductsPanel() {
         setLayout(new BorderLayout());
 
-        shelfPanel = new ShelfPanel();
-        productInfoPanel = new ProductInfoPanel();
+        ShelfPanel shelfPanel = new ShelfPanel();
+        ProductInfoPanel productInfoPanel = new ProductInfoPanel();
 
-        // Listener that updates ProductInfoPanel
-        shelfPanel.setProductClickListener(product -> {
-            productInfoPanel.showProductInfo(product);
-        });
+        // listener that updates ProductInfoPanel
+        shelfPanel.setProductClickListener(productInfoPanel::showProductInfo);
 
         
-        // Layout setup - you can adjust positions
+        // layout setup
         add(shelfPanel, BorderLayout.CENTER);
         add(productInfoPanel, BorderLayout.EAST);
     }

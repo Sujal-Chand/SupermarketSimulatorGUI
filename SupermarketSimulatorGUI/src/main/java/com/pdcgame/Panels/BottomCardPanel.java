@@ -28,6 +28,7 @@ public class BottomCardPanel extends JPanel {
         panels = new HashMap<>();
         contentPanel = new JPanel(new BorderLayout());
 
+        // create and register main panels
         panels.put("Menu", new MenuPagePanel(this));
         panels.put("Default", new InstructionPagePanel());
         panels.put("Equipment", EquipmentControllerPagePanel.getInstance());
@@ -37,38 +38,49 @@ public class BottomCardPanel extends JPanel {
 
         add(contentPanel, BorderLayout.CENTER);
 
+        // show the menu panel by default
         showPanel("Menu");
     }
 
+    // show a panel by name, clearing previous content first
     public void showPanel(String name) {
         contentPanel.removeAll();
 
         JPanel panel = panels.get(name);
-        if (panel != null) {
-            if (name.equals("Products") || name.equals("Store")) {
-                // Basic layout — just page + StoreStatusPanel
-                contentPanel.add(new DefaultPagePanel(panel), BorderLayout.CENTER);
-            } else if (panel instanceof SubPagePanel) {
-                // Full layout — SubPage + FunctionPage + StoreStatusPanel
-                FunctionPagePanel functionPage = switch (name) {
-                    case "Default", "Inventory" -> new GameBoardPanel();
-                    case "Equipment" -> {
-                        EquipmentControllerPagePanel.getInstance().updateView();
-                        yield new GameBoardPanel();
-                    }
-                    default -> new BuyProductsPanel();
-                };
-
-                contentPanel.add(new DefaultPagePanel((SubPagePanel) panel, functionPage), BorderLayout.CENTER);
-            } else {
-                // Fallback (shouldn't hit)
-                contentPanel.add(panel, BorderLayout.CENTER);
-            }
-
-            contentPanel.revalidate();
-            contentPanel.repaint();
-        } else {
-            System.err.println("Panel with name '" + name + "' not found.");
+        if (panel == null) {
+            System.err.println("panel with name '" + name + "' not found.");
+            return;
         }
+
+        if (name.equals("Products") || name.equals("Store")) {
+            showBasicLayout(panel);
+        } else if (panel instanceof SubPagePanel) {
+            showFullLayout(name, (SubPagePanel) panel);
+        } else {
+            // fallback: just add the panel as is
+            contentPanel.add(panel, BorderLayout.CENTER);
+        }
+
+        contentPanel.revalidate();
+        contentPanel.repaint();
+    }
+
+    // show panels with simple layout (just the page inside a default wrapper)
+    private void showBasicLayout(JPanel panel) {
+        contentPanel.add(new DefaultPagePanel(panel), BorderLayout.CENTER);
+    }
+
+    // show panels that require subpage + function page + store status panel
+    private void showFullLayout(String name, SubPagePanel panel) {
+        FunctionPagePanel functionPage = switch (name) {
+            case "Default", "Inventory" -> new GameBoardPanel();
+            case "Equipment" -> {
+                EquipmentControllerPagePanel.getInstance().updateView();
+                yield new GameBoardPanel();
+            }
+            default -> new BuyProductsPanel();
+        };
+
+        contentPanel.add(new DefaultPagePanel(panel, functionPage), BorderLayout.CENTER);
     }
 }

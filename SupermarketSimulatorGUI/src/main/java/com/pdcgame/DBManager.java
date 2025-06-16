@@ -46,14 +46,4 @@ public final class DBManager {
         }
     }
 
-    public void closeConnections() {
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
-    }
-
 }
