@@ -5,6 +5,7 @@ import com.pdcgame.Enums.InternalCases;
 import com.pdcgame.GameState;
 import com.pdcgame.IOHandler;
 import com.pdcgame.Managers.BuilderManager;
+import com.pdcgame.Panels.Pages.EquipmentControllerPagePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -102,6 +103,7 @@ public class ManageEquipmentPanel extends JPanel {
                                         " for $" + String.format("%.2f", sellPrice),
                                 "Item Sold",
                                 JOptionPane.INFORMATION_MESSAGE);
+                        EquipmentControllerPagePanel.getInstance().updateView();
                     }
                 }
 

@@ -4,6 +4,7 @@
  */
 package com.pdcgame.Panels;
 
+import com.pdcgame.Enums.ActionState;
 import com.pdcgame.Enums.Difficulty;
 import com.pdcgame.GamePersistence;
 import com.pdcgame.GameState;
@@ -13,7 +14,6 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Image;
-import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -28,7 +28,6 @@ import javax.swing.SwingConstants;
  * @author sujalchand
  */
 import javax.swing.*;
-import java.awt.*;
 import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -241,9 +240,12 @@ public class MenuPagePanel extends JPanel {
     // add action listener to difficulty buttons for setting game difficulty
     private void setupDifficultyButton(JButton button, Difficulty difficulty) {
         button.addActionListener(e -> {
+            GameState.instance().setActionState(ActionState.NEW_GAME);
             GameState.instance().setDifficulty(difficulty);
+            GamePersistence.newSave();
             GamePersistence.saveGame();
             System.out.println("Difficulty chosen: " + GameState.instance().getDifficulty());
+            PanelNavigator.getInstance().switchPanel("Default");
             bottomCardPanel.showPanel("Default");
             PanelNavigator.getInstance().addButtons();
         });

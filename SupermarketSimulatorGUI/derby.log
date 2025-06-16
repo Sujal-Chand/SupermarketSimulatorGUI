@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Mon Jun 16 15:55:49 NZST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-76e1-0cbb-00001f383910 
-on database directory C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
-Loaded from file:/C:/Users/sujal/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
-java.vendor=Azul Systems, Inc.
-java.runtime.version=24.0.1+9
-user.dir=C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI
-os.name=Windows 11
-os.arch=amd64
-os.version=10.0
+Mon Jun 16 19:39:49 NZST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-77ae-20f2-000000e57258 
+on database directory /Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI/database/SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@63c12fb0 
+Loaded from file:/Users/sujalchand/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=21.0.3+9-LTS
+user.dir=/Users/sujalchand/Desktop/SupermarketSimulatorGUI/SupermarketSimulatorGUI
+os.name=Mac OS X
+os.arch=aarch64
+os.version=15.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
