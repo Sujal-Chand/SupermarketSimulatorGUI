@@ -5,20 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a4fdf0-c197-420c-bf89-b66eca1a3312" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Enums/ActionSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/MoveOrRemoveDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/StockGridPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/StockProductCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/db.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log.ctrl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/log1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/log/logmirror.ctrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c400.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c400.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c490.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4a1.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4b0.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4d0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4f0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c4f0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/SupermarketDB/seg0/c501.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/SupermarketDB/seg0/c501.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/StorePagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/StorePagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/StoreStatusPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/StoreStatusPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/StorePagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/StorePagePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/StoreStatusPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/StoreStatusPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/ActionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/ActionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/BuilderManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/BuilderManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Managers/CartManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BuyEquipmentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/BuyEquipmentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ManageEquipmentPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryControllerPagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/Pages/InventoryControllerPagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ProductCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/InventoryProductCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/ProductGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/Panels/InventoryGridPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pdcgame/PriceChangeDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pdcgame/PriceChangeDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ManageEquipmentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InventoryControllerPagePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/Pages/InventoryControllerPagePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductCard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductGridPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/Panels/ProductInfoPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pdcgame/PriceChangeDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pdcgame/PriceChangeDialog.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -104,7 +124,7 @@
       <workItem from="1749974859818" duration="298000" />
       <workItem from="1749975175831" duration="34000" />
       <workItem from="1749975218239" duration="3780000" />
-      <workItem from="1750029725000" duration="1334000" />
+      <workItem from="1750029725000" duration="8897000" />
     </task>
     <servers />
   </component>

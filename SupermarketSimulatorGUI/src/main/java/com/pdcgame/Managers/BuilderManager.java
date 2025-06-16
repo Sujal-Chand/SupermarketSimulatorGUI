@@ -1,5 +1,6 @@
 package com.pdcgame.Managers;
 
+import com.pdcgame.Enums.ActionSource;
 import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.Enums.InternalCases;
 import com.pdcgame.Enums.ScenarioType;
@@ -35,6 +36,7 @@ public class BuilderManager {
                 ScenarioType.LONG_LINE.setWeight(ScenarioType.LONG_LINE.getWeight() - 2);
             }
 
+            ActionManager.futureConsume(ActionSource.BUY_EQUIPMENT);
             GamePersistence.saveGame();
             return InternalCases.SUCCESS;
         }
@@ -68,7 +70,7 @@ public class BuilderManager {
         gameInstance.getBoardManager().setCell(coordinates[0], coordinates[1], BoardCell.EMPTY);
         gameInstance.getFloorStorageManager().removeLocation(stringCoordinates);
         BankManager.addBalance(item.getItemCost() * 0.9);
-        ActionManager.futureConsume();
+        ActionManager.futureConsume(ActionSource.SELL_EQUIPMENT);
         GamePersistence.saveGame();
     }
 

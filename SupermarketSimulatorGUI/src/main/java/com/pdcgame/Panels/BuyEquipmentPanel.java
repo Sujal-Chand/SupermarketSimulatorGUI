@@ -1,5 +1,6 @@
 package com.pdcgame.Panels;
 
+import com.pdcgame.Enums.ActionSource;
 import com.pdcgame.Enums.BoardCell;
 import com.pdcgame.Enums.InternalCases;
 import com.pdcgame.GamePersistence;
@@ -106,8 +107,6 @@ public class BuyEquipmentPanel extends JPanel {
 
         switch (outcome) {
             case SUCCESS -> {
-                ActionManager.futureConsume();
-                GamePersistence.saveGame();
                 JOptionPane.showMessageDialog(this, "Purchase successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
             case SPACE_TAKEN -> JOptionPane.showMessageDialog(this, "This space is already taken.", "Purchase Failed", JOptionPane.WARNING_MESSAGE);

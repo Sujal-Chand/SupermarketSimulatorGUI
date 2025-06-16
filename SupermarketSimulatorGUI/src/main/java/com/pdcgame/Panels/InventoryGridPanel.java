@@ -1,15 +1,14 @@
 package com.pdcgame.Panels;
 
-import com.pdcgame.GameState;
 import com.pdcgame.ProductTypes.PurchasableProduct;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Collection;
 
-public class ProductGridPanel extends JPanel {
+public class InventoryGridPanel extends JPanel {
 
-    public ProductGridPanel() {
+    public InventoryGridPanel() {
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
 
@@ -24,11 +23,11 @@ public class ProductGridPanel extends JPanel {
         setLayout(new GridLayout(0, 3, 10, 10));
         setBackground(Color.WHITE);
         for(PurchasableProduct product : products) {
-            add(new ProductCard(product.getName(), "Sell Price: $"+product.getSellPrice()));
+            add(new InventoryProductCard(product.getName(), "Sell Price: $"+product.getSellPrice()));
         }
 
         int rows = (int) Math.ceil(products.size() / 3.0);
-        setPreferredSize(new Dimension(600, rows * 200));
+        setPreferredSize(new Dimension(600, rows * 220));
         revalidate();
         repaint();
     }

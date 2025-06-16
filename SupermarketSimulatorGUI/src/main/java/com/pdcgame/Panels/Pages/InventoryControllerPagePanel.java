@@ -11,12 +11,23 @@ package com.pdcgame.Panels.Pages;
 
 import com.pdcgame.Enums.ProductStorageType;
 import com.pdcgame.GameState;
-import com.pdcgame.Panels.ProductGridPanel;
+import com.pdcgame.Panels.InventoryGridPanel;
 import com.pdcgame.Panels.SubPagePanel;
 import javax.swing.*;
 import java.awt.*;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 public class InventoryControllerPagePanel extends SubPagePanel {
+
+    private ProductStorageType lastSelectedType = null;
+    private final InventoryGridPanel inventoryGridPanel = new InventoryGridPanel();
 
     public InventoryControllerPagePanel() {
         setLayout(null);
@@ -39,27 +50,38 @@ public class InventoryControllerPagePanel extends SubPagePanel {
         add(fridgeButton);
         add(freezerButton);
 
-        // Panel to hold the products
-        ProductGridPanel productGridPanel = new ProductGridPanel();
-
-        JScrollPane scrollPane = new JScrollPane(productGridPanel);
-        scrollPane.setBounds(15, 110, 850, 450); // below the buttons
+        JScrollPane scrollPane = new JScrollPane(inventoryGridPanel);
+        scrollPane.setBounds(15, 110, 850, 450);
         scrollPane.getVerticalScrollBar().setUnitIncrement(16);
         add(scrollPane);
 
+        // Timer to refresh product list every 2 seconds, only if a type is selected
+        Timer timer = new Timer(2000, (ActionEvent e) -> {
+            if (lastSelectedType != null) {
+                refreshList();
+            }
+        });
+        timer.start();
+
         shelfButton.addActionListener(e -> {
-            productGridPanel.setListProducts(GameState.instance()
-                    .getProductManager().getFilteredPurchasableProducts(ProductStorageType.SHELF));
+            lastSelectedType = ProductStorageType.SHELF;
+            refreshList();
         });
 
         fridgeButton.addActionListener(e -> {
-            productGridPanel.setListProducts(GameState.instance()
-                    .getProductManager().getFilteredPurchasableProducts(ProductStorageType.FRIDGE));
+            lastSelectedType = ProductStorageType.FRIDGE;
+            refreshList();
         });
 
         freezerButton.addActionListener(e -> {
-            productGridPanel.setListProducts(GameState.instance()
-                    .getProductManager().getFilteredPurchasableProducts(ProductStorageType.FROZEN));
+            lastSelectedType = ProductStorageType.FROZEN;
+            refreshList();
         });
+    }
+
+    private void refreshList() {
+        inventoryGridPanel.setListProducts(GameState.instance()
+                .getProductManager()
+                .getFilteredPurchasableProducts(lastSelectedType));
     }
 }

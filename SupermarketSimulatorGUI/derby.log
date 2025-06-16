@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Jun 16 11:49:09 NZST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-75ff-34ec-000003429170 
+Mon Jun 16 14:10:44 NZST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-7680-d6d6-000002744860 
 on database directory C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@18b4aac2 
 Loaded from file:/C:/Users/sujal/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
 java.vendor=Oracle Corporation

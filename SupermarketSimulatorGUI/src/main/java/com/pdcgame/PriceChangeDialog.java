@@ -1,5 +1,6 @@
 package com.pdcgame;
 
+import com.pdcgame.Enums.ActionSource;
 import com.pdcgame.Managers.ActionManager;
 import com.pdcgame.Panels.Pages.InventoryControllerPagePanel;
 
@@ -10,6 +11,7 @@ public class PriceChangeDialog {
 
     /**
      * Opens a dialog to change the price of a product.
+     * This code was written partially by ChatGPT
      *
      * @param parentComponent  the parent component for the dialog (for positioning)
      * @param productName      the name of the product
@@ -53,8 +55,8 @@ public class PriceChangeDialog {
                     JOptionPane.showMessageDialog(parentComponent,
                             "Changed price of " + productName + " to $" + String.format("%.2f", newPrice),
                             "Success", JOptionPane.INFORMATION_MESSAGE);
+                    ActionManager.futureConsume(ActionSource.CHANGE_PRICE);
                     GamePersistence.saveGame();
-                    ActionManager.futureConsume();
                     return true;
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(parentComponent,
@@ -70,8 +72,8 @@ public class PriceChangeDialog {
                 JOptionPane.showMessageDialog(parentComponent,
                         "Set price of " + productName + " to recommended: $" + String.format("%.2f", roundedRecommended),
                         "Success", JOptionPane.INFORMATION_MESSAGE);
+                ActionManager.futureConsume(ActionSource.CHANGE_PRICE);
                 GamePersistence.saveGame();
-                ActionManager.futureConsume();
                 return true;
             }
 

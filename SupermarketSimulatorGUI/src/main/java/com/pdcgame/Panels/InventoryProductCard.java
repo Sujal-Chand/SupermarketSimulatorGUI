@@ -1,20 +1,17 @@
 package com.pdcgame.Panels;
 
 import com.pdcgame.GameState;
-import com.pdcgame.Managers.ActionManager;
 import com.pdcgame.PriceChangeDialog;
-import com.pdcgame.ProductTypes.PurchasableProduct;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
-import java.util.Map;
 
-public class ProductCard extends JPanel {
+public class InventoryProductCard extends JPanel {
 
-    public ProductCard(String name, String price) {
+    public InventoryProductCard(String name, String price) {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
         setPreferredSize(new Dimension(120, 200));
@@ -54,6 +51,10 @@ public class ProductCard extends JPanel {
         stockLabel.setAlignmentX(CENTER_ALIGNMENT);
         stockLabel.setFont(new Font("Dialog", Font.BOLD, 16));
 
+        JLabel modifyLabel = new JLabel("Click to change price");
+        modifyLabel.setAlignmentX(CENTER_ALIGNMENT);
+        modifyLabel.setFont(new Font("Dialog", Font.BOLD, 10));
+
         add(Box.createVerticalStrut(5));
         add(imageLabel);
         add(Box.createVerticalStrut(5));
@@ -62,6 +63,8 @@ public class ProductCard extends JPanel {
         add(priceLabel);
         add(Box.createVerticalStrut(3));
         add(stockLabel);
+        add(Box.createVerticalStrut(3));
+        add(modifyLabel);
         add(Box.createVerticalGlue());
 
         // recommended price
@@ -71,7 +74,7 @@ public class ProductCard extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                boolean changed = PriceChangeDialog.showPriceChangeDialog(ProductCard.this, name, recommendedPrice);
+                boolean changed = PriceChangeDialog.showPriceChangeDialog(InventoryProductCard.this, name, recommendedPrice);
                 if (changed) {
                     // Fetch the new price from ProductManager and update label
                     double newPrice = GameState.instance().getProductManager().getSellPrice(name);

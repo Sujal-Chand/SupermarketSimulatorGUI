@@ -13,7 +13,10 @@ public class ManageEquipmentPanel extends JPanel {
 
     public ManageEquipmentPanel() {
         int[] cell = GameState.instance().getBoardManager().getSelectedCell();
-        String cellName = GameState.instance().getBoardManager().getCell(cell[0], cell[1]).name();
+        String stringCoordinates = IOHandler.instance().coordinatesToString(cell);
+        String cellName = GameState.instance().getBoardManager().getCell(cell[0], cell[1]).name().replace("_"," ");
+        BoardCell selectedCell = GameState.instance().getBoardManager().getCell(cell[0], cell[1]);
+        int availableStorage = GameState.instance().getFloorStorageManager().getAvailableSpacesAt(stringCoordinates);
         setLayout(null);
 
         JLabel titleLabel = new JLabel(cellName);
@@ -28,12 +31,19 @@ public class ManageEquipmentPanel extends JPanel {
         subLabel.setFont(new Font("Dialog", Font.BOLD, 16));
         add(subLabel);
 
+        if(selectedCell.canStoreProducts()) {
+            JLabel stockLabel = new JLabel("Available Storage: " + availableStorage);
+            stockLabel.setBounds(300, 60, 400, 30);
+            stockLabel.setForeground(new Color(66, 62, 55));
+            stockLabel.setFont(new Font("Dialog", Font.BOLD, 16));
+            add(stockLabel);
+        }
+
         JButton sellButton = new JButton("Sell");
         sellButton.setBounds(20, 100, 100, 30); // Positioned below subLabel
         sellButton.setFont(new Font("Dialog", Font.PLAIN, 14));
         sellButton.addActionListener(e -> {
-            BoardCell selectedCell = GameState.instance().getBoardManager().getCell(cell[0], cell[1]);
-            String stringCoordinates = IOHandler.instance().coordinatesToString(cell);
+
 
             InternalCases outcome = BuilderManager.trySellItem(selectedCell, stringCoordinates);
 
@@ -84,5 +94,16 @@ public class ManageEquipmentPanel extends JPanel {
             }
         });
         add(sellButton);
+
+        if(GameState.instance().getBoardManager().getCell(cell[0], cell[1]).canStoreProducts()) {
+            StockGridPanel stockGridPanel = new StockGridPanel();
+
+            JScrollPane scrollPane = new JScrollPane(stockGridPanel);
+            scrollPane.setBounds(20, 140, 820, 400);
+            scrollPane.getVerticalScrollBar().setUnitIncrement(16);
+            add(scrollPane);
+
+            stockGridPanel.setListProducts(GameState.instance().getProductManager().getFilteredPurchasableProducts(selectedCell.getStorageType()), cell);
+        }
     }
 }

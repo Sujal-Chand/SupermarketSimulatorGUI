@@ -1,5 +1,6 @@
 package com.pdcgame.Managers;
 
+import com.pdcgame.Enums.ActionSource;
 import com.pdcgame.Enums.InternalCases;
 import com.pdcgame.GamePersistence;
 import com.pdcgame.GameState;
@@ -58,6 +59,8 @@ public class CartManager extends ProductStorage {
             gameInstance.getInventoryManager().addToInventory(entry.getKey(), quantityAddForInventory(entry.getKey()));
         }
         BankManager.subtractBalance(cartTotalValue());
+        ActionManager.futureConsume(ActionSource.PURCHASE_PRODUCTS);
+        GamePersistence.saveGame();
         removeAllProducts();
     }
 
