@@ -42,7 +42,7 @@ public class GameState {
 
     public boolean isGameOver() {
         if(balance <= 0) return true;
-        if(rating > 4.5) return true;
+        if(rating >= 4.5) return true;
         if(rating < 1) return true;
         return false;
     }
