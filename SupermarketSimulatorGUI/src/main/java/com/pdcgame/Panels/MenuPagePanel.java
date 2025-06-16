@@ -103,7 +103,8 @@ public class MenuPagePanel extends JPanel {
         newGameButton.addActionListener(e -> showDifficulty()); // new game button shows difficulty options
 
         // add buttons conditionally and with spacing
-        if (GamePersistence.saveExists()) buttonPanel.add(loadGameButton);
+        buttonPanel.add(loadGameButton);
+        loadGameButton.setEnabled(GamePersistence.saveExists());
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
         buttonPanel.add(newGameButton);
         buttonPanel.add(Box.createRigidArea(new Dimension(0, 15)));
@@ -129,6 +130,7 @@ public class MenuPagePanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 // enable load button only if save exists
                 loadGameButton.setEnabled(GamePersistence.saveExists());
+
             }
         });
         updateTimer.start();
@@ -248,7 +250,7 @@ public class MenuPagePanel extends JPanel {
         if (GamePersistence.saveExists()) {
             GamePersistence.loadGame();
         }
-        bottomCardPanel.showPanel("Default");
+        PanelNavigator.getInstance().switchPanel("Default");
         PanelNavigator.getInstance().addButtons();
     }
 
