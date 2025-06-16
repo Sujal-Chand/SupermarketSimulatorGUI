@@ -8,6 +8,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Collection;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class StockGridPanel extends JPanel {
 
     // constructor sets up panel with border layout and white background

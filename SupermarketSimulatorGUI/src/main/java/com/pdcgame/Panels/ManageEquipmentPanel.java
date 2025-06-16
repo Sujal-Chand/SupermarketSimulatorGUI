@@ -9,6 +9,10 @@ import com.pdcgame.Managers.BuilderManager;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class ManageEquipmentPanel extends JPanel {
 
     public ManageEquipmentPanel() {

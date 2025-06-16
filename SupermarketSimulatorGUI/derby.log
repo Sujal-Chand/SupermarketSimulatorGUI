@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Mon Jun 16 15:27:13 NZST 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-76c6-dc09-0000026f12d8 
-on database directory C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@18b4aac2 
+Mon Jun 16 15:38:11 NZST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0197-76d0-e6da-00001f1d0058 
+on database directory C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI\database\SupermarketDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@11a4022a 
 Loaded from file:/C:/Users/sujal/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
-java.vendor=Oracle Corporation
-java.runtime.version=24.0.1+9-30
+java.vendor=Azul Systems, Inc.
+java.runtime.version=24.0.1+9
 user.dir=C:\Users\sujal\OneDrive\Desktop\Github\SupermarketSimulatorGUI\SupermarketSimulatorGUI
 os.name=Windows 11
 os.arch=amd64

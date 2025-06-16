@@ -15,6 +15,10 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class BuyEquipmentPanel extends JPanel {
 
     private final int[] selectedCell;

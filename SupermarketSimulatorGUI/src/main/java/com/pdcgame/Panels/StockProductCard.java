@@ -9,6 +9,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class StockProductCard extends JPanel {
 
     /**

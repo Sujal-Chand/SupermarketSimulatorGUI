@@ -1,16 +1,13 @@
 com\pdcgame\Printers\MenuPrinter.class
 com\pdcgame\Panels\ShelfPanel.class
 com\pdcgame\Panels\FridgePanel.class
-com\pdcgame\MainWindow$4.class
 com\pdcgame\DBManager.class
 com\pdcgame\Scenarios\NoParkingScenario.class
 com\pdcgame\Interfaces\GameObject.class
 com\pdcgame\Panels\SubPagePanel.class
 com\pdcgame\Scenarios\LongLineScenario.class
-com\pdcgame\Panels\ProductCard$1.class
 com\pdcgame\Finders\FindProductName.class
 com\pdcgame\Models\InventorySave.class
-com\pdcgame\Main.class
 com\pdcgame\Printers\PopularProductPrinter.class
 com\pdcgame\Finders\FindBoardCell.class
 com\pdcgame\Interfaces\BoardUtility.class
@@ -35,7 +32,6 @@ com\pdcgame\Printers\Printer.class
 com\pdcgame\Managers\BoardManager.class
 com\pdcgame\Panels\TutorialPanel$TutorialStep.class
 com\pdcgame\Printers\InventoryPrinter.class
-com\pdcgame\MainWindow$3.class
 com\pdcgame\Abstracts\PageInputs.class
 com\pdcgame\Panels\Pages\InstructionPagePanel.class
 com\pdcgame\Scenarios\CharityScenario.class
@@ -54,7 +50,6 @@ com\pdcgame\Panels\BuyEquipmentPanel.class
 com\pdcgame\PageInputs\GameMenuInput.class
 com\pdcgame\Pages\ProductsPage.class
 com\pdcgame\Enums\PageName.class
-com\pdcgame\Panels\ProductCard.class
 com\pdcgame\PageInputs\DifficultyInput.class
 com\pdcgame\Panels\Pages\StorePagePanel.class
 com\pdcgame\Managers\ProductManager.class
@@ -75,10 +70,8 @@ com\pdcgame\Enums\ScenarioType.class
 com\pdcgame\Panels\ShelfItem.class
 com\pdcgame\PageInputs\PopularProductInput.class
 com\pdcgame\Loaders\ProductLoader.class
-com\pdcgame\Panels\ProductGridPanel.class
 com\pdcgame\Panels\PanelNavigator.class
 com\pdcgame\Pages\InventoryStoragePage.class
-com\pdcgame\MainWindow$1.class
 com\pdcgame\Printers\DifficultyPrinter.class
 com\pdcgame\Interfaces\DataProcessor.class
 com\pdcgame\ProductTypes\PurchasableProduct.class
@@ -108,7 +101,6 @@ com\pdcgame\DisplayObjects\GameBoard.class
 com\pdcgame\Pages\SetPricePage.class
 com\pdcgame\Panels\BottomCardPanel.class
 com\pdcgame\Panels\ProductInfoPanel.class
-com\pdcgame\Panels\SubFunctionPagePanel.class
 com\pdcgame\Pages\StoragePage.class
 com\pdcgame\Panels\BuyEquipmentPanel$1.class
 com\pdcgame\Panels\Pages\EquipmentControllerPagePanel.class
@@ -124,14 +116,11 @@ com\pdcgame\Panels\BuyProductsPanel.class
 com\pdcgame\Pages\SellEquipmentPage.class
 com\pdcgame\Panels\Pages\InventoryControllerPagePanel.class
 com\pdcgame\Printers\SellEquipmentPrinter.class
-com\pdcgame\MainWindow$2.class
 com\pdcgame\Models\StorageItemSave.class
-com\pdcgame\SupermarketGame.class
 com\pdcgame\Scenarios\EmployeeErrorScenario$1.class
 com\pdcgame\Panels\MenuPagePanel.class
 com\pdcgame\GameState.class
 com\pdcgame\Managers\ScenarioManager.class
-com\pdcgame\MainWindow.class
 com\pdcgame\EquipmentStorage.class
 com\pdcgame\Managers\InventoryManager.class
 com\pdcgame\Interfaces\ObjectFinder.class

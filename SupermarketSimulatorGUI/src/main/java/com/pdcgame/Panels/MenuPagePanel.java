@@ -33,6 +33,10 @@ import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class MenuPagePanel extends JPanel {
 
     private JPanel rightPanel;

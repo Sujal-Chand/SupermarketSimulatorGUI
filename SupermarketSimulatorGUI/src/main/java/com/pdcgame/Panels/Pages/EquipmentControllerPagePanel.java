@@ -6,7 +6,7 @@ package com.pdcgame.Panels.Pages;
 
 /**
  *
- * @author prish
+ * @author sujal
  */
 
 import com.pdcgame.Enums.BoardCell;

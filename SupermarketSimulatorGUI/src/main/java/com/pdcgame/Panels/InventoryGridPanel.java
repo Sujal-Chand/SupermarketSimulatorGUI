@@ -6,6 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Collection;
 
+/**
+ *
+ * @author sujalchand
+ */
 public class InventoryGridPanel extends JPanel {
 
     // label shown initially or when no products are displayed
